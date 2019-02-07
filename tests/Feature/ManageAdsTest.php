@@ -6,15 +6,33 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class AdsTest extends TestCase
+class ManageAdsTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
+
+        /** @test **/
+    public function guests_cannot_control_ads()
+    {
+        // $this->withoutExceptionHandling();
+
+        $ad = factory('App\Ad')->create();
+
+        $this->get('/ads')->assertRedirect('login');
+        $this->get('/ads/create')->assertRedirect('login');
+        $this->get($ad->path())->assertRedirect('login');
+        $this->post('/ads', $ad->toArray())->assertRedirect('login');
+        
+       
+    }
+
 
     /** @test */
     public function a_user_can_create_an_ad()
     {
 
     	$this->withoutExceptionHandling();
+        $this->actingAs(factory('App\User')->create());
+        $this->get('ads/create')->assertStatus(200);
 
     	$attributes = [
 
@@ -31,12 +49,12 @@ class AdsTest extends TestCase
         $this->get('/ads')->assertSee($attributes['title']);
 
     }
-
      /** @test **/
-    public function a_user_can_view_an_ad()
+    public function a_user_can_view_their_ad()
     {
+        $this->be(factory('App\User')->create());
         $this->withoutExceptionHandling();
-        $ad = factory('App\Ad')->create();
+        $ad = factory('App\Ad')->create(['user_id' => auth()->id()]);
 
         $this->get($ad->path())
         ->assertSee($ad->title)
@@ -45,8 +63,19 @@ class AdsTest extends TestCase
     }
 
     /** @test **/
+    public function an_auth_user_cant_view_other_ads()
+    {
+        $this->be(factory('App\User')->create());
+        $ad = factory('App\Ad')->create();
+
+         $this->get($ad->path())->assertStatus(403);
+        
+    }
+
+    /** @test **/
     public function an_ad_requires_a_title()
     {
+        $this->actingAs(factory('App\User')->create());
 
         $attributes = factory('App\Ad')->raw(['title' => '']);
 
@@ -56,18 +85,13 @@ class AdsTest extends TestCase
      /** @test **/
      public function an_ad_requires_a_description()
     {
+        $this->actingAs(factory('App\User')->create());
+
         $attributes = factory('App\Ad')->raw(['description' => '']);
 
         $this->post('/ads', $attributes)->assertSessionHasErrors('description');
     }
 
-    /** @test **/
-    public function an_ad_requires_an owner()
-    {
-        $attributes = factory('App\Ad')->raw(;
-
-        $this->post('/ads', $attributes)->assertSessionHasErrors('owner');
-    }
-
+    
 
 }

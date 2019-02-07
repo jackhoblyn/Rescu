@@ -8,7 +8,11 @@ $factory->define(App\Ad::class, function (Faker $faker) {
     	'title' => $faker->sentence,
     	'phone' => $faker->sentence,
     	'description' => $faker->paragraph,
-    	'price' => $faker->randomFloat
+    	'price' => $faker->randomFloat($nbMaxDecimals = NULL, $min = 0, $max = 300.00),
+    	'user_id' => function () {
+
+    		return factory(App\User::class)->create()->id;
+    	}
         
     ];
 });

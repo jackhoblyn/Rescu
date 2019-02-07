@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.app')
 
-<head>
-	<title>Ads</title>
-</head>
-
-<body>
+@section('content')
 	<h1>{{ $ad->title }}</h1>
 
 	<div> {{ $ad->phone }} </div>
 	<div> {{ $ad->description }} </div>
 	<div> {{ $ad->price }} </div>
-	
-</body>
 
-</html>
+	<a href="/ads">Back</a>
+	
+@endsection

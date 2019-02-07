@@ -15,13 +15,14 @@ class CreateAdsTable extends Migration
     {
         Schema::create('ads', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('user_id');
             $table->string('title');
             $table->string('phone');
             $table->text('description');
             $table->float('price');
             $table->timestamps();
 
-            $table->foreign
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

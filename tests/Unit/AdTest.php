@@ -17,4 +17,13 @@ class AdTest extends TestCase
 
         $this->assertEquals('/ads/' . $ad->id, $ad->path());;
     }
+
+    /** @test **/
+    public function it_belongs_to_an_owner()
+    {
+        $ad = factory('App\Ad')->create();
+
+        $this->assertInstanceOf('App\User', $ad->user);
+    }
+
 }

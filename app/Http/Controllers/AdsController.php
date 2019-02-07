@@ -11,7 +11,9 @@ class AdsController extends Controller
 
     {
 
-    	$ads = Ad::all();
+    	$ads = Ad::all(); //Showall projects
+
+        //$ads = auth()->user()->ads; //show ads by a certain user,
 
     	return view('ads.index', compact('ads'));
     }
@@ -19,15 +21,20 @@ class AdsController extends Controller
      public function show(Ad $ad)
 
     {
+       
+        if(auth()->user()->isNot($ad->user)) {
+            abort(403);
+        }
 
-
-        return view('ads.show', compact('ad'));
+         return view('ads.show', compact('ad'));
     }
+
 
 
     public function store()
 
     {
+
 
     	$attributes = request()->validate([
             'title' => 'required',
@@ -36,9 +43,15 @@ class AdsController extends Controller
             'price' => 'required'
         ]);
 
-    	Ad::create($attributes);
+        auth()->user()->ads()->create($attributes);
 
     	return redirect('/ads');
 
+    }
+
+
+    public function create() 
+    {
+        return view('ads.create');
     }
 }

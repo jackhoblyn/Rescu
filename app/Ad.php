@@ -12,4 +12,9 @@ class Ad extends Model
     {
     	return "/ads/{$this->id}";
     }
+
+    public function user()
+    {
+    	return $this->belongsTo(User::class);
+    }
 }
