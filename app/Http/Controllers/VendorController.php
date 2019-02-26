@@ -16,6 +16,9 @@ class VendorController extends Controller
        'name'=>  'required',
        'password'=> 'required|min:6|confirmed'
     ]); 
+
+     $email = $request->email;
+     $password = $request->password;
     
     
      Vendor::create([
@@ -24,7 +27,12 @@ class VendorController extends Controller
           'password'=>bcrypt($request->password),
           'type'=> $request->type
     ]);
-      return redirect()->intended('/home/vendor');
+      // return redirect()->intended('/vendor/home');
+     if(Auth::guard('vendor')->attempt(['email'=> $email, 'password'=> $password])){
+       return redirect()->intended('/home/vendor');
+      } else {
+      return redirect()->back()->with('warning', 'Invalid Email or Password');
+      }
     }
     public function loginVendor()
     {
@@ -38,10 +46,11 @@ class VendorController extends Controller
    ]);
      $email = $request->email;
      $password = $request->password;
-     $remember = $request->remember;
      $type = $request->type;
+     $remember = $request->remember;
+  
 
-     if(Auth::guard('vendor')->attempt(['email'=> $email, 'password'=> $password], $remember, $type)){
+     if(Auth::guard('vendor')->attempt(['email'=> $email, 'password'=> $password], $remember)){
        return redirect()->intended('/home/vendor');
       } else {
      	return redirect()->back()->with('warning', 'Invalid Email or Password');
@@ -54,6 +63,7 @@ class VendorController extends Controller
   public function logout()
   {
     Auth::guard('vendor')->logout();
-    return redirect('/login/vendor'); 
+
+    return redirect('/');
   }
 }

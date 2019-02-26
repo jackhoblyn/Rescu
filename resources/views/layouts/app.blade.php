@@ -32,10 +32,7 @@
                             <img src="/img/red-cross.png" alt="Rescu" style="max-height: 35px"> Rescu
                         </a>
                     </h1>
-
                     <div>
-                       
-
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->

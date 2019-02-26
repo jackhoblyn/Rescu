@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="{{ url('/login/vendor') }}">Vendor</a>
+                    <a href="{{ route('home.vendor') }}">Vendor</a>
                     <a href="{{ route('login') }}">User</a>
                 </div>
             </div>

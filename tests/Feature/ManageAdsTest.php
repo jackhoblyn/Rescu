@@ -31,7 +31,7 @@ class ManageAdsTest extends TestCase
     {
 
     	$this->withoutExceptionHandling();
-        $this->actingAs(factory('App\User')->create());
+        $this->signIn();
         $this->get('ads/create')->assertStatus(200);
 
     	$attributes = [
@@ -42,7 +42,7 @@ class ManageAdsTest extends TestCase
     		'price' => $this->faker->randomFloat  
     	];
 
-    	$this->post('/ads', $attributes)->assertRedirect('/ads');
+    	$this->post('/ads', $attributes);
 
     	$this->assertDatabaseHas('ads', $attributes);
 
@@ -58,14 +58,13 @@ class ManageAdsTest extends TestCase
 
         $this->get($ad->path())
         ->assertSee($ad->title)
-        ->assertSee($ad->phone)
-        ->assertSee($ad->price);
+        ->assertSee($ad->description);
     }
 
     /** @test **/
     public function an_auth_user_cant_view_other_ads()
     {
-        $this->be(factory('App\User')->create());
+        $this->signIn();
         $ad = factory('App\Ad')->create();
 
          $this->get($ad->path())->assertStatus(403);
@@ -75,7 +74,7 @@ class ManageAdsTest extends TestCase
     /** @test **/
     public function an_ad_requires_a_title()
     {
-        $this->actingAs(factory('App\User')->create());
+        $this->signIn();
 
         $attributes = factory('App\Ad')->raw(['title' => '']);
 
@@ -85,7 +84,7 @@ class ManageAdsTest extends TestCase
      /** @test **/
      public function an_ad_requires_a_description()
     {
-        $this->actingAs(factory('App\User')->create());
+        $this->signIn();
 
         $attributes = factory('App\Ad')->raw(['description' => '']);
 

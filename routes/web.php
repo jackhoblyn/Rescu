@@ -24,32 +24,50 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/ads/{ad}', 'AdsController@show');
 
 	Route::post('/ads', 'AdsController@store');
-
 	
-
-
-
 	Route::get('/home', 'HomeController@index')->name('home');
 
 });
+
 
 Auth::routes();
 
 
 
 
-
 //vendor routes
 Route::get('/register/vendor', 'VendorController@create');
+
 Route::get('/login/vendor', 'VendorController@loginVendor');
+
 Route::post('/register/vendor', 'VendorController@registerVendor')->name('register.vendor');
+
 Route::post('/login/vendor', 'VendorController@vendorAuth')->name('login.vendor');
 
+Route::get('/vendor/home', 'VendorController@home');
+
+
+
+
+
 //vendor routes we want protected 
-Route::group(['middleware'=>'auth:vendor'], function(){
-Route::get('/home/vendor', 'VendorController@home');
-Route::post('/logout/vendor', 'VendorController@logout')->name('logout.vendor');
-});
+Route::group(['middleware'=>'vendor'], function() {
+
+	Route::get('/home/vendor', 'VendorController@home')->name('home.vendor');
+
+	Route::post('/logout/vendor', 'VendorController@logout')->name('logout.vendor');
+
+	Route::get('/vendor/ads', 'AdsController@all');
+
+	Route::get('/vendor/ads/{ad}', 'AdsController@list');
+
+	// Route::get('/vendor/ads/{ad}/responses', 'AdsController@respond');
+
+	Route::post('/vendor/ads/{ad}/responses/', 'ResponseController@store');
+
+	Route::patch('/vendor/ads/{ad}/responses/{response}', 'ResponseController@update');
+
+	});
 
 
 //ad routes

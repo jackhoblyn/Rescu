@@ -17,7 +17,7 @@
                         <img class="card-img-top" src={{ asset('img/wrench.png') }} alt="Card image" style="width:100%" >
                             <div class="card-body">
                                     <p>Find shops in your area</p>
-                                <a href="#" class="btn btn-primary">Show map</a>
+                                <a href="/ads" class="btn btn-primary">Show map</a>
                             </div>
                     </div>
                 </div>

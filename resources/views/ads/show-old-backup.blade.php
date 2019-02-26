@@ -32,28 +32,15 @@
 						<div class="card mb-3"> Nothing yet! </div>
 					@endforelse
 				</div>
-			</div>
-			<div class="lg:w-1/2 px-3">
-				<div class="card" style="height: 110%; position: relative; ">
-					<div>
-						<h3 class="font-normal text-xl mb-3 py-4 -ml-5 border-l-4 border-blue-light pl-4" style = "float: left">
-							<div class="text-black no-underline" >{{ $ad->title }}</div>
-						</h3>
-
-						<h1 style= "color: green; text-align: right; font-size: 3rem;"> ${{ $ad->price }} </h1></br>
-
-						<div class="text-grey">{{ str_limit($ad->description, 60) }}</div>
-
-						<img class = "center pt-6 mt-6" src={{ asset('img/nyes.jpg') }} alt="Card image" style="width:100% max-height: 180px; max-width: 180px;">
-					</div>
+				<div class="mb-6">
+					<h2 class="text-lg text-grey font-normal mb-3">Notes</h2>
+					<!-- {{-- Notes --}} -->
+					<textarea class="card w-full" style="min-height: 200px"></textarea>
 				</div>
 			</div>
-
-			</div>
-
-
-
-
+			<div class="lg:w-1/4 px-3">
+				
+				@include('ads.card')
 
 			</div>
 

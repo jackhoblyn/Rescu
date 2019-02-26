@@ -26,4 +26,16 @@ class AdTest extends TestCase
         $this->assertInstanceOf('App\User', $ad->user);
     }
 
+    /** @test */
+    public function it_can_add_responses()
+    {
+        $ad = factory('App\Ad')->create();
+       // $response = factory('App\Response')->create();
+        $response = $ad->addResponse('Test Response');
+
+        $this->assertCount(1, $ad->responses);
+        $this->assertTrue($ad->responses->contains($response));
+
+    }
+
 }

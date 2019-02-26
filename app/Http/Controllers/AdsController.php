@@ -10,12 +10,16 @@ class AdsController extends Controller
     public function index()
 
     {
-
-    	$ads = Ad::all(); //Showall projects
-
-        //$ads = auth()->user()->ads; //show ads by a certain user,
-
+    	// $ads = Ad::all(); //Showall projects
+        $ads = auth()->user()->ads()->orderBy('updated_at', 'desc')->get(); //show ads by a certain user,
     	return view('ads.index', compact('ads'));
+    }
+
+        public function all()
+
+    {
+        $ads = Ad::orderBy('updated_at','desc')->get(); //Showall projects
+        return view('ads.showall', compact('ads'));
     }
 
      public function show(Ad $ad)
@@ -29,13 +33,18 @@ class AdsController extends Controller
          return view('ads.show', compact('ad'));
     }
 
+    public function list(Ad $ad)
 
+    {
+         return view('ads.list', compact('ad'));
+
+    }
+
+    
 
     public function store()
 
     {
-
-
     	$attributes = request()->validate([
             'title' => 'required',
             'phone' => 'required',
@@ -43,10 +52,9 @@ class AdsController extends Controller
             'price' => 'required'
         ]);
 
-        auth()->user()->ads()->create($attributes);
+        $ad = auth()->user()->ads()->create($attributes);
 
-    	return redirect('/ads');
-
+    	return redirect($ad->path());
     }
 
 
@@ -54,4 +62,24 @@ class AdsController extends Controller
     {
         return view('ads.create');
     }
+
+    public function respond(Ad $ad)
+
+    {
+         return view('ads.respond');
+
+    }
+
+     public function response(Ad $ad)
+
+    {
+        $attributes = request()->validate([
+            'description' => 'required',
+            'offer' => 'required'
+        ]);
+
+        auth('vendor')->user()->ads()->create($attributes);
+       return redirect('/vendor/ads');
+    }
+
 }
