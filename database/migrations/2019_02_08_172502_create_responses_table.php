@@ -16,10 +16,13 @@ class CreateResponsesTable extends Migration
         Schema::create('responses', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('ad_id');
+            $table->unsignedInteger('vendor_id');
             $table->text('description');
             $table->float('offer');
             $table->boolean('chosen')->default(false);
             $table->timestamps();
+
+            $table->foreign('vendor_id')->references('id')->on('vendors')->onDelete('cascade');
 
         });
     }

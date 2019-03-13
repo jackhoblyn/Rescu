@@ -14,4 +14,14 @@ class Vendor extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+     public function responses()
+    {
+        return $this->hasMany(Response::class);
+    }
+
+    public function repairs()
+    {
+        return $this->hasMany(Repair::class);
+    }
 }

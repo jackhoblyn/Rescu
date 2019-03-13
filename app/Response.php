@@ -15,6 +15,11 @@ class Response extends Model
     	return $this->belongsTo(Ad::class);
     }
 
+    public function vendor()
+    {
+        return $this->belongsTo(Vendor::class);
+    }
+
     public function path()
     {
     	return "/ads/{$this->ad->id}/responses/{$this->id}";

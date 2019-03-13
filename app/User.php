@@ -33,6 +33,11 @@ class User extends Authenticatable
         return $this->hasMany(Ad::class);
     }
 
+     public function repairs()
+    {
+        return $this->hasMany(Repair::class);
+    }
+        
 
 
 }

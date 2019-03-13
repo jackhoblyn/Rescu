@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Ad;
 use App\Response;
+use App\Vendor;
 
 class ResponseController extends Controller
 {
@@ -20,14 +21,14 @@ class ResponseController extends Controller
     // 	return redirect($ad->list());
     // }
 
-    public function store(Ad $ad)
+    public function store(Ad $ad, Vendor $vendor)
     {
         Response::create([
             'description' => request('description'),
             'offer' => request('offer'),
             'chosen' => false,
-            'ad_id' => $ad->id
-
+            'ad_id' => $ad->id,
+            'vendor_id' => Auth('vendor')->user()->id
         ]);
 
         return back();

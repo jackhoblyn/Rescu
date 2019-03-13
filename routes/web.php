@@ -14,6 +14,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/map', function () {
+    return view('map');
+});
+
+Route::get('/map2', function () {
+	$config['center'] = 'Air Canada Centre, Toronto';
+	$config['zoom'] = '12';
+	$config['map-height'] = '600px';
+	$config['map-width'] = '100%';
+
+	GMaps::initialize($config);
+
+	//Marker
+	$marker['position'] = 'Air Canada Centre, Toronto';
+	$marker['infowindow_content'] = 'Air Canada Centre';
+
+	GMaps::add_marker($marker);
+
+	$map = GMaps::create_map();
+
+    return view('map2')->with('map', $map);
+});
+
 Route::group(['middleware' => 'auth'], function () {
 
 
@@ -23,9 +46,23 @@ Route::group(['middleware' => 'auth'], function () {
 	
 	Route::get('/ads/{ad}', 'AdsController@show');
 
+	Route::get('/ads/full/{ad}', 'AdsController@full');
+
+	Route::post('/ads/full/{ad}', 'AdsController@updatephoto');
+
+	Route::get('/ads/edit/{ad}', 'AdsController@edit');
+
+	Route::patch('/ads/edit/{ad}', 'AdsController@update');
+
 	Route::post('/ads', 'AdsController@store');
+
+	Route::post('/ads/{ad}/choose/{response}', 'AdsController@choose');
 	
 	Route::get('/home', 'HomeController@index')->name('home');
+
+	Route::post('/home', 'HomeController@update_avatar');
+
+	Route::get('/profile', 'HomeController@profile')->name('profile');
 
 });
 

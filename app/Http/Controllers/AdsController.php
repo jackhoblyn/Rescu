@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Ad;
+use App\Response;
+use App\Repair;
+use Image;
+use Auth;
 
 class AdsController extends Controller
 {
@@ -40,7 +45,35 @@ class AdsController extends Controller
 
     }
 
-    
+     public function full(Ad $ad)
+
+    {
+         return view('ads.full', compact('ad'));
+
+    }
+
+    public function updatephoto(Ad $ad, Request $request)
+
+    {
+        if($request->hasFile('photo'))
+       {
+            $photo = $request->file('photo');
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            Image::make($photo)->resize(300,300)->save( public_path('/uploads/photos/' . $filename));
+
+            $ad->photo = $filename;
+            $ad->save();
+       }
+         return view('ads.full', compact('ad'));
+
+    }
+
+     public function edit(Ad $ad)
+
+    {
+         return view('ads.edit', compact('ad'));
+
+    }
 
     public function store()
 
@@ -52,9 +85,24 @@ class AdsController extends Controller
             'price' => 'required'
         ]);
 
-        $ad = auth()->user()->ads()->create($attributes);
 
-    	return redirect($ad->path());
+        $ad = auth()->user()->ads()->create($attributes);
+       return redirect($ad->path());
+    }
+
+     public function update(Ad $ad)
+
+    {
+       $attributes = request()->validate([
+            'title' => 'required',
+            'phone' => 'required',
+            'description' => 'required',
+            'price' => 'required'
+        ]);
+
+        $ad->update($attributes);
+       
+        return redirect($ad->path());
     }
 
 
@@ -80,6 +128,23 @@ class AdsController extends Controller
 
         auth('vendor')->user()->ads()->create($attributes);
        return redirect('/vendor/ads');
+    }
+
+
+   
+
+
+    public function choose(Ad $ad, Response $response)
+    {
+        Repair::create([
+            'user_id' => $ad->user->id,
+            'vendor_id' => $response->vendor_id,
+            'price' => $response->offer,
+            'phone' => $ad->phone
+        ]);
+
+         return back();
+
     }
 
 }

@@ -12,25 +12,31 @@
 
 	<main>
 
-		<div class="card" style="height: 100%; position: relative; ">
+		<div class="card" style="height: 50%; position: relative; ">
 			<div>
-				<h3 class="font-normal text-xl mb-3 py-3 -ml-5 border-l-4 border-blue-light pl-7" style = "font-size: 3em; float: left">
+
+				<h3 class="font-normal text-xl mb-3 py-3 -ml-5 border-l-4 border-blue-light pl-7" style = "font-size: 2em; float: left">
 					<div class="text-black no-underline pt-3" >{{ $ad->title }}</div>
 				</h3>
 
-				<h1 class = "mt-3 pt-5 pr-5" style= "color: green; text-align: right; font-size: 3.6rem;"> ${{ $ad->price }} </h1></br>
+				<h1 class = "mt-3 pt-5 pr-5" style= "color: green; text-align: right; font-size: 2.6rem;"> ${{ $ad->price }} </h1></br>
 			</div>
 			<div class="text-grey pt-6 pl-6">
-				<h2 class = "pt-5" style = "font-size: 1.3em;">{{ ($ad->phone) }}</h2>
+				<h2 class = "pt-1" style = "font-size: 1.2rem;">{{ ($ad->phone) }}</h2>
+			</div>
+			<div class="text-blue pt-6 pl-6">
+				<h2 class = "pt-1" style = "font-size: 1.2rem;">{{ ($ad->user->name) }}</h2>
 			</div>
 
-			<div class="text-black pt-9 pl-6">
-				<h2 style = "font-size: 0.9em;">{{ ($ad->description) }}</h2>
-			</div>
+		<div class="text-black pt-9 pl-6" style="width: 50%; float: left;">
+			<h2 style = "font-size: 0.9rem;">{{ ($ad->description) }}</h2>
+		</div>
 
-			<div class="mt-6 pt-8" style="position: relative;">
-				<img class = "center" src={{ asset('img/nyes.jpg') }} alt="Card image" style="width:100% max-height: 400px; max-width: 400px;">
-			</div>
+		<div class="mt-6 pt-8" style="position: relative;">
+			<img class = "center" src={{ asset('img/nyes.jpg') }} alt="Card image" style="width:100% max-height: 300px; max-width: 300px;">
+		</div>
+
+
 
 
 			<div class="lg:flex -mx-3">

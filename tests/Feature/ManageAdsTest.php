@@ -21,8 +21,6 @@ class ManageAdsTest extends TestCase
         $this->get('/ads/create')->assertRedirect('login');
         $this->get($ad->path())->assertRedirect('login');
         $this->post('/ads', $ad->toArray())->assertRedirect('login');
-        
-       
     }
 
 
@@ -66,7 +64,6 @@ class ManageAdsTest extends TestCase
     {
         $this->signIn();
         $ad = factory('App\Ad')->create();
-
          $this->get($ad->path())->assertStatus(403);
         
     }
@@ -85,9 +82,7 @@ class ManageAdsTest extends TestCase
      public function an_ad_requires_a_description()
     {
         $this->signIn();
-
         $attributes = factory('App\Ad')->raw(['description' => '']);
-
         $this->post('/ads', $attributes)->assertSessionHasErrors('description');
     }
 

@@ -18,7 +18,8 @@
 					<!-- {{-- responses --}} -->
 					@forelse ($ad->responses as $response)
 						<div class="card mb-3"> 
-						<form method="POST" action="{{ $ad->list(). '/responses/' . $response->id }}">
+						<form method="POST" action="{{ $ad->list(). '/responses/'. $response->id }}">
+							
 							@method('PATCH')
 							@csrf
 

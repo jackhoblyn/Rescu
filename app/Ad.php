@@ -13,6 +13,16 @@ class Ad extends Model
     	return "/ads/{$this->id}";
     }
 
+    public function full()
+    {
+        return "/ads/full/{$this->id}";
+    }
+
+     public function edit()
+    {
+        return "/ads/edit/{$this->id}";
+    }
+
     public function list()
     {
     	return "/vendor/ads/{$this->id}";
