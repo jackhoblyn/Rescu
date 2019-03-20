@@ -2,7 +2,7 @@
 
 @section('content')
 <div class = "flex items center" style="padding-left: 8rem; padding-right: 8rem;">
-	<form method="POST" class="mx-auto bg-white shadow-lger rounded px-8 pt-6 pb-8 mb-4 ml-9" action="{{$ad->edit()}}">
+	<form method="POST" class="mx-auto bg-white shadow-lger rounded px-8 pt-6 pb-8 mb-4 ml-9" action="{{$ad->edit()}}" style="min-width: 80%">
 		@csrf
 		@method('PATCH')
 		<div class="mb-4">

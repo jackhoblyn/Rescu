@@ -52,6 +52,9 @@ main {
 h1 {
   font-size: 2em;
   margin: .67em 0;
+  color: #636b6f;
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
 }
 
 /* Grouping content
@@ -565,6 +568,19 @@ table {
  * @import "components/buttons";
  * @import "components/forms";
  */
+
+.button {
+  background-color: #3490dc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: .5rem;
+  font-size: .875rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  box-shadow: 0 2px 7px 0 #b0eaff;
+}
 
 .button {
   background-color: #3490dc;
@@ -28500,4 +28516,16 @@ table {
   .xl\:z-auto {
     z-index: auto;
   }
+}
+
+ a:visited{
+    text-decoration: none !important;
+  }
+
+  a {
+    text-decoration: none !important;
+}
+
+a:hover{
+  text-decoration: underline;
 }

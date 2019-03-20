@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Ad;
 use App\Response;
 use App\Vendor;
+use App\User;
 
 class ResponseController extends Controller
 {

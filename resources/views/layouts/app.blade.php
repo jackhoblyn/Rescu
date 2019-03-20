@@ -17,6 +17,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -39,33 +41,19 @@
         <nav class="bg-white">
             <div class="container mx-auto">
                 <div class = "flex justify-between items-center py-3">
-                    <h1 class="p-2">
-                        <a class="navbar-brand" href="{{ url('/') }}">
-                            <img src="/img/red-cross.png" alt="Rescu" style="max-height: 35px"> Rescu
+                        <a href="{{ url('/') }}">
+                            <h1 class="p-2" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
                         </a>
-                    </h1>
                     <div>
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->
-
-
-
-
-
                             @guest
                              <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                                 <div class="text-sm lg:flex-grow">
-                                  <a href="/login/vendor" style="text-decoration:none; font-size: 1.1rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
-                                    Vendor
-                                  </a>
-                                  <a href="{{ route('login') }}" style="text-decoration:none; font-size: 1.1rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
-                                    User
-                                  </a>
-                        
-                                </div>
-                                <div>
-                                  <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0">Download</a>
+                                  <a href="/login/vendor" style="font-size: 1.5rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
+                                    Vendor Login
+                                    </a>
                                 </div>
                               </div>
 
@@ -81,6 +69,8 @@
                                         <a href="/home" style="text-decoration:none; font-size: 1.1rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
                                             Home
                                         </a>
+
+                                        
                                         <a href="{{ route('logout') }}" style="text-decoration:none; font-size: 1.1rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>

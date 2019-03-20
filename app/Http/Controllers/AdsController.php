@@ -130,21 +130,34 @@ class AdsController extends Controller
        return redirect('/vendor/ads');
     }
 
-
-   
-
-
     public function choose(Ad $ad, Response $response)
     {
-        Repair::create([
+        $repair = Repair::create([
             'user_id' => $ad->user->id,
             'vendor_id' => $response->vendor_id,
+            'title' => $ad->title,
+            'description' => $ad->description,
             'price' => $response->offer,
-            'phone' => $ad->phone
+            'phone' => $ad->phone,
+            'pic' => $ad->photo
         ]);
 
-         return back();
+        $ad->chosen = 'yes';
+        $ad->save();
+
+        return redirect($repair->path());
 
     }
+
+    // public function show(Ad $ad)
+
+    // {
+       
+    //     if(auth()->user()->isNot($ad->user)) {
+    //         abort(403);
+    //     }
+
+    //      return view('ads.show', compact('ad'));
+    // }
 
 }

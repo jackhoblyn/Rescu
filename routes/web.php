@@ -19,16 +19,17 @@ Route::get('/map', function () {
 });
 
 Route::get('/map2', function () {
-	$config['center'] = 'Air Canada Centre, Toronto';
+	$config['center'] = 'Dublin City, Ireland';
 	$config['zoom'] = '12';
-	$config['map-height'] = '600px';
+	$config['map-height'] = '700px';
 	$config['map-width'] = '100%';
+	$config['geocodeCaching'] = true;
 
 	GMaps::initialize($config);
 
 	//Marker
-	$marker['position'] = 'Air Canada Centre, Toronto';
-	$marker['infowindow_content'] = 'Air Canada Centre';
+	$marker['position'] = 'Dublin City, Ireland';
+
 
 	GMaps::add_marker($marker);
 
@@ -63,6 +64,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/home', 'HomeController@update_avatar');
 
 	Route::get('/profile', 'HomeController@profile')->name('profile');
+
+	Route::get('/repairs', 'RepairsController@index');
+
+	Route::get('/repairs/{repair}', 'RepairsController@show');
 
 });
 

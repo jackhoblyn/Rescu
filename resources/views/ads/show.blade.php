@@ -41,7 +41,7 @@
 									<span class="fa fa-star"></span>
 								</div>
 								<div class="flex w-full pt-6">
-									<button type="submit" class="button2">Choose Response</button>
+									<button type="submit" class="button">Choose Response</button>
 								</div>
 							</form>
 						</div>
@@ -58,15 +58,17 @@
 						</h3>
 
 						<h1 style= "color: green; text-align: right; font-size: 3rem;"> ${{ $ad->price }} </h1></br>
+						
 
 						<div class="text-grey">{{ str_limit($ad->description, 60) }}</div>
 
-						<img class = "center pt-6 mt-6" sizes="100vw" src="/uploads/photos/{{ $ad->photo }}" alt="Card image" style="position: relative; object-fit: cover; object-position: center; min-height: 300px; max-width: 320px;">
-
+						<div style="padding-left: 2rem;">
+							<img class = "center pt-6 mt-6" sizes="100vw" src="/uploads/photos/{{ $ad->photo }}" alt="Card image" style="position: relative; object-fit: cover; object-position: center; min-height: 300px; max-width: 320px; padding-left: 2rem;">
+						</div>
 						<div class = "center mt-5" style="width: 5rem;">
 							<a href="{{ $ad->full() }}" style="text-decoration: none">
 								<div class="flex w-full pt-3">
-									<button type="submit" class="button2" style="min-width: 8rem; margin-left: -1.7rem; font-size: 0.9rem; ">View Full Ad</button>
+									<button type="submit" class="button center" style="min-width: 8rem; float: center; margin-left: 8rem; font-size: 0.9rem; ">View Full Ad</button>
 								</div>
 							</a>
 						</div>

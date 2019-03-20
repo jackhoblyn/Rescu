@@ -16,7 +16,7 @@
 			<div>
 
 				<h3 class="font-normal text-xl mb-3 py-3 -ml-5 border-l-4 border-blue-light pl-7" style = "font-size: 2em; float: left">
-					<div class="text-black no-underline pt-3" >{{ $ad->title }}</div>
+					<div class="text-black no-underline pt-3 ml-8" >{{ $ad->title }}</div>
 				</h3>
 
 				<h1 class = "mt-3 pt-5 pr-5" style= "color: green; text-align: right; font-size: 2.6rem;"> ${{ $ad->price }} </h1></br>
@@ -28,12 +28,12 @@
 				<h2 class = "pt-1" style = "font-size: 1.2rem;">{{ ($ad->user->name) }}</h2>
 			</div>
 
-		<div class="text-black pt-9 pl-6" style="width: 50%; float: left;">
+		<div class="text-black pt-9 pl-6 mt-6" style="width: 50%; float: left; margin-top: 4rem">
 			<h2 style = "font-size: 0.9rem;">{{ ($ad->description) }}</h2>
 		</div>
 
 		<div class="mt-6 pt-8" style="position: relative;">
-			<img class = "center" src={{ asset('img/nyes.jpg') }} alt="Card image" style="width:100% max-height: 300px; max-width: 300px;">
+			<img class = "center" src={{ asset('img/nyes.jpg') }} alt="Card image" style="width:100% max-height: 300px; max-width: 300px; margin-left:12rem">
 		</div>
 
 

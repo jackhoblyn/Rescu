@@ -4,6 +4,8 @@
 
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 	<style>
         #map {
         height: 600px;  /* The height is 400 pixels */
@@ -14,12 +16,10 @@
 <body class="bg-grey-light">
 	<nav class="bg-white">
             <div class="container mx-auto">
-                <div class = "flex justify-between items-center py-3">
-                    <h1 class="p-2">
-                        <a class="navbar-brand" href="{{ url('/') }}">
-                            <img src="/img/red-cross.png" alt="Rescu" style="max-height: 35px"> Rescu
+               <div class = "flex justify-between items-center py-3">
+                        <a href="{{ url('/') }}">
+                            <h1 class="p-2" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
                         </a>
-                    </h1>
                     <div>
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">

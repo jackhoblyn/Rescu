@@ -8,6 +8,11 @@ class Repair extends Model
 {
     protected $guarded = [];
 
+    public function path()
+    {
+    	return "/repairs/{$this->id}";
+    }
+
 
 	public function user()
     {
@@ -18,6 +23,8 @@ class Repair extends Model
     {
         return $this->belongsTo(Vendor::class);
     }
+
+    
 
 
 

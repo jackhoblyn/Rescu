@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-11">
@@ -19,7 +18,7 @@
 <div class ="mt-3 mb-5 "style="position: relative; min-height: 350px;">
     <a href="/ads/create">
       <div class = "mx-auto">
-        <img class = "mt-1" role="presentation" sizes="100vw" src={{ asset('img/parlx.jpg') }} style="width: 100%; height: 40%; position: absolute; object-fit: cover; object-position: center; max-width: 1200px; min-height: 310px; min-width: 900px;">
+        <img class = "mt-1" role="presentation" sizes="100vw" src={{ asset('img/hand.jpg') }} style="width: 100%; height: 40%; position: absolute; object-fit: cover; object-position: center; max-width: 1200px; min-height: 310px; min-width: 900px;">
             <div style="position: absolute; top: 52%; left: 50%; transform: translate(-50%, -50%); font-size: 1.1rem; font-weight: bold" class="border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 px-4 py-4">
                 Create New Ad
             </div>
@@ -66,7 +65,7 @@
     </a>
   
 
-    
+    <a href="/repairs">
         <div style="width: 33.222%; display: inline-block; white-space: normal; vertical-align: top; float: right;">
             <div style="padding-left: 8px;">
                 <div style="position: relative;">
@@ -74,29 +73,18 @@
                         <img role="presentation" sizes="100vw" src={{ asset('img/3.jpg') }} style=" position: relative; object-fit: cover; object-position: center; min-height: 300px;">
                     </div>
                      <div style="position: absolute; top: 52%; left: 50%; transform: translate(-50%, -50%); font-size: 1.1rem; font-weight: bold" class="bg-white border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 px-4 py-4">
-                        Previous Repairs
+                        Your Repairs
                      </div>
                 </div>
             </div>
         </div>
+    </a>
     
 </div>
 
 <div class="footer">
     <p> footer</p>
 </div>
-
-
-
-
-
-
-
-
-        
-
-
-  
             
 @endsection
 
@@ -108,4 +96,4 @@
                         <h4 class="card-title">Find repair shops in your area</h4>
                         <a href="#" class="btn btn-primary">See Profile</a>
                     </div>
-            </div> -->
+            </div>
