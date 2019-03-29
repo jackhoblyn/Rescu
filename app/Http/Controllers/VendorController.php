@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Vendor;
+use App\gmaps_geocache;
 use Auth;
 class VendorController extends Controller
 {
@@ -28,12 +29,16 @@ class VendorController extends Controller
           'type'=> $request->type
     ]);
       // return redirect()->intended('/vendor/home');
-     if(Auth::guard('vendor')->attempt(['email'=> $email, 'password'=> $password])){
-       return redirect()->intended('/home/vendor');
-      } else {
+     if(Auth::guard('vendor')->attempt(['email'=> $email, 'password'=> $password]))
+     {
+       return redirect()->intended('/vendor/home');
+      } 
+      else 
+      {
       return redirect()->back()->with('warning', 'Invalid Email or Password');
       }
     }
+
     public function loginVendor()
     {
         return view('vendor.login');
@@ -51,7 +56,7 @@ class VendorController extends Controller
   
 
      if(Auth::guard('vendor')->attempt(['email'=> $email, 'password'=> $password], $remember)){
-       return redirect()->intended('/home/vendor');
+       return redirect()->intended('/vendor/home');
       } else {
      	return redirect()->back()->with('warning', 'Invalid Email or Password');
       }
@@ -66,4 +71,46 @@ class VendorController extends Controller
 
     return redirect('/');
   }
+
+    public function location(Request $request, Vendor $vendor)
+    {
+
+       $id = Auth('vendor')->user()->id;
+       $vendor = Vendor::find($id);
+
+       $vendor->lat = $request->lat;
+       $vendor->long = $request->lng;
+
+       $vendor->save();
+       return redirect('/map');
+    }
+
+    public function locationMake(Request $request, Vendor $vendor)
+    {
+
+      $id = Auth('vendor')->user()->id;
+      $vendor = Vendor::find($id);
+
+        gmaps_geocache::updateOrCreate([
+            'vendor_id' => $vendor->id],
+            ['address' => $vendor->name,
+            'latitude' => $request->lat,
+            'longitude' => $request->lng,
+        ]);
+
+        return redirect('/vendor/map');
+    
+    }
+
+  public function map()
+  {
+    return view('map');
+  }
+
+  public function viewShops()
+  {
+    return view('map3');
+  }
+
+
 }

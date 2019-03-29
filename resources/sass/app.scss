@@ -1,6 +1,11 @@
 // Variables
 @import 'variables';
 
+//FontAwesome
+$fa-font-path: "../webfonts";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+
 
 /**
  * This injects Tailwind's base styles, which is a combination of

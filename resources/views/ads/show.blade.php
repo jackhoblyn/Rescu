@@ -25,15 +25,27 @@
 								
 								@csrf              
 								<div class="flex w-full">
-									<p class="font-normal text-xl mb-3 py-4 -ml-5 border-l-4 border-red pl-4">
+									@if($response->vendor->type=='shop')
+									<p class="font-normal text-xl mb-3 py-4 -ml-5 border-l-4 border-green pl-4">
+									@else
+									<p class="font-normal text-xl mb-3 py-4 -ml-5 border-l-4 border-orange pl-4">
+									@endif
 									<div class="pt-2 w-full {{ $response->chosen ? 'text-blue' : '' }}">{{ $response->description }} </div></p>
 									<!-- <input name="chosen" type="checkbox" onChange="this.form.submit()" {{ $response->chosen ? 'checked' : '' }}> -->
-									<h1 style= "color: green; font-size: 1rem;"> ${{ $response->offer }} </h1>
+									<h1 style= "color: green; font-size: 1.2rem;"> ${{ $response->offer }} </h1>
 								</div>
 								<div class="flex w-full">
-									<h1 style= "color: blue; font-size: 0.8rem;"> {{ $response->vendor->name }} </h1>
+									<h1 style= "color: blue; font-size: 1.2rem;"> {{ $response->vendor->name }} </h1>
+
 								</div>
-								<div class="flex w-full">
+								<div class="flex w-full mt-3">
+									@if($response->vendor->type=='shop')
+										<h1 style= "color: green; font-size: 1.2rem;"> {{ $response->vendor->type }} </h1>
+									@else
+										<h1 style= "color: orange; font-size: 1.2rem;"> {{ $response->vendor->type }} </h1>
+									@endif
+								</div>
+								<div class="flex w-full mt-3">
 									<span class="fa fa-star checked"></span>
 									<span class="fa fa-star checked"></span>
 									<span class="fa fa-star checked"></span>
@@ -57,18 +69,20 @@
 							<div class="text-black no-underline" >{{ $ad->title }}</div>
 						</h3>
 
-						<h1 style= "color: green; text-align: right; font-size: 3rem;"> ${{ $ad->price }} </h1></br>
+						<h1 style= "color: green; text-align: right; font-size: 3rem;"> €{{ $ad->price }} </h1></br>
 						
 
-						<div class="text-grey">{{ str_limit($ad->description, 60) }}</div>
-
-						<div style="padding-left: 2rem;">
-							<img class = "center pt-6 mt-6" sizes="100vw" src="/uploads/photos/{{ $ad->photo }}" alt="Card image" style="position: relative; object-fit: cover; object-position: center; min-height: 300px; max-width: 320px; padding-left: 2rem;">
-						</div>
-						<div class = "center mt-5" style="width: 5rem;">
+						<div class="text-grey pb-4">{{ str_limit($ad->description, 60) }}</div>
+						<a href="{{ $ad->full() }}">
+							<div class="textWithBlurredBg flex w-full" style="align-items: center; justify-content: center;">
+								<img class = "center mt-6" sizes="100vw" src="/uploads/photos/{{ $ad->photo }}" alt="Card image" style="position: relative; object-fit: cover; object-position: center; min-height: 300px; max-width: 320px;">
+								<h2 style="margin-top: 16%">Change Picture</h2>
+							</div>
+						</a>
+						<div class = "center mt-5">
 							<a href="{{ $ad->full() }}" style="text-decoration: none">
-								<div class="flex w-full pt-3">
-									<button type="submit" class="button center" style="min-width: 8rem; float: center; margin-left: 8rem; font-size: 0.9rem; ">View Full Ad</button>
+								<div class="flex w-full pt-3" style="align-items: center; justify-content: center;">
+									<button type="submit" class="button center" style="min-width: 8rem; float: center; font-size: 0.9rem; ">View Full Ad</button>
 								</div>
 							</a>
 						</div>

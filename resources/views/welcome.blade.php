@@ -11,8 +11,15 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
         <!-- Styles -->
+        <link rel="shortcut icon" href="../favicon.ico">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/component.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/content.css') }}" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script type="text/javascript" src="{!! asset('js/modernizr.custom.js') !!}"></script>
         <style>
             html, body {
                 background-color: #fff;
@@ -94,10 +101,10 @@
         </style>
     </head>
     <body>
-        <nav>
-            <div class="container mx-auto">
-                <div class = "flex justify-between items-center py-3">
-                    <h1 class="p-2 ml-2" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
+        <nav class="py-5">
+            <div style="margin-left: 10%; margin-right: 10%">
+                <div class = "flex justify-between items-center">
+                    <h1 class="ml-2" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
                     <div>
                     <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
@@ -127,18 +134,105 @@
                 </div>
 
                 
-                <div class="links" style="margin-top: -8rem;">
-                    <a href="/register/vendor" style="font-size: 1.4rem; font-weight: bold" class="border border-white rounded block mt-4 lg:inline-block lg:mt-0 text-white hover:bg-orange mr-4">
+                <div class="links" style="margin-top: -8rem; margin-left: 15%; margin-right: 15%">
+                    <a href="/register/vendor" style="font-size: 1.4rem; font-weight: bold; max-width: 40%; float: left" class="border border-white rounded block mt-4 lg:inline-block lg:mt-0 text-white hover:bg-orange mr-4">
                         Become a Fixer
                     </a>
-                    <a href="{{ route('register') }}" style=" font-size: 1.4rem; font-weight: bold" class="border border-white rounded block mt-6 lg:inline-block lg:mt-0 text-white hover:bg-green mr-6 ml-6">
+                    <a href="{{ route('register') }}" style=" font-size: 1.4rem; font-weight: bold; max-width: 40%; float: right" class="border border-white rounded block mt-6 lg:inline-block lg:mt-0 text-white hover:bg-green mr-6 ml-6">
 
-                        Become a User
+                        Become a User 
                     </a>    
                 </div>
+                <div class="morph-button morph-button-overlay morph-button-fixed">
+                    <button type="button" style="margin-top: 20%">More Info</button>
+                    <div class="morph-content">
+                        <div>
+                            <div class="content-style-overlay">
+                                <span class="icon icon-close"><img src="https://img.icons8.com/metro/26/000000/multiply.png" ></span>
+                                <h2 style="font-family: 'Nunito';">Rescü</h2>
+                                <p>Rescu is a service designed to help everyone to find the best possible price when getting their device fixed. In 2019, I broke a headphone jack and had to pay $100 to get it fixed. I later found out that my friend could have done it for $20. I think that says it all.</p>
+                                <p>As phones and similar devices become more and more vital to our lives, we here at Rescü think that everyone should have the chance to get them fixed at a fair price instead of paying extortionate prices to shops that often have a small monopoly over their areas.</p>
+                                <p>We also offer a way to make money if you have expertise in fixing phones, computers, tablets, Airpods or whatever you find listed on here.</p>
+                                <p>If you are a shop, it's easy to make a profile and list the location of your shop to our ever growing worldwide database of trusted repair shops.</p>
+                                <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
+                                <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- morph-button -->
             </div>
         </div>
     </div>
+        <script src="{!! asset('js/classie.js') !!}"></script>
+        <script src="{!! asset('js/uiMorphingButton_fixed.js') !!}"></script>
+        <script>
+            (function() {   
+                var docElem = window.document.documentElement, didScroll, scrollPosition;
+
+                // trick to prevent scrolling when opening/closing button
+                function noScrollFn() {
+                    window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
+                }
+
+                function noScroll() {
+                    window.removeEventListener( 'scroll', scrollHandler );
+                    window.addEventListener( 'scroll', noScrollFn );
+                }
+
+                function scrollFn() {
+                    window.addEventListener( 'scroll', scrollHandler );
+                }
+
+                function canScroll() {
+                    window.removeEventListener( 'scroll', noScrollFn );
+                    scrollFn();
+                }
+
+                function scrollHandler() {
+                    if( !didScroll ) {
+                        didScroll = true;
+                        setTimeout( function() { scrollPage(); }, 60 );
+                    }
+                };
+
+                function scrollPage() {
+                    scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
+                    didScroll = false;
+                };
+
+                scrollFn();
+                
+                var el = document.querySelector( '.morph-button' );
+                
+                new UIMorphingButton( el, {
+                    closeEl : '.icon-close',
+                    onBeforeOpen : function() {
+                        // don't allow to scroll
+                        noScroll();
+                    },
+                    onAfterOpen : function() {
+                        // can scroll again
+                        canScroll();
+                        // add class "noscroll" to body
+                        classie.addClass( document.body, 'noscroll' );
+                        // add scroll class to main el
+                        classie.addClass( el, 'scroll' );
+                    },
+                    onBeforeClose : function() {
+                        // remove class "noscroll" to body
+                        classie.removeClass( document.body, 'noscroll' );
+                        // remove scroll class from main el
+                        classie.removeClass( el, 'scroll' );
+                        // don't allow to scroll
+                        noScroll();
+                    },
+                    onAfterClose : function() {
+                        // can scroll again
+                        canScroll();
+                    }
+                } );
+            })();
+        </script>
 
 
 

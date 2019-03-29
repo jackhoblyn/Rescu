@@ -15,6 +15,11 @@ class Vendor extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function map()
+    {
+        return "/map/{$this->id}";
+    }
+
      public function responses()
     {
         return $this->hasMany(Response::class);
@@ -23,5 +28,10 @@ class Vendor extends Authenticatable
     public function repairs()
     {
         return $this->hasMany(Repair::class);
+    }
+
+    public function gmaps_geocache()
+    {
+        return $this->hasOne(gmaps_geocache::class);
     }
 }

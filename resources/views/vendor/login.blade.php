@@ -1,10 +1,10 @@
 @extends('layouts.vendor')
 
 @section('content')
-<div class="flex items-center" style="padding-left: 17rem;
-    padding-right: 17rem;">
+<div class="flex items-center" style="margin-left: 20%;
+    margin-right: 20%; margin-top: 10%;">
     <div class = "container mx-auto">
-    <form class="mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-9" method="POST" action="{{ route('login.vendor') }}" aria-label="{{ __('Login') }}">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-9" method="POST" action="{{ route('login.vendor') }}" aria-label="{{ __('Login') }}">
          @csrf
         <div class="mb-4">
           <h1 class="text-center text-2xl text-green-dark mb-6">Vendor Login</h1>

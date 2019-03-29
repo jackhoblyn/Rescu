@@ -13,6 +13,21 @@ class Repair extends Model
     	return "/repairs/{$this->id}";
     }
 
+     public function list()
+    {
+        return "/vendor/repairs/{$this->id}";
+    }
+
+     public function full()
+    {
+        return "/repairs/{$this->id}/full";
+    }
+
+    public function fullAd()
+    {
+        return "/vendor/repairs/{$this->id}/fullAd";
+    }
+
 
 	public function user()
     {
@@ -22,6 +37,11 @@ class Repair extends Model
     public function vendor()
     {
         return $this->belongsTo(Vendor::class);
+    }
+
+     public function updates()
+    {
+        return $this->hasMany(Update::class);
     }
 
     

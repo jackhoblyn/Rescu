@@ -12,9 +12,6 @@
 		<!-- moves everything from left to right -->
 
 		@forelse ($repairs as $repair)
-
-
-
 			<div class="lg:w-1/3 px-3 mb-5">
 				<div class="card" style="height: 100%; position: relative; ">
 					<div>
@@ -23,7 +20,9 @@
 								<div class="text-black no-underline" >{{ ($repair->phone )}}</div>
 							</a>
 						</h3>
-						<h1 style= "color: green; text-align: right; font-size: 2rem; padding-top: 2%"> ${{ $repair->price }} </h1>
+						<h1 style= "color: green; text-align: right; font-size: 2rem; padding-top: 2%"> €{{ $repair->price }} </h1>
+						<div class="text-grey pt-4">{{ str_limit($repair->description, 60) }}</div>
+						<img class = "center pt-6 mt-6 ml-6" sizes="70vw" src="/uploads/photos/{{ $repair->pic }}" alt="Card image" style="position: relative; object-fit: cover; object-position: center; min-height: 250px; max-width: 250px; margin-left: 3rem;">
 					</div>
 				</div>
 			</div>
@@ -32,6 +31,10 @@
 			<div>No ads yet</div>
 		@endforelse
 	</main>
+
+	
 	
 @endsection
+
+
 

@@ -22,6 +22,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
@@ -29,17 +30,41 @@
             color: orange;
         }
 
+        html,body {
+            height: 100%;
+        }
+
+        #container {
+            min-height: 100%;
+        }
+
+        main{
+            padding-bottom: 100px;
+
+        }
+
+        #footer
+        {
+            background-color: white;
+            position: relative;
+            height: 100px;
+            clear:both;
+        }
+
         #map {
         height: 400px;  /* The height is 400 pixels */
         width: 100%;  /* The width is the width of the web page */
-       }
+
+        }
+        
+       
     </style>
 </head>
 
 <body class="bg-grey-light">
     <div id="app">
         <nav class="bg-white">
-            <div class="container mx-auto">
+            <div style="margin-left: 10%; margin-right: 10%">
                 <div class = "flex justify-between items-center py-3">
                         <a href="{{ url('/') }}">
                             <h1 class="p-2" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
@@ -80,29 +105,6 @@
                         
                                     </div>
                                 </div>
-
-
-
-
-                            <!-- <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-
-                                    <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                         document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li> -->
                             @endguest
                         </ul>
                     </div>
@@ -110,10 +112,21 @@
             </div>
         </nav>
 
-        <main class="container mx-auto py-4">
-            @yield('content')
-        </main>
-    </div>
-</body>
+        <div id="container">
+            <main style="margin-left: 10%; margin-right: 10%">
+                @yield('content')
+            </main>
+        </div>
 
+
+        <footer id="footer" style="margin-top: 10rem;">
+            <div style="margin-left: 10%; margin-right: 10%">
+                <div style="float: right">
+                    <h1 class="p-2" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
+                </div>
+            </div>
+        </footer>
+
+    </app>
+</body>
 </html>

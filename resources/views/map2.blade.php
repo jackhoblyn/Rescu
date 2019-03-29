@@ -10,6 +10,10 @@
         height: 600px;  /* The height is 400 pixels */
         width: 100%;  /* The width is the width of the web page */
        }
+
+       #map_canvas{
+        min-height: 600px;
+       }
     </style>
     {!! $map['js'] !!}
 </head>
@@ -71,9 +75,9 @@
             </div>
         </nav>
 	<main>
-		<div class="card mx-auto" style="max-height: 90%; position: relative; margin-bottom: 50px;">
+		<div class="card mx-auto" style="min-height: 600px; position: relative; margin-bottom: 50px;">
 		    <h3>Repair shops near you</h3>
-		   {!! $map['html'] !!}
+		   <div id="map">{!! $map['html'] !!}</div>
 		</div>
   </main>
 </body>

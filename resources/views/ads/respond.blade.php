@@ -20,7 +20,7 @@
 		<div class="field">
 			<label class="label" for="title">Offer</label>
 			<div class="control">
-				<input type="number" class="input" name="offer" placeholder="offer">
+				<input type="number" class="input" name="offer" placeholder="Offer in €">
 			</div>
 		</div>
 

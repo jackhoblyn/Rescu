@@ -1,5 +1,6 @@
 <?php
 
+use App\gmaps_geocache;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,36 +11,61 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/map', function () {
-    return view('map');
-});
 
-Route::get('/map2', function () {
-	$config['center'] = 'Dublin City, Ireland';
+Route::get('/map', function (gmaps_geocache $gmaps_geocache) {
+	$config['center'] = 'Carphone Warehouse';
 	$config['zoom'] = '12';
-	$config['map-height'] = '700px';
+	$config['map-height'] = '800px';
 	$config['map-width'] = '100%';
 	$config['geocodeCaching'] = true;
 
 	GMaps::initialize($config);
 
-	//Marker
-	$marker['position'] = 'Dublin City, Ireland';
+	$gmaps_geocaches = gmaps_geocache::orderBy('updated_at','desc')->get();
 
-
-	GMaps::add_marker($marker);
+	foreach($gmaps_geocaches as $gmaps_geocache)
+	{
+		$marker['position'] = $gmaps_geocache->address;
+		$marker['infowindow_content'] = $gmaps_geocache->address;
+		GMaps::add_marker($marker);
+	}
 
 	$map = GMaps::create_map();
 
     return view('map2')->with('map', $map);
 });
 
-Route::group(['middleware' => 'auth'], function () {
+Route::get('/vendor/map2', function (gmaps_geocache $gmaps_geocache) {
+	$config['center'] = 'Carphone Warehouse';
+	$config['zoom'] = '12';
+	$config['map-height'] = '800px';
+	$config['map-width'] = '100%';
+	$config['geocodeCaching'] = true;
 
+	GMaps::initialize($config);
+
+	$gmaps_geocaches = gmaps_geocache::orderBy('updated_at','desc')->get();
+
+	foreach($gmaps_geocaches as $gmaps_geocache)
+	{
+		$marker['position'] = $gmaps_geocache->address;
+		$marker['infowindow_content'] = $gmaps_geocache->address;
+		GMaps::add_marker($marker);
+	}
+
+	$map = GMaps::create_map();
+
+    return view('map3')->with('map', $map);
+});
+
+
+//USER ROUTES
+Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/ads', 'AdsController@index');//means you have to be signed in
 
@@ -69,6 +95,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/repairs/{repair}', 'RepairsController@show');
 
+	Route::get('/repairs/{repair}/full', 'RepairsController@full');
+
 });
 
 
@@ -86,28 +114,34 @@ Route::post('/register/vendor', 'VendorController@registerVendor')->name('regist
 
 Route::post('/login/vendor', 'VendorController@vendorAuth')->name('login.vendor');
 
-Route::get('/vendor/home', 'VendorController@home');
-
-
-
-
-
 //vendor routes we want protected 
 Route::group(['middleware'=>'vendor'], function() {
 
-	Route::get('/home/vendor', 'VendorController@home')->name('home.vendor');
+	Route::get('/vendor/home', 'VendorController@home');
 
+	Route::get('/vendor/map', 'VendorController@map');
+
+	Route::post('/vendor/map', 'VendorController@locationMake');
+    
 	Route::post('/logout/vendor', 'VendorController@logout')->name('logout.vendor');
 
 	Route::get('/vendor/ads', 'AdsController@all');
 
 	Route::get('/vendor/ads/{ad}', 'AdsController@list');
 
-	// Route::get('/vendor/ads/{ad}/responses', 'AdsController@respond');
-
 	Route::post('/vendor/ads/{ad}/responses/', 'ResponseController@store');
 
 	Route::patch('/vendor/ads/{ad}/responses/{response}', 'ResponseController@update');
+
+	Route::get('/vendor/repairs', 'RepairsController@all');
+
+	Route::get('/vendor/repairs/{repair}', 'RepairsController@list');
+
+	Route::get('/vendor/repairs/{repair}/fullAd', 'RepairsController@fullAd');
+
+	Route::post('/vendor/repairs/{repair}/updates', 'UpdatesController@store');
+
+
 
 	});
 

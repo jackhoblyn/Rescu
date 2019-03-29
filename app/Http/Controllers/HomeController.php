@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\gmaps_geocache;
 use Auth;
 use Image;
 
@@ -40,4 +41,31 @@ class HomeController extends Controller
 
        return view('home');
     }
+
+    public function map(gmaps_geocache $gmaps_geocache)
+    {
+        $config['center'] = 'Dublin City, Ireland';
+        $config['zoom'] = '12';
+        $config['map-height'] = '700px';
+        $config['map-width'] = '100%';
+        $config['geocodeCaching'] = true;
+
+        GMaps::initialize($config);
+
+        //Marker
+        $marker['position'] = 'Dublin City, Ireland';
+        $marker['infowindow_content'] = 'Dublin City, Ireland';
+
+        GMaps::add_marker($marker);
+
+        $marker['position'] = 'Carphone Warehouse';
+        $marker['infowindow_content'] = 'Carphone Warehouse';
+
+        GMaps::add_marker($marker);
+
+        $map = GMaps::create_map();
+
+          return view('map2')->with('map', $map);
+    }
+
 }

@@ -27,7 +27,7 @@
 							</a>
 						</h3>
 
-						<h1 style= "color: green; text-align: right; font-size: 2rem; padding-top: 2%"> ${{ $ad->price }} </h1>
+						<h1 style= "color: green; text-align: right; font-size: 2rem; padding-top: 2%"> €{{ $ad->price }} </h1>
 
 						<div class="text-grey pt-4">{{ str_limit($ad->description, 60) }}</div>
 
