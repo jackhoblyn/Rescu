@@ -78,16 +78,16 @@
 
             .links > a {
                 color: white;
-                padding: 0 25px;
+                padding: 0 45px;
                 font-size: 13px;
                 font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
+                letter-spacing: .2rem;
+                text-decoration: none !important;
                 text-transform: uppercase;
             }
 
             a{
-                text-decoration: none;
+                text-decoration: none !important;
             }
 
             a:hover{
@@ -112,7 +112,7 @@
                              <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                                 <div class="text-sm lg:flex-grow">
                                     <a href="/login/vendor" style="font-size: 1.5rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
-                                    Vendor
+                                    Fixer
                                     </a>
                                     <a href="{{ route('login') }}" style=" font-size: 1.5rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-green mr-4 ml-6">
                                     User
@@ -135,7 +135,7 @@
 
                 
                 <div class="links" style="margin-top: -8rem; margin-left: 15%; margin-right: 15%">
-                    <a href="/register/vendor" style="font-size: 1.4rem; font-weight: bold; max-width: 40%; float: left" class="border border-white rounded block mt-4 lg:inline-block lg:mt-0 text-white hover:bg-orange mr-4">
+                    <a href="/register/vendor" style="font-size: 1.4rem; font-weight: bold; max-width: 40%; float: left" class="border border-white rounded block mt-6 lg:inline-block lg:mt-0 text-white hover:bg-orange mr-4">
                         Become a Fixer
                     </a>
                     <a href="{{ route('register') }}" style=" font-size: 1.4rem; font-weight: bold; max-width: 40%; float: right" class="border border-white rounded block mt-6 lg:inline-block lg:mt-0 text-white hover:bg-green mr-6 ml-6">

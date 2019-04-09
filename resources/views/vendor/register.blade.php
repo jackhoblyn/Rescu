@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="flex items-center" style="padding-left: 17rem;
-    padding-right: 17rem;">
-    <div class = "container mx-auto">
+<div class="flex items-center" style="padding-left: 25%;
+    padding-right: 25%;">
+    <div class = "container mx-auto mt-6">
          <form class="mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-9" method="POST" action="{{ route('register.vendor') }}" aria-label="{{ __('Register') }}">
             @csrf
             <div class="mb-4">

@@ -20,7 +20,7 @@
 <body class="bg-grey-light">
 	<div id="app">
 		<nav class="bg-white">
-            <div class="container mx-auto">
+            <div style="margin-right: 10%; margin-left: 10%">
                 <div class = "flex justify-between items-center py-3">
                         <a href="{{ url('/') }}">
                             <h1 class="p-2" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>

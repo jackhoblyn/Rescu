@@ -23,6 +23,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
@@ -63,9 +64,9 @@
 
 <body class="bg-grey-light">
     <div id="app">
-        <nav class="bg-white">
+        <nav class="py-4 bg-white">
             <div style="margin-left: 10%; margin-right: 10%">
-                <div class = "flex justify-between items-center py-3">
+                <div class = "flex justify-between items-center">
                         <a href="{{ url('/') }}">
                             <h1 class="p-2" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
                         </a>
