@@ -50,4 +50,16 @@ class RepairsController extends Controller
         $repairs = auth('vendor')->user()->repairs()->orderBy('updated_at', 'desc')->get(); //show ads by a certain user,
         return view('repairs.all', compact('repairs'));
     }
+
+
+    public function destroy(Repair $repair)
+
+    {
+         $repair->ad->open();
+         $repair->response->delete();
+
+         $repair->delete();
+
+         return redirect('/vendor/home');
+    }
 }

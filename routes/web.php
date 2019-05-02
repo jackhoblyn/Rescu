@@ -1,6 +1,8 @@
 <?php
 
 use App\gmaps_geocache;
+use App\User;
+use App\Notifications\ResponsePosted;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -114,6 +116,29 @@ Route::post('/register/vendor', 'VendorController@registerVendor')->name('regist
 
 Route::post('/login/vendor', 'VendorController@vendorAuth')->name('login.vendor');
 
+Route::get('/x', function() {
+
+	// $user = Auth::user();
+
+	// $user->notify(new ResponsePosted(User::findOrFail(2)));
+
+	foreach(Auth::user()->notifications as $notification) {
+		$notification->markAsRead();
+
+	}
+});
+
+Route::get('/y', function() {
+
+	// $user = Auth::user();
+
+	// $user->notify(new ResponsePosted(User::findOrFail(2)));
+
+	foreach(Auth::user()->unreadNotifications as $notification) {
+		dd($notification);
+
+	}
+});
 //vendor routes we want protected 
 Route::group(['middleware'=>'vendor'], function() {
 
@@ -136,6 +161,8 @@ Route::group(['middleware'=>'vendor'], function() {
 	Route::get('/vendor/repairs', 'RepairsController@all');
 
 	Route::get('/vendor/repairs/{repair}', 'RepairsController@list');
+
+	Route::Delete('/vendor/repairs/{repair}', 'RepairsController@destroy');
 
 	Route::get('/vendor/repairs/{repair}/fullAd', 'RepairsController@fullAd');
 

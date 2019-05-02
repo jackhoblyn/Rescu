@@ -55,12 +55,19 @@ class VendorController extends Controller
      $remember = $request->remember;
   
 
-     if(Auth::guard('vendor')->attempt(['email'=> $email, 'password'=> $password], $remember)){
+     if (Auth::guard('vendor')->attempt(['email'=> $email, 'password'=> $password], $remember))
+      {
        return redirect()->intended('/vendor/home');
-      } else {
+      }
+      else 
+      {
      	return redirect()->back()->with('warning', 'Invalid Email or Password');
       }
     }
+
+
+
+
   public function home()
   {
     return view('vendor');

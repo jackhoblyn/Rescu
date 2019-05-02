@@ -25,7 +25,7 @@ class AddChosenToAd extends Migration
      */
     public function down()
     {
-        Schema::table('ad', function (Blueprint $table) {
+        Schema::table('ads', function (Blueprint $table) {
             $table->dropColumn('chosen');
         });
     }

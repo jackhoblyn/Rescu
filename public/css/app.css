@@ -5,8 +5,6 @@
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 
-
-
 .fa,
 .fas,
 .far,
@@ -6658,7 +6656,6 @@ table {
   background-color: #3d4852;
 }
 
-
 .hover\:bg-grey-darker:hover {
   background-color: #606f7b;
 }
@@ -8176,6 +8173,298 @@ table {
 }
 
 .focus\:border-pink-lightest:focus {
+  border-color: #ffebef;
+}
+
+.group:hover .group-hover\:border-transparent {
+  border-color: transparent;
+}
+
+.group:hover .group-hover\:border-black {
+  border-color: #22292f;
+}
+
+.group:hover .group-hover\:border-grey-darkest {
+  border-color: #3d4852;
+}
+
+.group:hover .group-hover\:border-grey-darker {
+  border-color: #606f7b;
+}
+
+.group:hover .group-hover\:border-grey-dark {
+  border-color: #8795a1;
+}
+
+.group:hover .group-hover\:border-grey {
+  border-color: rgba(0, 0, 0, .4);
+}
+
+.group:hover .group-hover\:border-grey-light {
+  border-color: #f5f6f9;
+}
+
+.group:hover .group-hover\:border-grey-lighter {
+  border-color: #f1f5f8;
+}
+
+.group:hover .group-hover\:border-grey-lightest {
+  border-color: #f8fafc;
+}
+
+.group:hover .group-hover\:border-white {
+  border-color: #fff;
+}
+
+.group:hover .group-hover\:border-red-darkest {
+  border-color: #3b0d0c;
+}
+
+.group:hover .group-hover\:border-red-darker {
+  border-color: #621b18;
+}
+
+.group:hover .group-hover\:border-red-dark {
+  border-color: #cc1f1a;
+}
+
+.group:hover .group-hover\:border-red {
+  border-color: #e3342f;
+}
+
+.group:hover .group-hover\:border-red-light {
+  border-color: #ef575;
+}
+
+.group:hover .group-hover\:border-red-lighter {
+  border-color: #f9acaa;
+}
+
+.group:hover .group-hover\:border-red-lightest {
+  border-color: #fcebea;
+}
+
+.group:hover .group-hover\:border-orange-darkest {
+  border-color: #462a16;
+}
+
+.group:hover .group-hover\:border-orange-darker {
+  border-color: #613b1f;
+}
+
+.group:hover .group-hover\:border-orange-dark {
+  border-color: #de751f;
+}
+
+.group:hover .group-hover\:border-orange {
+  border-color: #f6993f;
+}
+
+.group:hover .group-hover\:border-orange-light {
+  border-color: #faad63;
+}
+
+.group:hover .group-hover\:border-orange-lighter {
+  border-color: #fcd9b6;
+}
+
+.group:hover .group-hover\:border-orange-lightest {
+  border-color: #fff5eb;
+}
+
+.group:hover .group-hover\:border-yellow-darkest {
+  border-color: #453411;
+}
+
+.group:hover .group-hover\:border-yellow-darker {
+  border-color: #684f1d;
+}
+
+.group:hover .group-hover\:border-yellow-dark {
+  border-color: #f2d024;
+}
+
+.group:hover .group-hover\:border-yellow {
+  border-color: #ffed4a;
+}
+
+.group:hover .group-hover\:border-yellow-light {
+  border-color: #fff382;
+}
+
+.group:hover .group-hover\:border-yellow-lighter {
+  border-color: #fff9c2;
+}
+
+.group:hover .group-hover\:border-yellow-lightest {
+  border-color: #fcfbeb;
+}
+
+.group:hover .group-hover\:border-green-darkest {
+  border-color: #0f2f21;
+}
+
+.group:hover .group-hover\:border-green-darker {
+  border-color: #1a4731;
+}
+
+.group:hover .group-hover\:border-green-dark {
+  border-color: #1f9d55;
+}
+
+.group:hover .group-hover\:border-green {
+  border-color: #38c172;
+}
+
+.group:hover .group-hover\:border-green-light {
+  border-color: #51d88a;
+}
+
+.group:hover .group-hover\:border-green-lighter {
+  border-color: #a2f5bf;
+}
+
+.group:hover .group-hover\:border-green-lightest {
+  border-color: #e3fcec;
+}
+
+.group:hover .group-hover\:border-teal-darkest {
+  border-color: #0d3331;
+}
+
+.group:hover .group-hover\:border-teal-darker {
+  border-color: #20504f;
+}
+
+.group:hover .group-hover\:border-teal-dark {
+  border-color: #38a89d;
+}
+
+.group:hover .group-hover\:border-teal {
+  border-color: #4dc0b5;
+}
+
+.group:hover .group-hover\:border-teal-light {
+  border-color: #64d5ca;
+}
+
+.group:hover .group-hover\:border-teal-lighter {
+  border-color: #a0f0ed;
+}
+
+.group:hover .group-hover\:border-teal-lightest {
+  border-color: #e8fffe;
+}
+
+.group:hover .group-hover\:border-blue-darkest {
+  border-color: #12283a;
+}
+
+.group:hover .group-hover\:border-blue-darker {
+  border-color: #1c3d5a;
+}
+
+.group:hover .group-hover\:border-blue-dark {
+  border-color: #2779bd;
+}
+
+.group:hover .group-hover\:border-blue {
+  border-color: #3490dc;
+}
+
+.group:hover .group-hover\:border-blue-light {
+  border-color: #8ae2fe;
+}
+
+.group:hover .group-hover\:border-blue-lighter {
+  border-color: #bcdefa;
+}
+
+.group:hover .group-hover\:border-blue-lightest {
+  border-color: #eff8ff;
+}
+
+.group:hover .group-hover\:border-indigo-darkest {
+  border-color: #191e38;
+}
+
+.group:hover .group-hover\:border-indigo-darker {
+  border-color: #2f365f;
+}
+
+.group:hover .group-hover\:border-indigo-dark {
+  border-color: #5661b3;
+}
+
+.group:hover .group-hover\:border-indigo {
+  border-color: #6574cd;
+}
+
+.group:hover .group-hover\:border-indigo-light {
+  border-color: #7886d7;
+}
+
+.group:hover .group-hover\:border-indigo-lighter {
+  border-color: #b2b7ff;
+}
+
+.group:hover .group-hover\:border-indigo-lightest {
+  border-color: #e6e8ff;
+}
+
+.group:hover .group-hover\:border-purple-darkest {
+  border-color: #21183c;
+}
+
+.group:hover .group-hover\:border-purple-darker {
+  border-color: #382b5f;
+}
+
+.group:hover .group-hover\:border-purple-dark {
+  border-color: #794acf;
+}
+
+.group:hover .group-hover\:border-purple {
+  border-color: #9561e2;
+}
+
+.group:hover .group-hover\:border-purple-light {
+  border-color: #a779e9;
+}
+
+.group:hover .group-hover\:border-purple-lighter {
+  border-color: #d6bbfc;
+}
+
+.group:hover .group-hover\:border-purple-lightest {
+  border-color: #f3ebff;
+}
+
+.group:hover .group-hover\:border-pink-darkest {
+  border-color: #451225;
+}
+
+.group:hover .group-hover\:border-pink-darker {
+  border-color: #6f213f;
+}
+
+.group:hover .group-hover\:border-pink-dark {
+  border-color: #eb5286;
+}
+
+.group:hover .group-hover\:border-pink {
+  border-color: #f66d9b;
+}
+
+.group:hover .group-hover\:border-pink-light {
+  border-color: #fa7ea8;
+}
+
+.group:hover .group-hover\:border-pink-lighter {
+  border-color: #ffbbca;
+}
+
+.group:hover .group-hover\:border-pink-lightest {
   border-color: #ffebef;
 }
 
@@ -11750,6 +12039,14 @@ table {
   visibility: hidden;
 }
 
+.group:hover .group-hover\:visible {
+  visibility: visible;
+}
+
+.group:hover .group-hover\:invisible {
+  visibility: hidden;
+}
+
 .whitespace-normal {
   white-space: normal;
 }
@@ -13780,6 +14077,298 @@ table {
   }
 
   .sm\:focus\:border-pink-lightest:focus {
+    border-color: #ffebef;
+  }
+
+  .group:hover .sm\:group-hover\:border-transparent {
+    border-color: transparent;
+  }
+
+  .group:hover .sm\:group-hover\:border-black {
+    border-color: #22292f;
+  }
+
+  .group:hover .sm\:group-hover\:border-grey-darkest {
+    border-color: #3d4852;
+  }
+
+  .group:hover .sm\:group-hover\:border-grey-darker {
+    border-color: #606f7b;
+  }
+
+  .group:hover .sm\:group-hover\:border-grey-dark {
+    border-color: #8795a1;
+  }
+
+  .group:hover .sm\:group-hover\:border-grey {
+    border-color: rgba(0, 0, 0, .4);
+  }
+
+  .group:hover .sm\:group-hover\:border-grey-light {
+    border-color: #f5f6f9;
+  }
+
+  .group:hover .sm\:group-hover\:border-grey-lighter {
+    border-color: #f1f5f8;
+  }
+
+  .group:hover .sm\:group-hover\:border-grey-lightest {
+    border-color: #f8fafc;
+  }
+
+  .group:hover .sm\:group-hover\:border-white {
+    border-color: #fff;
+  }
+
+  .group:hover .sm\:group-hover\:border-red-darkest {
+    border-color: #3b0d0c;
+  }
+
+  .group:hover .sm\:group-hover\:border-red-darker {
+    border-color: #621b18;
+  }
+
+  .group:hover .sm\:group-hover\:border-red-dark {
+    border-color: #cc1f1a;
+  }
+
+  .group:hover .sm\:group-hover\:border-red {
+    border-color: #e3342f;
+  }
+
+  .group:hover .sm\:group-hover\:border-red-light {
+    border-color: #ef575;
+  }
+
+  .group:hover .sm\:group-hover\:border-red-lighter {
+    border-color: #f9acaa;
+  }
+
+  .group:hover .sm\:group-hover\:border-red-lightest {
+    border-color: #fcebea;
+  }
+
+  .group:hover .sm\:group-hover\:border-orange-darkest {
+    border-color: #462a16;
+  }
+
+  .group:hover .sm\:group-hover\:border-orange-darker {
+    border-color: #613b1f;
+  }
+
+  .group:hover .sm\:group-hover\:border-orange-dark {
+    border-color: #de751f;
+  }
+
+  .group:hover .sm\:group-hover\:border-orange {
+    border-color: #f6993f;
+  }
+
+  .group:hover .sm\:group-hover\:border-orange-light {
+    border-color: #faad63;
+  }
+
+  .group:hover .sm\:group-hover\:border-orange-lighter {
+    border-color: #fcd9b6;
+  }
+
+  .group:hover .sm\:group-hover\:border-orange-lightest {
+    border-color: #fff5eb;
+  }
+
+  .group:hover .sm\:group-hover\:border-yellow-darkest {
+    border-color: #453411;
+  }
+
+  .group:hover .sm\:group-hover\:border-yellow-darker {
+    border-color: #684f1d;
+  }
+
+  .group:hover .sm\:group-hover\:border-yellow-dark {
+    border-color: #f2d024;
+  }
+
+  .group:hover .sm\:group-hover\:border-yellow {
+    border-color: #ffed4a;
+  }
+
+  .group:hover .sm\:group-hover\:border-yellow-light {
+    border-color: #fff382;
+  }
+
+  .group:hover .sm\:group-hover\:border-yellow-lighter {
+    border-color: #fff9c2;
+  }
+
+  .group:hover .sm\:group-hover\:border-yellow-lightest {
+    border-color: #fcfbeb;
+  }
+
+  .group:hover .sm\:group-hover\:border-green-darkest {
+    border-color: #0f2f21;
+  }
+
+  .group:hover .sm\:group-hover\:border-green-darker {
+    border-color: #1a4731;
+  }
+
+  .group:hover .sm\:group-hover\:border-green-dark {
+    border-color: #1f9d55;
+  }
+
+  .group:hover .sm\:group-hover\:border-green {
+    border-color: #38c172;
+  }
+
+  .group:hover .sm\:group-hover\:border-green-light {
+    border-color: #51d88a;
+  }
+
+  .group:hover .sm\:group-hover\:border-green-lighter {
+    border-color: #a2f5bf;
+  }
+
+  .group:hover .sm\:group-hover\:border-green-lightest {
+    border-color: #e3fcec;
+  }
+
+  .group:hover .sm\:group-hover\:border-teal-darkest {
+    border-color: #0d3331;
+  }
+
+  .group:hover .sm\:group-hover\:border-teal-darker {
+    border-color: #20504f;
+  }
+
+  .group:hover .sm\:group-hover\:border-teal-dark {
+    border-color: #38a89d;
+  }
+
+  .group:hover .sm\:group-hover\:border-teal {
+    border-color: #4dc0b5;
+  }
+
+  .group:hover .sm\:group-hover\:border-teal-light {
+    border-color: #64d5ca;
+  }
+
+  .group:hover .sm\:group-hover\:border-teal-lighter {
+    border-color: #a0f0ed;
+  }
+
+  .group:hover .sm\:group-hover\:border-teal-lightest {
+    border-color: #e8fffe;
+  }
+
+  .group:hover .sm\:group-hover\:border-blue-darkest {
+    border-color: #12283a;
+  }
+
+  .group:hover .sm\:group-hover\:border-blue-darker {
+    border-color: #1c3d5a;
+  }
+
+  .group:hover .sm\:group-hover\:border-blue-dark {
+    border-color: #2779bd;
+  }
+
+  .group:hover .sm\:group-hover\:border-blue {
+    border-color: #3490dc;
+  }
+
+  .group:hover .sm\:group-hover\:border-blue-light {
+    border-color: #8ae2fe;
+  }
+
+  .group:hover .sm\:group-hover\:border-blue-lighter {
+    border-color: #bcdefa;
+  }
+
+  .group:hover .sm\:group-hover\:border-blue-lightest {
+    border-color: #eff8ff;
+  }
+
+  .group:hover .sm\:group-hover\:border-indigo-darkest {
+    border-color: #191e38;
+  }
+
+  .group:hover .sm\:group-hover\:border-indigo-darker {
+    border-color: #2f365f;
+  }
+
+  .group:hover .sm\:group-hover\:border-indigo-dark {
+    border-color: #5661b3;
+  }
+
+  .group:hover .sm\:group-hover\:border-indigo {
+    border-color: #6574cd;
+  }
+
+  .group:hover .sm\:group-hover\:border-indigo-light {
+    border-color: #7886d7;
+  }
+
+  .group:hover .sm\:group-hover\:border-indigo-lighter {
+    border-color: #b2b7ff;
+  }
+
+  .group:hover .sm\:group-hover\:border-indigo-lightest {
+    border-color: #e6e8ff;
+  }
+
+  .group:hover .sm\:group-hover\:border-purple-darkest {
+    border-color: #21183c;
+  }
+
+  .group:hover .sm\:group-hover\:border-purple-darker {
+    border-color: #382b5f;
+  }
+
+  .group:hover .sm\:group-hover\:border-purple-dark {
+    border-color: #794acf;
+  }
+
+  .group:hover .sm\:group-hover\:border-purple {
+    border-color: #9561e2;
+  }
+
+  .group:hover .sm\:group-hover\:border-purple-light {
+    border-color: #a779e9;
+  }
+
+  .group:hover .sm\:group-hover\:border-purple-lighter {
+    border-color: #d6bbfc;
+  }
+
+  .group:hover .sm\:group-hover\:border-purple-lightest {
+    border-color: #f3ebff;
+  }
+
+  .group:hover .sm\:group-hover\:border-pink-darkest {
+    border-color: #451225;
+  }
+
+  .group:hover .sm\:group-hover\:border-pink-darker {
+    border-color: #6f213f;
+  }
+
+  .group:hover .sm\:group-hover\:border-pink-dark {
+    border-color: #eb5286;
+  }
+
+  .group:hover .sm\:group-hover\:border-pink {
+    border-color: #f66d9b;
+  }
+
+  .group:hover .sm\:group-hover\:border-pink-light {
+    border-color: #fa7ea8;
+  }
+
+  .group:hover .sm\:group-hover\:border-pink-lighter {
+    border-color: #ffbbca;
+  }
+
+  .group:hover .sm\:group-hover\:border-pink-lightest {
     border-color: #ffebef;
   }
 
@@ -17338,6 +17927,14 @@ table {
     visibility: hidden;
   }
 
+  .group:hover .sm\:group-hover\:visible {
+    visibility: visible;
+  }
+
+  .group:hover .sm\:group-hover\:invisible {
+    visibility: hidden;
+  }
+
   .sm\:whitespace-normal {
     white-space: normal;
   }
@@ -19354,6 +19951,298 @@ table {
   }
 
   .md\:focus\:border-pink-lightest:focus {
+    border-color: #ffebef;
+  }
+
+  .group:hover .md\:group-hover\:border-transparent {
+    border-color: transparent;
+  }
+
+  .group:hover .md\:group-hover\:border-black {
+    border-color: #22292f;
+  }
+
+  .group:hover .md\:group-hover\:border-grey-darkest {
+    border-color: #3d4852;
+  }
+
+  .group:hover .md\:group-hover\:border-grey-darker {
+    border-color: #606f7b;
+  }
+
+  .group:hover .md\:group-hover\:border-grey-dark {
+    border-color: #8795a1;
+  }
+
+  .group:hover .md\:group-hover\:border-grey {
+    border-color: rgba(0, 0, 0, .4);
+  }
+
+  .group:hover .md\:group-hover\:border-grey-light {
+    border-color: #f5f6f9;
+  }
+
+  .group:hover .md\:group-hover\:border-grey-lighter {
+    border-color: #f1f5f8;
+  }
+
+  .group:hover .md\:group-hover\:border-grey-lightest {
+    border-color: #f8fafc;
+  }
+
+  .group:hover .md\:group-hover\:border-white {
+    border-color: #fff;
+  }
+
+  .group:hover .md\:group-hover\:border-red-darkest {
+    border-color: #3b0d0c;
+  }
+
+  .group:hover .md\:group-hover\:border-red-darker {
+    border-color: #621b18;
+  }
+
+  .group:hover .md\:group-hover\:border-red-dark {
+    border-color: #cc1f1a;
+  }
+
+  .group:hover .md\:group-hover\:border-red {
+    border-color: #e3342f;
+  }
+
+  .group:hover .md\:group-hover\:border-red-light {
+    border-color: #ef575;
+  }
+
+  .group:hover .md\:group-hover\:border-red-lighter {
+    border-color: #f9acaa;
+  }
+
+  .group:hover .md\:group-hover\:border-red-lightest {
+    border-color: #fcebea;
+  }
+
+  .group:hover .md\:group-hover\:border-orange-darkest {
+    border-color: #462a16;
+  }
+
+  .group:hover .md\:group-hover\:border-orange-darker {
+    border-color: #613b1f;
+  }
+
+  .group:hover .md\:group-hover\:border-orange-dark {
+    border-color: #de751f;
+  }
+
+  .group:hover .md\:group-hover\:border-orange {
+    border-color: #f6993f;
+  }
+
+  .group:hover .md\:group-hover\:border-orange-light {
+    border-color: #faad63;
+  }
+
+  .group:hover .md\:group-hover\:border-orange-lighter {
+    border-color: #fcd9b6;
+  }
+
+  .group:hover .md\:group-hover\:border-orange-lightest {
+    border-color: #fff5eb;
+  }
+
+  .group:hover .md\:group-hover\:border-yellow-darkest {
+    border-color: #453411;
+  }
+
+  .group:hover .md\:group-hover\:border-yellow-darker {
+    border-color: #684f1d;
+  }
+
+  .group:hover .md\:group-hover\:border-yellow-dark {
+    border-color: #f2d024;
+  }
+
+  .group:hover .md\:group-hover\:border-yellow {
+    border-color: #ffed4a;
+  }
+
+  .group:hover .md\:group-hover\:border-yellow-light {
+    border-color: #fff382;
+  }
+
+  .group:hover .md\:group-hover\:border-yellow-lighter {
+    border-color: #fff9c2;
+  }
+
+  .group:hover .md\:group-hover\:border-yellow-lightest {
+    border-color: #fcfbeb;
+  }
+
+  .group:hover .md\:group-hover\:border-green-darkest {
+    border-color: #0f2f21;
+  }
+
+  .group:hover .md\:group-hover\:border-green-darker {
+    border-color: #1a4731;
+  }
+
+  .group:hover .md\:group-hover\:border-green-dark {
+    border-color: #1f9d55;
+  }
+
+  .group:hover .md\:group-hover\:border-green {
+    border-color: #38c172;
+  }
+
+  .group:hover .md\:group-hover\:border-green-light {
+    border-color: #51d88a;
+  }
+
+  .group:hover .md\:group-hover\:border-green-lighter {
+    border-color: #a2f5bf;
+  }
+
+  .group:hover .md\:group-hover\:border-green-lightest {
+    border-color: #e3fcec;
+  }
+
+  .group:hover .md\:group-hover\:border-teal-darkest {
+    border-color: #0d3331;
+  }
+
+  .group:hover .md\:group-hover\:border-teal-darker {
+    border-color: #20504f;
+  }
+
+  .group:hover .md\:group-hover\:border-teal-dark {
+    border-color: #38a89d;
+  }
+
+  .group:hover .md\:group-hover\:border-teal {
+    border-color: #4dc0b5;
+  }
+
+  .group:hover .md\:group-hover\:border-teal-light {
+    border-color: #64d5ca;
+  }
+
+  .group:hover .md\:group-hover\:border-teal-lighter {
+    border-color: #a0f0ed;
+  }
+
+  .group:hover .md\:group-hover\:border-teal-lightest {
+    border-color: #e8fffe;
+  }
+
+  .group:hover .md\:group-hover\:border-blue-darkest {
+    border-color: #12283a;
+  }
+
+  .group:hover .md\:group-hover\:border-blue-darker {
+    border-color: #1c3d5a;
+  }
+
+  .group:hover .md\:group-hover\:border-blue-dark {
+    border-color: #2779bd;
+  }
+
+  .group:hover .md\:group-hover\:border-blue {
+    border-color: #3490dc;
+  }
+
+  .group:hover .md\:group-hover\:border-blue-light {
+    border-color: #8ae2fe;
+  }
+
+  .group:hover .md\:group-hover\:border-blue-lighter {
+    border-color: #bcdefa;
+  }
+
+  .group:hover .md\:group-hover\:border-blue-lightest {
+    border-color: #eff8ff;
+  }
+
+  .group:hover .md\:group-hover\:border-indigo-darkest {
+    border-color: #191e38;
+  }
+
+  .group:hover .md\:group-hover\:border-indigo-darker {
+    border-color: #2f365f;
+  }
+
+  .group:hover .md\:group-hover\:border-indigo-dark {
+    border-color: #5661b3;
+  }
+
+  .group:hover .md\:group-hover\:border-indigo {
+    border-color: #6574cd;
+  }
+
+  .group:hover .md\:group-hover\:border-indigo-light {
+    border-color: #7886d7;
+  }
+
+  .group:hover .md\:group-hover\:border-indigo-lighter {
+    border-color: #b2b7ff;
+  }
+
+  .group:hover .md\:group-hover\:border-indigo-lightest {
+    border-color: #e6e8ff;
+  }
+
+  .group:hover .md\:group-hover\:border-purple-darkest {
+    border-color: #21183c;
+  }
+
+  .group:hover .md\:group-hover\:border-purple-darker {
+    border-color: #382b5f;
+  }
+
+  .group:hover .md\:group-hover\:border-purple-dark {
+    border-color: #794acf;
+  }
+
+  .group:hover .md\:group-hover\:border-purple {
+    border-color: #9561e2;
+  }
+
+  .group:hover .md\:group-hover\:border-purple-light {
+    border-color: #a779e9;
+  }
+
+  .group:hover .md\:group-hover\:border-purple-lighter {
+    border-color: #d6bbfc;
+  }
+
+  .group:hover .md\:group-hover\:border-purple-lightest {
+    border-color: #f3ebff;
+  }
+
+  .group:hover .md\:group-hover\:border-pink-darkest {
+    border-color: #451225;
+  }
+
+  .group:hover .md\:group-hover\:border-pink-darker {
+    border-color: #6f213f;
+  }
+
+  .group:hover .md\:group-hover\:border-pink-dark {
+    border-color: #eb5286;
+  }
+
+  .group:hover .md\:group-hover\:border-pink {
+    border-color: #f66d9b;
+  }
+
+  .group:hover .md\:group-hover\:border-pink-light {
+    border-color: #fa7ea8;
+  }
+
+  .group:hover .md\:group-hover\:border-pink-lighter {
+    border-color: #ffbbca;
+  }
+
+  .group:hover .md\:group-hover\:border-pink-lightest {
     border-color: #ffebef;
   }
 
@@ -22912,6 +23801,14 @@ table {
     visibility: hidden;
   }
 
+  .group:hover .md\:group-hover\:visible {
+    visibility: visible;
+  }
+
+  .group:hover .md\:group-hover\:invisible {
+    visibility: hidden;
+  }
+
   .md\:whitespace-normal {
     white-space: normal;
   }
@@ -24928,6 +25825,298 @@ table {
   }
 
   .lg\:focus\:border-pink-lightest:focus {
+    border-color: #ffebef;
+  }
+
+  .group:hover .lg\:group-hover\:border-transparent {
+    border-color: transparent;
+  }
+
+  .group:hover .lg\:group-hover\:border-black {
+    border-color: #22292f;
+  }
+
+  .group:hover .lg\:group-hover\:border-grey-darkest {
+    border-color: #3d4852;
+  }
+
+  .group:hover .lg\:group-hover\:border-grey-darker {
+    border-color: #606f7b;
+  }
+
+  .group:hover .lg\:group-hover\:border-grey-dark {
+    border-color: #8795a1;
+  }
+
+  .group:hover .lg\:group-hover\:border-grey {
+    border-color: rgba(0, 0, 0, .4);
+  }
+
+  .group:hover .lg\:group-hover\:border-grey-light {
+    border-color: #f5f6f9;
+  }
+
+  .group:hover .lg\:group-hover\:border-grey-lighter {
+    border-color: #f1f5f8;
+  }
+
+  .group:hover .lg\:group-hover\:border-grey-lightest {
+    border-color: #f8fafc;
+  }
+
+  .group:hover .lg\:group-hover\:border-white {
+    border-color: #fff;
+  }
+
+  .group:hover .lg\:group-hover\:border-red-darkest {
+    border-color: #3b0d0c;
+  }
+
+  .group:hover .lg\:group-hover\:border-red-darker {
+    border-color: #621b18;
+  }
+
+  .group:hover .lg\:group-hover\:border-red-dark {
+    border-color: #cc1f1a;
+  }
+
+  .group:hover .lg\:group-hover\:border-red {
+    border-color: #e3342f;
+  }
+
+  .group:hover .lg\:group-hover\:border-red-light {
+    border-color: #ef575;
+  }
+
+  .group:hover .lg\:group-hover\:border-red-lighter {
+    border-color: #f9acaa;
+  }
+
+  .group:hover .lg\:group-hover\:border-red-lightest {
+    border-color: #fcebea;
+  }
+
+  .group:hover .lg\:group-hover\:border-orange-darkest {
+    border-color: #462a16;
+  }
+
+  .group:hover .lg\:group-hover\:border-orange-darker {
+    border-color: #613b1f;
+  }
+
+  .group:hover .lg\:group-hover\:border-orange-dark {
+    border-color: #de751f;
+  }
+
+  .group:hover .lg\:group-hover\:border-orange {
+    border-color: #f6993f;
+  }
+
+  .group:hover .lg\:group-hover\:border-orange-light {
+    border-color: #faad63;
+  }
+
+  .group:hover .lg\:group-hover\:border-orange-lighter {
+    border-color: #fcd9b6;
+  }
+
+  .group:hover .lg\:group-hover\:border-orange-lightest {
+    border-color: #fff5eb;
+  }
+
+  .group:hover .lg\:group-hover\:border-yellow-darkest {
+    border-color: #453411;
+  }
+
+  .group:hover .lg\:group-hover\:border-yellow-darker {
+    border-color: #684f1d;
+  }
+
+  .group:hover .lg\:group-hover\:border-yellow-dark {
+    border-color: #f2d024;
+  }
+
+  .group:hover .lg\:group-hover\:border-yellow {
+    border-color: #ffed4a;
+  }
+
+  .group:hover .lg\:group-hover\:border-yellow-light {
+    border-color: #fff382;
+  }
+
+  .group:hover .lg\:group-hover\:border-yellow-lighter {
+    border-color: #fff9c2;
+  }
+
+  .group:hover .lg\:group-hover\:border-yellow-lightest {
+    border-color: #fcfbeb;
+  }
+
+  .group:hover .lg\:group-hover\:border-green-darkest {
+    border-color: #0f2f21;
+  }
+
+  .group:hover .lg\:group-hover\:border-green-darker {
+    border-color: #1a4731;
+  }
+
+  .group:hover .lg\:group-hover\:border-green-dark {
+    border-color: #1f9d55;
+  }
+
+  .group:hover .lg\:group-hover\:border-green {
+    border-color: #38c172;
+  }
+
+  .group:hover .lg\:group-hover\:border-green-light {
+    border-color: #51d88a;
+  }
+
+  .group:hover .lg\:group-hover\:border-green-lighter {
+    border-color: #a2f5bf;
+  }
+
+  .group:hover .lg\:group-hover\:border-green-lightest {
+    border-color: #e3fcec;
+  }
+
+  .group:hover .lg\:group-hover\:border-teal-darkest {
+    border-color: #0d3331;
+  }
+
+  .group:hover .lg\:group-hover\:border-teal-darker {
+    border-color: #20504f;
+  }
+
+  .group:hover .lg\:group-hover\:border-teal-dark {
+    border-color: #38a89d;
+  }
+
+  .group:hover .lg\:group-hover\:border-teal {
+    border-color: #4dc0b5;
+  }
+
+  .group:hover .lg\:group-hover\:border-teal-light {
+    border-color: #64d5ca;
+  }
+
+  .group:hover .lg\:group-hover\:border-teal-lighter {
+    border-color: #a0f0ed;
+  }
+
+  .group:hover .lg\:group-hover\:border-teal-lightest {
+    border-color: #e8fffe;
+  }
+
+  .group:hover .lg\:group-hover\:border-blue-darkest {
+    border-color: #12283a;
+  }
+
+  .group:hover .lg\:group-hover\:border-blue-darker {
+    border-color: #1c3d5a;
+  }
+
+  .group:hover .lg\:group-hover\:border-blue-dark {
+    border-color: #2779bd;
+  }
+
+  .group:hover .lg\:group-hover\:border-blue {
+    border-color: #3490dc;
+  }
+
+  .group:hover .lg\:group-hover\:border-blue-light {
+    border-color: #8ae2fe;
+  }
+
+  .group:hover .lg\:group-hover\:border-blue-lighter {
+    border-color: #bcdefa;
+  }
+
+  .group:hover .lg\:group-hover\:border-blue-lightest {
+    border-color: #eff8ff;
+  }
+
+  .group:hover .lg\:group-hover\:border-indigo-darkest {
+    border-color: #191e38;
+  }
+
+  .group:hover .lg\:group-hover\:border-indigo-darker {
+    border-color: #2f365f;
+  }
+
+  .group:hover .lg\:group-hover\:border-indigo-dark {
+    border-color: #5661b3;
+  }
+
+  .group:hover .lg\:group-hover\:border-indigo {
+    border-color: #6574cd;
+  }
+
+  .group:hover .lg\:group-hover\:border-indigo-light {
+    border-color: #7886d7;
+  }
+
+  .group:hover .lg\:group-hover\:border-indigo-lighter {
+    border-color: #b2b7ff;
+  }
+
+  .group:hover .lg\:group-hover\:border-indigo-lightest {
+    border-color: #e6e8ff;
+  }
+
+  .group:hover .lg\:group-hover\:border-purple-darkest {
+    border-color: #21183c;
+  }
+
+  .group:hover .lg\:group-hover\:border-purple-darker {
+    border-color: #382b5f;
+  }
+
+  .group:hover .lg\:group-hover\:border-purple-dark {
+    border-color: #794acf;
+  }
+
+  .group:hover .lg\:group-hover\:border-purple {
+    border-color: #9561e2;
+  }
+
+  .group:hover .lg\:group-hover\:border-purple-light {
+    border-color: #a779e9;
+  }
+
+  .group:hover .lg\:group-hover\:border-purple-lighter {
+    border-color: #d6bbfc;
+  }
+
+  .group:hover .lg\:group-hover\:border-purple-lightest {
+    border-color: #f3ebff;
+  }
+
+  .group:hover .lg\:group-hover\:border-pink-darkest {
+    border-color: #451225;
+  }
+
+  .group:hover .lg\:group-hover\:border-pink-darker {
+    border-color: #6f213f;
+  }
+
+  .group:hover .lg\:group-hover\:border-pink-dark {
+    border-color: #eb5286;
+  }
+
+  .group:hover .lg\:group-hover\:border-pink {
+    border-color: #f66d9b;
+  }
+
+  .group:hover .lg\:group-hover\:border-pink-light {
+    border-color: #fa7ea8;
+  }
+
+  .group:hover .lg\:group-hover\:border-pink-lighter {
+    border-color: #ffbbca;
+  }
+
+  .group:hover .lg\:group-hover\:border-pink-lightest {
     border-color: #ffebef;
   }
 
@@ -28486,6 +29675,14 @@ table {
     visibility: hidden;
   }
 
+  .group:hover .lg\:group-hover\:visible {
+    visibility: visible;
+  }
+
+  .group:hover .lg\:group-hover\:invisible {
+    visibility: hidden;
+  }
+
   .lg\:whitespace-normal {
     white-space: normal;
   }
@@ -30502,6 +31699,298 @@ table {
   }
 
   .xl\:focus\:border-pink-lightest:focus {
+    border-color: #ffebef;
+  }
+
+  .group:hover .xl\:group-hover\:border-transparent {
+    border-color: transparent;
+  }
+
+  .group:hover .xl\:group-hover\:border-black {
+    border-color: #22292f;
+  }
+
+  .group:hover .xl\:group-hover\:border-grey-darkest {
+    border-color: #3d4852;
+  }
+
+  .group:hover .xl\:group-hover\:border-grey-darker {
+    border-color: #606f7b;
+  }
+
+  .group:hover .xl\:group-hover\:border-grey-dark {
+    border-color: #8795a1;
+  }
+
+  .group:hover .xl\:group-hover\:border-grey {
+    border-color: rgba(0, 0, 0, .4);
+  }
+
+  .group:hover .xl\:group-hover\:border-grey-light {
+    border-color: #f5f6f9;
+  }
+
+  .group:hover .xl\:group-hover\:border-grey-lighter {
+    border-color: #f1f5f8;
+  }
+
+  .group:hover .xl\:group-hover\:border-grey-lightest {
+    border-color: #f8fafc;
+  }
+
+  .group:hover .xl\:group-hover\:border-white {
+    border-color: #fff;
+  }
+
+  .group:hover .xl\:group-hover\:border-red-darkest {
+    border-color: #3b0d0c;
+  }
+
+  .group:hover .xl\:group-hover\:border-red-darker {
+    border-color: #621b18;
+  }
+
+  .group:hover .xl\:group-hover\:border-red-dark {
+    border-color: #cc1f1a;
+  }
+
+  .group:hover .xl\:group-hover\:border-red {
+    border-color: #e3342f;
+  }
+
+  .group:hover .xl\:group-hover\:border-red-light {
+    border-color: #ef575;
+  }
+
+  .group:hover .xl\:group-hover\:border-red-lighter {
+    border-color: #f9acaa;
+  }
+
+  .group:hover .xl\:group-hover\:border-red-lightest {
+    border-color: #fcebea;
+  }
+
+  .group:hover .xl\:group-hover\:border-orange-darkest {
+    border-color: #462a16;
+  }
+
+  .group:hover .xl\:group-hover\:border-orange-darker {
+    border-color: #613b1f;
+  }
+
+  .group:hover .xl\:group-hover\:border-orange-dark {
+    border-color: #de751f;
+  }
+
+  .group:hover .xl\:group-hover\:border-orange {
+    border-color: #f6993f;
+  }
+
+  .group:hover .xl\:group-hover\:border-orange-light {
+    border-color: #faad63;
+  }
+
+  .group:hover .xl\:group-hover\:border-orange-lighter {
+    border-color: #fcd9b6;
+  }
+
+  .group:hover .xl\:group-hover\:border-orange-lightest {
+    border-color: #fff5eb;
+  }
+
+  .group:hover .xl\:group-hover\:border-yellow-darkest {
+    border-color: #453411;
+  }
+
+  .group:hover .xl\:group-hover\:border-yellow-darker {
+    border-color: #684f1d;
+  }
+
+  .group:hover .xl\:group-hover\:border-yellow-dark {
+    border-color: #f2d024;
+  }
+
+  .group:hover .xl\:group-hover\:border-yellow {
+    border-color: #ffed4a;
+  }
+
+  .group:hover .xl\:group-hover\:border-yellow-light {
+    border-color: #fff382;
+  }
+
+  .group:hover .xl\:group-hover\:border-yellow-lighter {
+    border-color: #fff9c2;
+  }
+
+  .group:hover .xl\:group-hover\:border-yellow-lightest {
+    border-color: #fcfbeb;
+  }
+
+  .group:hover .xl\:group-hover\:border-green-darkest {
+    border-color: #0f2f21;
+  }
+
+  .group:hover .xl\:group-hover\:border-green-darker {
+    border-color: #1a4731;
+  }
+
+  .group:hover .xl\:group-hover\:border-green-dark {
+    border-color: #1f9d55;
+  }
+
+  .group:hover .xl\:group-hover\:border-green {
+    border-color: #38c172;
+  }
+
+  .group:hover .xl\:group-hover\:border-green-light {
+    border-color: #51d88a;
+  }
+
+  .group:hover .xl\:group-hover\:border-green-lighter {
+    border-color: #a2f5bf;
+  }
+
+  .group:hover .xl\:group-hover\:border-green-lightest {
+    border-color: #e3fcec;
+  }
+
+  .group:hover .xl\:group-hover\:border-teal-darkest {
+    border-color: #0d3331;
+  }
+
+  .group:hover .xl\:group-hover\:border-teal-darker {
+    border-color: #20504f;
+  }
+
+  .group:hover .xl\:group-hover\:border-teal-dark {
+    border-color: #38a89d;
+  }
+
+  .group:hover .xl\:group-hover\:border-teal {
+    border-color: #4dc0b5;
+  }
+
+  .group:hover .xl\:group-hover\:border-teal-light {
+    border-color: #64d5ca;
+  }
+
+  .group:hover .xl\:group-hover\:border-teal-lighter {
+    border-color: #a0f0ed;
+  }
+
+  .group:hover .xl\:group-hover\:border-teal-lightest {
+    border-color: #e8fffe;
+  }
+
+  .group:hover .xl\:group-hover\:border-blue-darkest {
+    border-color: #12283a;
+  }
+
+  .group:hover .xl\:group-hover\:border-blue-darker {
+    border-color: #1c3d5a;
+  }
+
+  .group:hover .xl\:group-hover\:border-blue-dark {
+    border-color: #2779bd;
+  }
+
+  .group:hover .xl\:group-hover\:border-blue {
+    border-color: #3490dc;
+  }
+
+  .group:hover .xl\:group-hover\:border-blue-light {
+    border-color: #8ae2fe;
+  }
+
+  .group:hover .xl\:group-hover\:border-blue-lighter {
+    border-color: #bcdefa;
+  }
+
+  .group:hover .xl\:group-hover\:border-blue-lightest {
+    border-color: #eff8ff;
+  }
+
+  .group:hover .xl\:group-hover\:border-indigo-darkest {
+    border-color: #191e38;
+  }
+
+  .group:hover .xl\:group-hover\:border-indigo-darker {
+    border-color: #2f365f;
+  }
+
+  .group:hover .xl\:group-hover\:border-indigo-dark {
+    border-color: #5661b3;
+  }
+
+  .group:hover .xl\:group-hover\:border-indigo {
+    border-color: #6574cd;
+  }
+
+  .group:hover .xl\:group-hover\:border-indigo-light {
+    border-color: #7886d7;
+  }
+
+  .group:hover .xl\:group-hover\:border-indigo-lighter {
+    border-color: #b2b7ff;
+  }
+
+  .group:hover .xl\:group-hover\:border-indigo-lightest {
+    border-color: #e6e8ff;
+  }
+
+  .group:hover .xl\:group-hover\:border-purple-darkest {
+    border-color: #21183c;
+  }
+
+  .group:hover .xl\:group-hover\:border-purple-darker {
+    border-color: #382b5f;
+  }
+
+  .group:hover .xl\:group-hover\:border-purple-dark {
+    border-color: #794acf;
+  }
+
+  .group:hover .xl\:group-hover\:border-purple {
+    border-color: #9561e2;
+  }
+
+  .group:hover .xl\:group-hover\:border-purple-light {
+    border-color: #a779e9;
+  }
+
+  .group:hover .xl\:group-hover\:border-purple-lighter {
+    border-color: #d6bbfc;
+  }
+
+  .group:hover .xl\:group-hover\:border-purple-lightest {
+    border-color: #f3ebff;
+  }
+
+  .group:hover .xl\:group-hover\:border-pink-darkest {
+    border-color: #451225;
+  }
+
+  .group:hover .xl\:group-hover\:border-pink-darker {
+    border-color: #6f213f;
+  }
+
+  .group:hover .xl\:group-hover\:border-pink-dark {
+    border-color: #eb5286;
+  }
+
+  .group:hover .xl\:group-hover\:border-pink {
+    border-color: #f66d9b;
+  }
+
+  .group:hover .xl\:group-hover\:border-pink-light {
+    border-color: #fa7ea8;
+  }
+
+  .group:hover .xl\:group-hover\:border-pink-lighter {
+    border-color: #ffbbca;
+  }
+
+  .group:hover .xl\:group-hover\:border-pink-lightest {
     border-color: #ffebef;
   }
 
@@ -34060,6 +35549,14 @@ table {
     visibility: hidden;
   }
 
+  .group:hover .xl\:group-hover\:visible {
+    visibility: visible;
+  }
+
+  .group:hover .xl\:group-hover\:invisible {
+    visibility: hidden;
+  }
+
   .xl\:whitespace-normal {
     white-space: normal;
   }
@@ -34237,349 +35734,4 @@ table {
   .xl\:z-auto {
     z-index: auto;
   }
-}
-
-.progress-circle {
-  background-color: #ddd;
-  border-radius: 50%;
-  display: inline-block;
-  height: 15rem;
-  margin: 4rem 2rem 0;
-  position: relative;
-  width: 15rem;
-}
-.progress-circle:before {
-  align-items: center;
-  background-color: #fff;
-  border-radius: 50%;
-  content: attr(data-progress) '%';
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 1rem;
-  right: 1rem;
-  top: 1rem;
-  bottom: 1rem;
-  transition: -webkit-transform 0.2s ease;
-  transition: transform 0.2s ease;
-  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
-}
-.progress-circle:after {
-  background-color: #0083ff;
-  border-radius: 50%;
-  content: '';
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-}
-.progress-circle:hover:before,
-.progress-circle:focus:before {
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-}
-/**
-* $step is set to 5 by default, meaning you can only use percentage classes in increments of five (e.g. 25, 30, 45, 50, and so on). This helps to reduce the size of the final CSS file. If you need a number that doesn't end in 0 or 5, you can change the text percentage while rounding the class up/down to the nearest 5.
-*/
-.progress-circle[data-progress="0"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(90deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="1"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(93.6deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="2"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(97.2deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="3"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(100.8deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="4"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(104.4deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="5"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(108deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="6"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(111.6deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="7"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(115.2deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="8"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(118.8deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="9"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(122.4deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="10"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(126deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="11"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(129.6deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="12"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(133.2deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="13"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(136.8deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="14"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(140.4deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="15"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(144deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="16"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(147.6deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="17"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(151.2deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="18"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(154.8deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="19"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(158.4deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="20"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(162deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="21"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(165.60000000000002deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="22"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(169.2deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="23"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(172.8deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="24"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(176.4deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="25"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(180deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="26"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(183.60000000000002deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="27"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(187.2deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="28"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(190.8deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="29"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(194.4deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="30"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(198deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="31"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(201.60000000000002deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="32"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(205.2deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="33"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(208.8deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="34"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(212.4deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="35"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(216deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="36"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(219.6deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="37"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(223.20000000000002deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="38"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(226.8deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="39"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(230.4deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="40"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(234deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="41"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(237.6deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="42"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(241.20000000000002deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="43"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(244.8deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="44"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(248.4deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="45"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(252deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="46"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(255.6deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="47"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(259.20000000000005deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="48"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(262.8deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="49"]:after {
-  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%, transparent), linear-gradient(266.4deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="50"]:after {
-  background-image: linear-gradient(-90deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="51"]:after {
-  background-image: linear-gradient(-86.4deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="52"]:after {
-  background-image: linear-gradient(-82.8deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="53"]:after {
-  background-image: linear-gradient(-79.2deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="54"]:after {
-  background-image: linear-gradient(-75.6deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="55"]:after {
-  background-image: linear-gradient(-72deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="56"]:after {
-  background-image: linear-gradient(-68.4deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="57"]:after {
-  background-image: linear-gradient(-64.8deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="58"]:after {
-  background-image: linear-gradient(-61.2deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="59"]:after {
-  background-image: linear-gradient(-57.6deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="60"]:after {
-  background-image: linear-gradient(-54deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="61"]:after {
-  background-image: linear-gradient(-50.4deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="62"]:after {
-  background-image: linear-gradient(-46.8deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="63"]:after {
-  background-image: linear-gradient(-43.199999999999996deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="64"]:after {
-  background-image: linear-gradient(-39.6deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="65"]:after {
-  background-image: linear-gradient(-36deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="66"]:after {
-  background-image: linear-gradient(-32.4deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="67"]:after {
-  background-image: linear-gradient(-28.799999999999997deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="68"]:after {
-  background-image: linear-gradient(-25.200000000000003deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="69"]:after {
-  background-image: linear-gradient(-21.599999999999994deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="70"]:after {
-  background-image: linear-gradient(-18deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="71"]:after {
-  background-image: linear-gradient(-14.399999999999991deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="72"]:after {
-  background-image: linear-gradient(-10.799999999999997deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="73"]:after {
-  background-image: linear-gradient(-7.200000000000003deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="74"]:after {
-  background-image: linear-gradient(-3.599999999999994deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="75"]:after {
-  background-image: linear-gradient(0deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="76"]:after {
-  background-image: linear-gradient(3.600000000000009deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="77"]:after {
-  background-image: linear-gradient(7.200000000000003deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="78"]:after {
-  background-image: linear-gradient(10.799999999999997deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="79"]:after {
-  background-image: linear-gradient(14.400000000000006deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="80"]:after {
-  background-image: linear-gradient(18deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="81"]:after {
-  background-image: linear-gradient(21.60000000000001deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="82"]:after {
-  background-image: linear-gradient(25.200000000000003deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="83"]:after {
-  background-image: linear-gradient(28.799999999999997deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="84"]:after {
-  background-image: linear-gradient(32.400000000000006deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="85"]:after {
-  background-image: linear-gradient(36deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="86"]:after {
-  background-image: linear-gradient(39.599999999999994deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="87"]:after {
-  background-image: linear-gradient(43.20000000000002deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="88"]:after {
-  background-image: linear-gradient(46.80000000000001deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="89"]:after {
-  background-image: linear-gradient(50.400000000000006deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="90"]:after {
-  background-image: linear-gradient(54deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="91"]:after {
-  background-image: linear-gradient(57.599999999999994deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="92"]:after {
-  background-image: linear-gradient(61.20000000000002deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="93"]:after {
-  background-image: linear-gradient(64.80000000000001deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="94"]:after {
-  background-image: linear-gradient(68.4deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="95"]:after {
-  background-image: linear-gradient(72deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="96"]:after {
-  background-image: linear-gradient(75.6deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="97"]:after {
-  background-image: linear-gradient(79.20000000000002deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="98"]:after {
-  background-image: linear-gradient(82.80000000000001deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="99"]:after {
-  background-image: linear-gradient(86.4deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
-}
-.progress-circle[data-progress="100"]:after {
-  background-image: linear-gradient(90deg, #0083ff 50%, transparent 50%, transparent), linear-gradient(270deg, #0083ff 50%, #ddd 50%, #ddd);
 }

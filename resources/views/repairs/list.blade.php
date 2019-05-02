@@ -37,6 +37,14 @@
 							<a href="{{ $repair->fullAd() }}" style="text-decoration: none">
 								<div class="flex w-full pt-3" style="align-items: center; justify-content: center;">
 									<button type="submit" class="button center" style="min-width: 8rem; font-size: 0.9rem; ">View details</button>
+
+
+									<form method="POST" action="{{ $repair->list() }}">
+										{{ method_field('DELETE') }}
+										@csrf
+										<button type="submit" onclick="return confirm('Are you sure you want to cancel this repair?')" class="button" style=" margin-left: 3rem; min-width: 8rem; font-size: 0.9rem; ">Cancel Repair</button>
+										
+									</form>
 								</div>
 							</a>
 						</div>
@@ -58,6 +66,10 @@
 						</div>
 					@empty
 						<div class="card mb-3"> Nothing yet! </div>
+						<!-- {{$repair->ad->title}}
+						{{$repair->user->name}}
+						{{$repair->response->description}}
+						{{$repair->vendor->name}} -->
 					@endforelse
 				</div>
 
@@ -73,7 +85,20 @@
 											<form action="{{ $repair->list(). '/updates' }}" method="POST">
 												@csrf
 												<p><label>Update Description</label><input type="text" name="description" /></p>
-												<p><label>Progress</label><input type="number" name="progress" /></p>
+												<p><label>Progress</label></p>
+
+												<select name="progress">
+													<option value=10>10</option>
+													<option value=20>20</option>
+													<option value=30>30</option>
+													<option value=40>40</option>
+													<option value=50>50</option>
+													<option value=60>60</option>
+													<option value=70>70</option>
+													<option value=80>80</option>
+													<option value=90>90</option>
+													<option value=100>100</option>
+												</select>
 												
 												<p><button>Post Update</button></p>
 

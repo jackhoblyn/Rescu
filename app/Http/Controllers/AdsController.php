@@ -101,9 +101,18 @@ class AdsController extends Controller
         ]);
 
         $ad->update($attributes);
+
+        if ($ad->chosen == 'yes')
+        {
+            $ad->chosen();
+        } else {
+            $ad->open();
+        }
        
         return redirect($ad->path());
     }
+
+    
 
 
     public function create() 
@@ -116,6 +125,13 @@ class AdsController extends Controller
     {
          return view('ads.respond');
 
+    }
+
+    public function reopen(Ad $ad)
+    {
+
+        $ad->open();
+        return redirect($ad->path());
     }
 
      public function response(Ad $ad)
@@ -132,9 +148,14 @@ class AdsController extends Controller
 
     public function choose(Ad $ad, Response $response)
     {
+        $ad->chosen();
+        $ad->save();
+
         $repair = Repair::create([
             'user_id' => $ad->user->id,
             'vendor_id' => $response->vendor_id,
+            'ad_id' => $ad->id,
+            'response_id' => $response->id,
             'title' => $ad->title,
             'description' => $ad->description,
             'price' => $response->offer,
@@ -142,8 +163,7 @@ class AdsController extends Controller
             'pic' => $ad->photo
         ]);
 
-        $ad->chosen = 'yes';
-        $ad->save();
+        $response->vendor->notify(new ResponseChosen($ad, $ad->user, $response->vendor));
 
         return redirect($repair->path());
 

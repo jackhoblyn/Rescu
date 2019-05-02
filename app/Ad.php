@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ad extends Model
 {
+    use RecordsActivity;
+
     protected $guarded = [];
 
     public function path()
@@ -38,13 +40,43 @@ class Ad extends Model
     	return $this->belongsTo(User::class);
     }
 
-    public function addResponse($description)
+    public function addResponse($vendor_id, $description, $offer)
     {
-        return $this->responses()->create(compact('description'));
+        return $this->responses()->create(compact('vendor_id', 'description', 'offer'));
     }
 
     public function responses()
     {
         return $this->hasMany(Response::class);
     }
+
+    // public function recordActivity($description)
+    // {
+
+    // $this->activity()->create(compact('description'));
+
+    // }
+
+    // public function activity()
+    // {
+    //     return $this->hasMany(Activity::class)->latest();;
+    // }
+
+    public function chosen()
+    {
+        $this->update(['chosen' => 'yes']);
+
+        $this->recordActivity('response picked');
+    }
+
+    public function open()
+    {
+        $this->update(['chosen' => 'no']);
+        
+        $this->recordActivity('ad reopened');
+    }
+
+
+
+
 }

@@ -1,15 +1,15 @@
 @extends('layouts.vendor')
 
 @section('content')
-<div class="flex items-center" style="margin-left: 20%;
-    margin-right: 20%; margin-top: 10%;">
-    <div class = "container mx-auto">
+<div class="flex items-center" style="padding-left: 10rem;
+    padding-right: 10rem;">
+    <div class = "container mx-auto" style="padding-right: 7rem; padding-left: 7rem; padding-top: 3rem; margin-top: 3rem;">
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-9" method="POST" action="{{ route('login.vendor') }}" aria-label="{{ __('Login') }}">
          @csrf
         <div class="mb-4">
-          <h1 class="text-center text-2xl text-green-dark mb-6">Vendor Login</h1>
+          <h1 class="text-center text-2xl text-green-dark mb-6 mt-6">Vendor Login</h1>
 
-          <label for="email" class="block text-grey-darker text-sm font-bold mb-2">{{ __('E-Mail Address') }}</label>
+          <label for="email" class="block text-grey-darker text-sm font-bold mb-2 mt-6 ">{{ __('E-Mail Address') }}</label>
 
           <div class="mb-4-6">
 
@@ -43,6 +43,13 @@
            <button type="submit" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
               {{ __('Login') }}
           </button>
+          @if (\Session::has('warning'))
+            <div class="alert mt-5">
+              <ul>
+                <li><h3 class="text-red-dark">{!! \Session::get('warning') !!}</h3></li>
+              </ul>
+            </div>
+          @endif
           <br><br>
           <a class="btn btn-link" href="/register/vendor">
               {{ __('Dont have an account? Register') }}

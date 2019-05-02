@@ -17,6 +17,8 @@ class CreateRepairsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('vendor_id');
+            $table->unsignedInteger('ad_id');
+            $table->unsignedInteger('response_id');
             $table->timestamps();
             $table->float('price');
             $table->string('phone');

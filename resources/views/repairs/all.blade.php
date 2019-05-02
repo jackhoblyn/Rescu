@@ -28,7 +28,7 @@
 			</div>
 
 		@empty
-			<div>No ads yet</div>
+			<div style="margin-top: 15%; margin-left: 15%; padding-top: 7%; font-family: 'Nunito';"><h1>No Repairs yet!</h1></div>
 		@endforelse
 	</main>
 

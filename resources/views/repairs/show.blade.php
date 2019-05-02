@@ -12,7 +12,7 @@
 
 	<main>
 		<div class="lg:flex -mx-3">
-			<div class ="lg:w-1/2 px-3 mb-6">
+			<div class ="lg:w-1/2 px-3 mb-6" style="max-height: 700px">
 
 				<div class="card" style="height: 100%; position: relative; ">
 					<div>
@@ -42,6 +42,9 @@
 						</div>
 					</div>
 				</div>
+				<div style="margin-top: 2rem; margin-bottom: 5rem">
+					@include ('ads.activity.repair_card')
+				</div>
 
 				
 			</div>
@@ -53,7 +56,7 @@
 							<div class="flex w-full">
 								<p class="font-normal text-xl mb-3 py-4 -ml-5 border-l-4 border-green pl-4">
 								<div class="pt-2 w-full">{{ $update->description }} </div></p>
-								<div class="progress-circle" style="font-size: 1rem !important; margin: 0; height: 5rem; width: 5rem;" data-progress="{{ $update->progress }}" style="float: right"></div>
+								<div class="progress-circle" style="font-size: 1rem !important; margin: 0; height: 6rem; width: 7rem;" data-progress="{{ $update->progress }}" style="float: right"></div>
 							</div>
 							<div class="text-green">
 							<h2 style = "font-size: 1.2rem;">{{ ($repair->vendor->name) }}</h2>

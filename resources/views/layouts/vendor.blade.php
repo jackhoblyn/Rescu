@@ -64,7 +64,7 @@
             <div style="margin-left: 10%; margin-right: 10%">
                 <div class = "flex justify-between items-center">
                         <a href="{{ url('/') }}">
-                            <h1 class="p-2" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
+                            <h1 class="p-2 text-orange-dark" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
                         </a>
                     <div>
                         <!-- Right Side Of Navbar -->
@@ -73,8 +73,8 @@
                         @if(!(Auth('vendor')->user()))
                            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                                 <div class="text-sm lg:flex-grow">
-                                    <a href="{{ route('login') }}" style="font-size: 1.5rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
-                                    User Login
+                                    <a href="{{ route('login') }}" style="font-size: 1rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
+                                    Login as User
                                     </a>
                                 </div>
                             </div>

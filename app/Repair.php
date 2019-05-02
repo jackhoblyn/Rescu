@@ -8,6 +8,21 @@ class Repair extends Model
 {
     protected $guarded = [];
 
+    protected static function boot() 
+
+    {
+        parent::boot();
+
+        static::created(function ($repair) 
+        {
+            Activity::create([
+            'ad_id' => $repair->ad->id,
+            'description' => 'repair started'
+        ]); 
+
+        });
+    }
+
     public function path()
     {
     	return "/repairs/{$this->id}";
@@ -28,8 +43,7 @@ class Repair extends Model
         return "/vendor/repairs/{$this->id}/fullAd";
     }
 
-
-	public function user()
+    public function user()
     {
     	return $this->belongsTo(User::class);
     }
@@ -37,6 +51,16 @@ class Repair extends Model
     public function vendor()
     {
         return $this->belongsTo(Vendor::class);
+    }
+
+    public function ad()
+    {
+        return $this->belongsTo(Ad::class);
+    }
+
+    public function response()
+    {
+        return $this->belongsTo(Response::class);
     }
 
      public function updates()

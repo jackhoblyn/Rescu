@@ -62,13 +62,13 @@
     </style>
 </head>
 
-<body class="bg-grey-light">
+<body class="bg-grey-light mt-auto mr-auto">
     <div id="app">
         <nav class="py-4 bg-white">
             <div style="margin-left: 10%; margin-right: 10%">
                 <div class = "flex justify-between items-center">
                         <a href="{{ url('/') }}">
-                            <h1 class="p-2" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
+                            <h1 class="p-2 text-green-dark" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
                         </a>
                     <div>
                         <!-- Right Side Of Navbar -->
@@ -77,16 +77,38 @@
                             @guest
                              <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                                 <div class="text-sm lg:flex-grow">
-                                  <a href="/login/vendor" style="font-size: 1.5rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
-                                    Vendor Login
+                                  <a href="/login/vendor" style="font-size: 1rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
+                                    Login as Fixer
                                     </a>
                                 </div>
                               </div>
 
                             @else
                                  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                                    <div class="relative group">
+                                      <div class="relative group">
+                                          <div class="flex items-center cursor-pointer text-sm text-blue border border-white border-b-0  group-hover:border-grey-light rounded-t-lg py-1 px-2">
+                                            <i class="fa fa-bell" style="font-size: 1rem; margin-right:1rem"></i>
+                                            <span class="badge">{{ count(Auth::user()->unreadNotifications) }}</span>
+                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                          </div>
+                                          <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-full" style="min-width: 400px; z-index: 1; padding-top: 30px">
+                                            @foreach(Auth::user()->notifications as $notification)
+                                                <div style="margin-top: 10px; margin-left: 7px">
+                                                    <a href="#"><h4 style="font-family: 'Nunito', sans-serif;">{{ $notification->data['vendor_name'] }} responded to {{ $notification->data['ad_name'] }}</h4></a>
+                                                    <p>{{ $notification->created_at->diffForHumans() }}</p>
+                                                </div>
+                                            @endforeach
+                                           
+                                          </div>
+                                                
+                                        </div>
+
+                                    </div>
                                     <div class="text-sm lg:flex-grow">
 
+                                        <div class="relative group" style="z-index: 2">
+                                           
                                         <a href="/profile" style="text-decoration:none; font-size: 1.1rem; font-weight: bold; position: relative;" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
                                             <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width: 42px; height:42px; top:10px; left:10px; border-radius: 50%; margin-bottom: -10px; margin-right: 10px;">
                                            {{ Auth::user()->name }}
@@ -120,7 +142,7 @@
         </div>
 
 
-        <footer id="footer" style="margin-top: 10rem;">
+        <footer id="footer" style="margin-top: 13rem;">
             <div style="margin-left: 10%; margin-right: 10%">
                 <div style="float: right">
                     <h1 class="p-2" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
@@ -128,6 +150,8 @@
             </div>
         </footer>
 
+        
     </app>
+    
 </body>
 </html>

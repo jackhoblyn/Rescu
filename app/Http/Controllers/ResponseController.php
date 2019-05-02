@@ -7,21 +7,11 @@ use App\Ad;
 use App\Response;
 use App\Vendor;
 use App\User;
+use App\Notifications\ResponsePosted;
 
 class ResponseController extends Controller
 {
-    // public function store(Ad $ad)
-    // {
-    // 	$attributes = request()->validate([
-    //     'description' => 'required',
-    //      'offer' => 'required'
-    //     ]);
-
-    // 	$ad->addResponse(request($attributes));
-
-    // 	return redirect($ad->list());
-    // }
-
+    
     public function store(Ad $ad, Vendor $vendor)
     {
         Response::create([
@@ -32,26 +22,15 @@ class ResponseController extends Controller
             'vendor_id' => Auth('vendor')->user()->id
         ]);
 
+         $ad = Ad::find($ad->id);
+         $vendor = Vendor::find(Auth('vendor')->user()->id);
+         $user = $ad->user;
+
+
+        $ad->user->notify(new ResponsePosted($user, $ad, $vendor));
+
         return back();
     }
-
-
-    // public function store(Ad $ad)
-
-    // {
-    //     $attributes = request()->validate([
-    //         'title' => 'required',
-    //         'phone' => 'required',
-    //         'description' => 'required',
-    //         'price' => 'required'
-    //     ]);
-
-    //     $ad = auth()->user()->ads()->create($attributes);
-
-    //     return redirect($ad->path());
-    // }
-
-
 
 
     public function update(Ad $ad, Response $response)

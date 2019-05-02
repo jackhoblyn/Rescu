@@ -3,7 +3,7 @@
 @section('content')
 <div class="flex items-center" style="padding-left: 10rem;
     padding-right: 10rem;">
-    <div class = "container mx-auto" style="padding-right: 7rem; padding-left: 7rem; padding-top: 3rem;">
+    <div class = "container mx-auto" style="padding-right: 7rem; padding-left: 7rem; padding-top: 3rem; margin-top: 3rem">
         <form method="POST" class="mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-9" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
         @csrf
             <div class="mb-4">
@@ -14,9 +14,11 @@
                 <div class="mb-4-6">
                     <input id="email" type="email" class=" shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                       @if ($errors->has('email'))
+                      <div class=mt-4>
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('email') }}</strong>
                         </span>
+                      </div>
                       @endif      
 
                 </div>

@@ -15,7 +15,7 @@
 			<div class ="lg:w-3/4 px-3 mb-6">
 				<div class="mb-8">
 					<h2 class="text-lg text-grey font-normal mb-3">Responses</h2>
-					<!-- {{-- responses --}} -->
+			
 					@forelse ($ad->responses as $response)
 						<div class="card mb-5" style="height:70%; position: relative;"> 
 							<!-- <form class = "h-6" method="POST" action="{{ $ad->list(). '/responses/' . $response->id }}">
@@ -62,8 +62,8 @@
 					@endforelse
 				</div>
 			</div>
-			<div class="lg:w-1/2 px-3">
-				<div class="card" style="height: 100%; position: relative; ">
+			<div class="lg:w-1/3 px-3">
+				<div class="card" style="position: relative; ">
 					<div>
 						<h3 class="font-normal text-xl mb-3 py-4 -ml-5 border-l-4 border-blue-light pl-4" style = "float: left">
 							<div class="text-black no-underline" >{{ $ad->title }}</div>
@@ -96,7 +96,11 @@
                         </form> -->
 					</div>
 				</div>
+
+				@include ('ads.activity.card')
 			</div>
+
+
 
 			</div>
 

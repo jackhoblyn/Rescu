@@ -896,7 +896,7 @@ module.exports = {
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: [],
-    borderColors: ['responsive', 'hover', 'focus'],
+    borderColors: ["responsive", "hover", "focus", "group-hover"],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
     borderWidths: ['responsive'],
@@ -935,13 +935,13 @@ module.exports = {
     tracking: ['responsive'],
     userSelect: ['responsive'],
     verticalAlign: ['responsive'],
-    visibility: ['responsive'],
+    visibility: ["responsive", "group-hover"],
     whitespace: ['responsive'],
     width: ['responsive'],
     zIndex: ['responsive'],
   },
 
-
+ 
   /*
   |-----------------------------------------------------------------------------
   | Plugins                                https://tailwindcss.com/docs/plugins
@@ -981,3 +981,5 @@ module.exports = {
   },
 
 }
+
+
