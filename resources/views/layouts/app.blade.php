@@ -12,7 +12,7 @@
     <title>Rescu</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script  type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -67,7 +67,7 @@
         <nav class="py-4 bg-white">
             <div style="margin-left: 10%; margin-right: 10%">
                 <div class = "flex justify-between items-center">
-                        <a href="{{ url('/') }}">
+                        <a href="{{ url('/home') }}">
                             <h1 class="p-2 text-green-dark" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
                         </a>
                     <div>
@@ -92,12 +92,9 @@
                                             <span class="badge">{{ count(Auth::user()->unreadNotifications) }}</span>
                                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                                           </div>
-                                          <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-full" style="min-width: 400px; z-index: 1; padding-top: 30px">
+                                          <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-full" style="min-width: 500px; z-index: 1; padding-top: 30px">
                                             @foreach(Auth::user()->notifications as $notification)
-                                                <div style="margin-top: 10px; margin-left: 7px">
-                                                    <a href="#"><h4 style="font-family: 'Nunito', sans-serif;">{{ $notification->data['vendor_name'] }} responded to {{ $notification->data['ad_name'] }}</h4></a>
-                                                    <p>{{ $notification->created_at->diffForHumans() }}</p>
-                                                </div>
+                                                @include ('notifications.' .snake_case(class_basename($notification->type)))
                                             @endforeach
                                            
                                           </div>
@@ -135,9 +132,10 @@
             </div>
         </nav>
 
-        <div id="container">
+        <div id="app">
             <main style="margin-left: 10%; margin-right: 10%">
                 @yield('content')
+                <flash message="Temporary"></flash>
             </main>
         </div>
 
@@ -149,8 +147,7 @@
                 </div>
             </div>
         </footer>
-
-        
+       
     </app>
     
 </body>

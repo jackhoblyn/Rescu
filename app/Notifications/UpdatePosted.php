@@ -7,12 +7,11 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class ResponsePosted extends Notification
+class UpdatePosted extends Notification
 {
     use Queueable;
 
-    protected $user;
-    protected $ad;
+    protected $repair;
     protected $vendor;
 
     /**
@@ -20,9 +19,9 @@ class ResponsePosted extends Notification
      *
      * @return void
      */
-    public function __construct($ad, $vendor)
+    public function __construct($repair, $vendor)
     {
-        $this->ad = $ad;
+        $this->repair = $repair;
         $this->vendor = $vendor;
     }
 
@@ -47,14 +46,8 @@ class ResponsePosted extends Notification
     public function toDatabase($notifiable)
     {
         return [
-            // 'user_id' => $this->user->id,
-            // 'ad_id' => $this->ad->id,
-            // 'ad_phone' => $this->ad->phone,
-            // 'replyTime' => Carbon::now(),
-            // 'vendor_name' => $this->vendor->name,
-
-            'ad'=>$this->ad,
-            'vendor'=>$this->vendor
+            'repair' => $this->repair,
+            'vendor' => $this->vendor
         ];
     }
 }

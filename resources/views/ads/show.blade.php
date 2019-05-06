@@ -96,21 +96,7 @@
                         </form> -->
 					</div>
 				</div>
-
-				@include ('ads.activity.card')
 			</div>
-
-
-
-			</div>
-
-
-
-
-
-			</div>
-
-		</div>
 
 	</main>
 	

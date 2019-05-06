@@ -24,10 +24,9 @@ class ResponseController extends Controller
 
          $ad = Ad::find($ad->id);
          $vendor = Vendor::find(Auth('vendor')->user()->id);
-         $user = $ad->user;
 
 
-        $ad->user->notify(new ResponsePosted($user, $ad, $vendor));
+        $ad->user->notify(new ResponsePosted($ad, $vendor));
 
         return back();
     }

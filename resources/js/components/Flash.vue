@@ -1,0 +1,50 @@
+<template>
+    <div class="bg-orange-lightest alert-flash border-l-4 border-orange text-orange-dark p-4" role="alert" v-show="show">
+      <p class="font-bold">Success</p>
+      <p>{{ body }}</p>
+    </div>
+</template>
+
+<script>
+    export default {
+        props: ['message'],
+        data() {
+            return {
+                body: '',
+                show: false
+            }
+        },
+        created() {
+            if (this.message) {
+                this.flash(this.message);
+            }
+            window.events.$on(
+                'flash', message => this.flash(message)
+            );
+        },
+        methods: {
+            flash(message) {
+                this.body = message;
+                this.show = true;
+                this.hide();
+            },
+            hide() {
+                setTimeout(() => {
+                    this.show = false;
+                }, 3000);
+            }
+        }
+    };
+</script>
+
+<style>
+
+    .alert-flash {
+        position: fixed;
+        right: 0px;
+        bottom: 25px;
+        z-index: 3;
+        width: 500px;
+    }
+
+</style>

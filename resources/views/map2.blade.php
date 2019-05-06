@@ -3,8 +3,15 @@
 <head>
 
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
 	<style>
         #map {
         height: 600px;  /* The height is 400 pixels */
@@ -17,15 +24,14 @@
     </style>
     {!! $map['js'] !!}
 </head>
-<body class="bg-grey-light">
-	<nav class="bg-white">
-            <div class="container mx-auto">
-                <div class = "flex justify-between items-center py-3">
-                    <h1 class="p-2">
-                        <a class="navbar-brand" href="{{ url('/') }}">
-                            <img src="/img/red-cross.png" alt="Rescu" style="max-height: 35px"> Rescu
+<body class="bg-grey-light mt-auto mr-auto">
+    <div id="app">
+        <nav class="py-4 bg-white">
+            <div style="margin-left: 10%; margin-right: 10%">
+                <div class = "flex justify-between items-center">
+                        <a href="{{ url('/home') }}">
+                            <h1 class="p-2 text-green-dark" style="font-family: 'Nunito'; font-size: 2.6rem;">Rescü</h1>
                         </a>
-                    </h1>
                     <div>
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">

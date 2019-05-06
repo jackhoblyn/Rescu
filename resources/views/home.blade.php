@@ -43,7 +43,7 @@
     
 
         <a href="/map">
-            <div style="width: 33.222%; display: inline-block; white-space: normal; vertical-align: top";>
+            <div style="width: 33.222%; display: inline-block; white-space: normal; vertical-align: top;">
                 <div style="padding-left: 8px; padding-right: 8px;">
                     <div style="position: relative;">
                         <div style="background-size: 100% 100%;">
@@ -91,6 +91,8 @@
             </a>
         </div>
     </div>
+
+    
 
 
     <!-- <div class = "w-full" style="box-sizing: border-box; margin-top: 20px;">

@@ -87,7 +87,8 @@ class AdsController extends Controller
 
 
         $ad = auth()->user()->ads()->create($attributes);
-       return redirect($ad->path());
+        return redirect($ad->path())
+        ->with('flash', 'Your ad has been created');
     }
 
      public function update(Ad $ad)

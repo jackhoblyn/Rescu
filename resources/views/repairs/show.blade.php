@@ -42,9 +42,6 @@
 						</div>
 					</div>
 				</div>
-				<div style="margin-top: 2rem; margin-bottom: 5rem">
-					@include ('ads.activity.repair_card')
-				</div>
 
 				
 			</div>
