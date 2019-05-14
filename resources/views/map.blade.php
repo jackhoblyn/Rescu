@@ -86,7 +86,7 @@
 	    		}
 	    		else
 	    		{
-	    			alert("Browser not supported")
+	    			alert("Browser not supported");
 	    		}
 	    	}
 
@@ -195,7 +195,7 @@
 
 	 <form method="POST" action="/vendor/map" style="min-width: 80%">
 		@csrf
-        
+ 
         
         
         <div class="mb-4-6">

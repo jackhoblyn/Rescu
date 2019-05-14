@@ -23,13 +23,18 @@ class HomeController extends Controller
 
     public function profile()
     {
-        return view('profile');
+        return view('profiles.profile');
     }
 
-     public function update_avatar(Request $request)
+    public function editProfile()
+    {
+        return view('profiles.edit');
+    }
+
+     public function editPhoto(Request $request)
     {
        if($request->hasFile('avatar'))
-       {
+       {  
        		$avatar = $request->file('avatar');
        		$filename = time() . '.' . $avatar->getClientOriginalExtension();
        		Image::make($avatar)->resize(300,300)->save( public_path('/uploads/avatars/' . $filename));
@@ -39,7 +44,7 @@ class HomeController extends Controller
        		$user->save();
        }
 
-       return view('home');
+       return redirect('/profile');
     }
 
     public function map(gmaps_geocache $gmaps_geocache)
@@ -65,7 +70,43 @@ class HomeController extends Controller
 
         $map = GMaps::create_map();
 
-          return view('map2')->with('map', $map);
+        return view('map2')->with('map', $map);
+    }
+
+    public function updateProfile()
+    {
+       $attributes = request()->validate([
+            'name' => 'required',
+            'city' => 'required',
+            'bio' => 'required'
+        ]);
+
+        $user = Auth::user();
+        $user->update($attributes);
+       
+        return redirect('/profile');
+    }
+
+    public function update(Ad $ad)
+
+    {
+       $attributes = request()->validate([
+            'title' => 'required',
+            'phone' => 'required',
+            'description' => 'required',
+            'price' => 'required'
+        ]);
+
+        $ad->update($attributes);
+
+        if ($ad->chosen == 'yes')
+        {
+            $ad->chosen();
+        } else {
+            $ad->open();
+        }
+       
+        return redirect($ad->path());
     }
 
 }

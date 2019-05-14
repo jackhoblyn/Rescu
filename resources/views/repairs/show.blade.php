@@ -2,17 +2,22 @@
 
 @section('content')
 	<header class="flex items-center mb-4 py-4">
-		<div class="flex justify-between items-end w-full">
-			<p class="text-grey text-sm font-normal">
-				<a href="/repairs" class="text-grey text-sm font-normal no-underline">My Repairs</a> / {{ $repair ->title }}
-			</p>
-			
+		<div class="flex justify-between mt-2 items-end w-full">
+			<p class="text-muted font-light">
+                <a href="/home" class="text-muted no-underline hover:underline">Home</a> /
+                @if ($repair->complete == 'no')
+                	<a href="/repairs" class="text-muted no-underline hover:underline"> Active Repairs</a> /  {{ $repair->title }}
+                @else
+                	<a href="/finished" class="text-muted no-underline hover:underline"> Finished Repairs</a> /  {{ $repair->title }}
+            	@endif
+
+            </p>
 		</div>
 	</header>
 
 	<main>
 		<div class="lg:flex -mx-3">
-			<div class ="lg:w-1/2 px-3 mb-6" style="max-height: 700px">
+			<div class ="lg:w-1/2 px-3 mb-6" style="max-height: 800px">
 
 				<div class="card" style="height: 100%; position: relative; ">
 					<div>
@@ -31,7 +36,7 @@
 						
 						<div class="flex w-full pt-3" style="align-items: center; justify-content: center;">
 							<img class = "center pt-6 mt-6" sizes="100vw" src="/uploads/photos/{{ $repair->pic }}" alt="Card image" style="position: relative; object-fit: cover; object-position: center; min-height: 270px; max-width: 270px; border-radius:50%; float: right;">
-							<div class="progress-circle" data-progress="{{ $repair->progress }}" style="float: right; font-size: 3rem;"></div>
+							<div class="progress-circle" data-progress="{{ $repair->progress }}" style="float: right; font-size: 3rem; min-width: 15rem"></div>
 						</div>
 						<div class = "center mt-8 pt-6">
 							<a href="{{ $repair->full() }}" style="text-decoration: none">
@@ -39,6 +44,15 @@
 									<button type="submit" class="button center" style="min-width: 8rem; font-size: 0.9rem; ">View details</button>
 								</div>
 							</a>
+						</div>
+						<div class = "center mt-3 pt-3">
+							@if ($repair->complete == 'yes')
+								<div class="w-full" style="text-align: center">
+									<a href="{{ $repair->path() .'/review' }}">
+										<button type="submit" class="bg-green hover:bg-green-dark text-white font-bold py-2 px-4 rounded" style="min-width: 8rem; font-size: 0.9rem; ">Leave a Review</button>
+									</a>
+								</div>
+							@endif
 						</div>
 					</div>
 				</div>

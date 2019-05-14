@@ -22,13 +22,12 @@ class ResponseController extends Controller
             'vendor_id' => Auth('vendor')->user()->id
         ]);
 
-         $ad = Ad::find($ad->id);
-         $vendor = Vendor::find(Auth('vendor')->user()->id);
-
+        $ad = Ad::find($ad->id);
+        $vendor = Vendor::find(Auth('vendor')->user()->id);
 
         $ad->user->notify(new ResponsePosted($ad, $vendor));
 
-        return back();
+        return back()->with('flash', 'Your response was posted');
     }
 
 

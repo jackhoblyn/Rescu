@@ -1786,7 +1786,7 @@ __webpack_require__.r(__webpack_exports__);
     }
 
     window.events.$on('flash', function (message) {
-      return _this.flash(message);
+      _this.flash(message);
     });
   },
   methods: {
@@ -37549,7 +37549,7 @@ var render = function() {
         { name: "show", rawName: "v-show", value: _vm.show, expression: "show" }
       ],
       staticClass:
-        "bg-orange-lightest alert-flash border-l-4 border-orange text-orange-dark p-4",
+        "bg-green-lightest alert-flash border-l-4 border-green text-green-dark p-4",
       attrs: { role: "alert" }
     },
     [
@@ -49546,9 +49546,9 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -49558,6 +49558,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
  */
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+
 
 Vue.component('flash', __webpack_require__(/*! ./components/flash.vue */ "./resources/js/components/flash.vue")["default"]);
 /**
@@ -49623,7 +49624,7 @@ if (token) {
 
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-window.event = new Vue(); //
+window.events = new Vue(); //
 
 window.flash = function (message) {
   window.events.$emit('flash', message);

@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 Route::get('/map', function (gmaps_geocache $gmaps_geocache) {
-	$config['center'] = 'Carphone Warehouse';
+	$config['center'] = '53.3498, -6.2603';
 	$config['zoom'] = '12';
 	$config['map-height'] = '800px';
 	$config['map-width'] = '100%';
@@ -93,11 +93,25 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/profile', 'HomeController@profile')->name('profile');
 
+	Route::get('/profile/{user}/edit', 'HomeController@editProfile');
+
+	Route::post('/profile/{user}/editPhoto', 'HomeController@editPhoto');
+
+	Route::patch('/profile/{user}/update', 'HomeController@updateProfile');
+
 	Route::get('/repairs', 'RepairsController@index');
+
+	Route::get('/finished', 'RepairsController@finished');
 
 	Route::get('/repairs/{repair}', 'RepairsController@show');
 
 	Route::get('/repairs/{repair}/full', 'RepairsController@full');
+
+	Route::get('/repairs/{repair}/review', 'ReviewsController@create');
+
+	Route::post('/repairs/{repair}/review', 'ReviewsController@store');
+
+	
 
 });
 
@@ -122,6 +136,14 @@ Route::group(['middleware'=>'vendor'], function() {
 
 	Route::get('/vendor/home', 'VendorController@home');
 
+	Route::get('/vendor/profile', 'VendorController@profile');
+
+	Route::get('/vendor/profile/{vendor}/edit', 'VendorController@editProfile');
+
+	Route::post('/vendor/profile/{vendor}/editPhoto', 'VendorController@editPhoto');
+
+	Route::patch('/vendor/profile/{vendor}/update', 'VendorController@updateProfile');
+
 	Route::get('/vendor/map', 'VendorController@map');
 
 	Route::post('/vendor/map', 'VendorController@locationMake');
@@ -140,7 +162,9 @@ Route::group(['middleware'=>'vendor'], function() {
 
 	Route::get('/vendor/repairs/{repair}', 'RepairsController@list');
 
-	Route::Delete('/vendor/repairs/{repair}', 'RepairsController@destroy');
+	Route::post('/vendor/repairs/{repair}/finish', 'RepairsController@finish');
+
+	Route::post('/vendor/repairs/{repair}', 'RepairsController@destroy');
 
 	Route::get('/vendor/repairs/{repair}/fullAd', 'RepairsController@fullAd');
 

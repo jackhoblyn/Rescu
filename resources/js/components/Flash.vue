@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-orange-lightest alert-flash border-l-4 border-orange text-orange-dark p-4" role="alert" v-show="show">
+    <div class="bg-green-lightest alert-flash border-l-4 border-green text-green-dark p-4" role="alert" v-show="show">
       <p class="font-bold">Success</p>
       <p>{{ body }}</p>
     </div>
@@ -18,10 +18,11 @@
             if (this.message) {
                 this.flash(this.message);
             }
-            window.events.$on(
-                'flash', message => this.flash(message)
-            );
+            window.events.$on('flash', message => {
+                this.flash(message);
+            });
         },
+
         methods: {
             flash(message) {
                 this.body = message;

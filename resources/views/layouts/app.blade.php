@@ -12,7 +12,7 @@
     <title>Rescu</title>
 
     <!-- Scripts -->
-    <script  type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -25,6 +25,9 @@
     <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/demo.css') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <style>
         .checked {
@@ -135,7 +138,8 @@
         <div id="app">
             <main style="margin-left: 10%; margin-right: 10%">
                 @yield('content')
-                <flash message="Temporary"></flash>
+                <flash message="{{ session('flash') }}"></flash>
+                <!-- <flash message="yo dawg"></flash> -->
             </main>
         </div>
 

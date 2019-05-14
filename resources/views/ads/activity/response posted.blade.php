@@ -1,1 +1,0 @@
-Someone responded to the ad

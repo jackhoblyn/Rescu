@@ -4,12 +4,17 @@ use Illuminate\Http\Request;
 use App\Vendor;
 use App\gmaps_geocache;
 use Auth;
+use Image;
+
+
 class VendorController extends Controller
 {
     public function create()
     {
         return view('vendor.register');
     }
+
+
     public function registerVendor(Request $request)
     {
       $this->validate($request, [
@@ -88,6 +93,7 @@ class VendorController extends Controller
        $vendor->lat = $request->lat;
        $vendor->long = $request->lng;
 
+
        $vendor->save();
        return redirect('/map');
     }
@@ -97,6 +103,9 @@ class VendorController extends Controller
 
       $id = Auth('vendor')->user()->id;
       $vendor = Vendor::find($id);
+
+      $vendor->gcached = 'no';
+      $vendor->save();
 
         gmaps_geocache::updateOrCreate([
             'vendor_id' => $vendor->id],
@@ -111,6 +120,22 @@ class VendorController extends Controller
 
   public function map()
   {
+    $id = Auth('vendor')->user()->id;
+    $vendor = Vendor::find($id);
+
+    $cache = \DB::table('gmaps_geocache')
+         ->where('address', $vendor->name);
+    
+    $chached = $vendor->gcached;
+    $cLat = $cache->latitude;
+    $cLng = $cache->longtude;
+
+    $data = array([
+      'chached' => $chached,
+      'cLat' => $cLat,
+      'cLng' => $cLng
+    ]);
+
     return view('map');
   }
 
@@ -118,6 +143,47 @@ class VendorController extends Controller
   {
     return view('map3');
   }
+
+  public function profile()
+  {
+      return view('profiles.fixer');
+  }
+
+  public function editProfile()
+  {
+      return view('profiles.edit_vendor');
+  }
+
+  public function editPhoto(Request $request)
+    {
+       if($request->hasFile('avatar'))
+       {  
+          $avatar = $request->file('avatar');
+          $filename = time() . '.' . $avatar->getClientOriginalExtension();
+          Image::make($avatar)->resize(300,300)->save( public_path('/uploads/avatars/' . $filename));
+
+          $vendor = Auth('vendor')->user();
+          $vendor->avatar = $filename;
+          $vendor->save();
+       }
+
+       return redirect('/vendor/profile');
+    }
+
+    public function updateProfile()
+    {
+       $attributes = request()->validate([
+            'name' => 'required',
+            'city' => 'required',
+            'bio' => 'required'
+        ]);
+
+        $vendor = Auth('vendor')->user();
+  
+        $vendor->update($attributes);
+       
+        return redirect('/vendor/profile');
+    }
 
 
 }

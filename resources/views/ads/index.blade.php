@@ -2,9 +2,16 @@
 
 @section('content')
 	<header class="flex items-center mb-4 py-4">
-		<div class="flex justify-between items-end w-full">
-			<h2 class="text-grey text-sm font-normal">Your Ads</h2>
+		<div class="flex justify-between mt-2 items-end w-full">
+
+			<p class="text-muted font-light">
+                <a href="/home" class="text-muted no-underline hover:underline">Home</a>
+                / Your ads
+            </p>
 			<a href="/ads/create" class="button">Create New Ad</a>
+
+
+
 		</div>
 	</header>
 

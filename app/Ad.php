@@ -20,7 +20,7 @@ class Ad extends Model
         return "/ads/full/{$this->id}";
     }
 
-     public function edit()
+    public function edit()
     {
         return "/ads/edit/{$this->id}";
     }

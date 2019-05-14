@@ -11,7 +11,7 @@ class Vendor extends Authenticatable
 
     protected $guard = 'vendor';
 
-    protected $fillable = ['name', 'type', 'email', 'password'];
+    protected $fillable = ['name', 'type', 'email', 'city', 'bio', 'password', 'gcached'];
 
     protected $hidden = [
         'password', 'remember_token',
@@ -32,8 +32,23 @@ class Vendor extends Authenticatable
         return $this->hasMany(Repair::class);
     }
 
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
     public function gmaps_geocache()
     {
         return $this->hasOne(gmaps_geocache::class);
+    }
+
+    public function edit()
+    {
+        return "/vendor/profile/{$this->id}/update";
+    }
+
+    public function photo()
+    {
+        return "/vendor/profile/{$this->id}/editPhoto";
     }
 }

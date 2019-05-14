@@ -2,7 +2,7 @@
 
 @section('content')
 <div class = "flex items center" style="padding-left: 8rem; padding-right: 8rem; padding-top: 3%;">
-	<form method="POST" class="mx-auto bg-white shadow-lger rounded px-8 pt-6 pb-8 mb-4 ml-9" action="/ads" style="min-width: 80%">
+	<form method="POST" class="mx-auto bg-white shadow-lger rounded px-8 pt-6 pb-8 mb-4 ml-9" action="/ads" style="min-width: 50rem;">
 		@csrf
 		<div class="mb-4">
 			<h1 class="text-center text-red mb-6 pb-6 mt-5 pt-5" style="font-size: 3rem">Create an ad</h1>

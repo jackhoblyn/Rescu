@@ -1,1 +1,0 @@
-The ad was reopened

@@ -2,11 +2,11 @@
 
 @section('content')
 	<header class="flex items-center mb-4 py-4">
-		<div class="flex justify-between items-end w-full">
-			<p class="text-grey text-sm font-normal">
-				<a href="/ads" class="text-grey text-sm font-normal no-underline">My Ads</a> / {{ $ad ->title }}
-			</p>
-			
+		<div class="flex justify-between mt-2 items-end w-full">
+			<p class="text-muted font-light">
+                <a href="/home" class="text-muted no-underline hover:underline">Home</a> /
+                <a href="/ads" class="text-muted no-underline hover:underline"> Your ads </a> / {{ $ad ->title }}
+            </p>
 		</div>
 	</header>
 
@@ -46,12 +46,25 @@
 									@endif
 								</div>
 								<div class="flex w-full mt-3">
-									<span class="fa fa-star checked"></span>
-									<span class="fa fa-star checked"></span>
-									<span class="fa fa-star checked"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-								</div>
+									
+                            		@foreach(range(1,5) as $i)
+	                                	<span class="fa-stack" style="width:1em">
+		                                	<i class="far fa-star fa-stack-1x"></i>
+
+		                                	@if($response->vendor->rating >0)
+			                                    @if($response->vendor->rating >0.5)
+			                                        <i class="fas fa-star fa-stack-1x"></i>
+			                                    @else
+			                                        <i class="fas fa-star-half fa-stack-1x"></i>
+		                                    	@endif
+		                                	@endif
+		                                	@php $response->vendor->rating--; @endphp
+	                                	</span>
+                            		@endforeach
+
+                            		({{ $response->vendor->reviews->count() }})
+                        		</div>
+								
 								<div class="flex w-full pt-6">
 									<button type="submit" class="button">Choose Response</button>
 								</div>

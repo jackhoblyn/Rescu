@@ -45,8 +45,9 @@ if (token) {
  */
 
 // import Echo from 'laravel-echo'
-window.Vue=require('vue');
-window.event = new Vue(); //
+window.Vue = require('vue');
+
+window.events = new Vue(); //
 
 window.flash = function (message) {
 	window.events.$emit('flash', message);

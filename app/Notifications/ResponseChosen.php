@@ -11,20 +11,20 @@ class ResponseChosen extends Notification
 {
     use Queueable;
 
-    public $user;
+    public $repair;
     public $ad;
-    public $vendor;
+    public $user;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($user, $ad, $vendor)
+    public function __construct($repair, $ad, $user)
     {
-        $this->user = $user;
+        $this->repair = $repair;
         $this->ad = $ad;
-        $this->vendor = $vendor;
+        $this->user = $user;
     }
 
     /**
@@ -47,7 +47,9 @@ class ResponseChosen extends Notification
     public function toArray($notifiable)
     {
         return [
-            $this->
+            'repair'=>$this->repair,
+            'ad'=>$this->ad,
+            'user'=>$this->user   
         ];
     }
 }

@@ -68,6 +68,16 @@ class Repair extends Model
         return $this->hasMany(Update::class);
     }
 
+    public function finish()
+    {
+        $this->update(['complete' => 'yes']);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
     
 
 

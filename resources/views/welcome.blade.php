@@ -111,7 +111,7 @@
                         <!-- Authentication Links -->
                              <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                                 <div class="text-sm lg:flex-grow">
-                                    <a href="/login/vendor" style="font-size: 1.5rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
+                                    <a href="/vendor/home" style="font-size: 1.5rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
                                     Fixer
                                     </a>
                                     <a href="{{ route('login') }}" style=" font-size: 1.5rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-green mr-4 ml-6">

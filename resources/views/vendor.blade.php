@@ -40,7 +40,6 @@
             </div>
         </a>
 
-        @if((Auth('vendor')->user()->type=='shop'))
         <a href="/vendor/map">
             <div style="width: 33.222%; display: inline-block; white-space: normal; vertical-align: top";>
                 <div style="padding-left: 8px; padding-right: 8px;">
@@ -55,22 +54,6 @@
                 </div>
             </div>
         </a>
-        @else
-        <a href="/vendor/map2">
-            <div style="width: 33.222%; display: inline-block; white-space: normal; vertical-align: top";>
-                <div style="padding-left: 8px; padding-right: 8px;">
-                    <div style="position: relative;">
-                        <div style="background-size: 100% 100%;">
-                            <img role="presentation" sizes="100vw" src={{ asset('img/map.jpg') }} style=" position: relative; object-fit: cover; object-position: center; min-height: 330px; max-height: 330px; min-width: 100%">
-                        </div>
-                        <div style="position: absolute; top: 52%; left: 50%; transform: translate(-50%, -50%); font-size: 1.1rem; font-weight: bold" class="bg-white border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 px-4 py-4">
-                                Local Shops
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        @endif
         
         <a href="/vendor/repairs">
             <div style="width: 33.222%; display: inline-block; white-space: normal; vertical-align: top; float: right;">

@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Ad;
+use App\User;
 use App\Response;
 use App\Repair;
 use Image;
 use Auth;
+use App\Notifications\ResponseChosen;
 
 class AdsController extends Controller
 {
@@ -87,8 +89,8 @@ class AdsController extends Controller
 
 
         $ad = auth()->user()->ads()->create($attributes);
-        return redirect($ad->path())
-        ->with('flash', 'Your ad has been created');
+
+        return redirect($ad->path())->with('flash', 'Your ad has been created');
     }
 
      public function update(Ad $ad)
@@ -164,9 +166,12 @@ class AdsController extends Controller
             'pic' => $ad->photo
         ]);
 
-        $response->vendor->notify(new ResponseChosen($ad, $ad->user, $response->vendor));
+        $ad = Ad::find($ad->id);
+        $user = User::find($ad->user_id);
 
-        return redirect($repair->path());
+        $response->vendor->notify(new ResponseChosen($repair, $ad, $user));
+
+        return redirect($repair->path())->with('flash', 'Offer chosen, here is your repair homescreen');
 
     }
 
