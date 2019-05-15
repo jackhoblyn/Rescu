@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 Route::get('/map', function (gmaps_geocache $gmaps_geocache) {
-	$config['center'] = '53.3498, -6.2603';
+	$config['center'] = 'Lidl Repairs';
 	$config['zoom'] = '12';
 	$config['map-height'] = '800px';
 	$config['map-width'] = '100%';
@@ -33,7 +33,24 @@ Route::get('/map', function (gmaps_geocache $gmaps_geocache) {
 	foreach($gmaps_geocaches as $gmaps_geocache)
 	{
 		$marker['position'] = $gmaps_geocache->address;
-		$marker['infowindow_content'] = $gmaps_geocache->address;
+		$link = $gmaps_geocache->vendor_id;
+		$name = $gmaps_geocache->address;
+		$image = $gmaps_geocache->vendor->avatar;
+		$rating = $gmaps_geocache->vendor->rating;
+		$marker['infowindow_content'] = '<div id="content" style="width:280px; height: 150px; border-style: solid; border-color: green; text-align: center"> <a href="/view/' . $link . '" style="text-decoration: none"><h1 style="font-family: calibri; ">' . $name . '</h1> <div style="text-align: center;"> <div style="display: inline-block;"> <img src="/uploads/avatars/' . $image . '" style=" border-radius:50%; max-height: 100px; max-width: 100px;"> </div> </div></a></div>';
+
+
+
+		if($gmaps_geocache->vendor->type == 'shop')
+		{
+			$marker['icon'] = "/img/repair.png";
+		}
+		else
+		{
+			$marker['icon'] = "/img/man.png";
+		}
+
+		
 		GMaps::add_marker($marker);
 	}
 
@@ -99,6 +116,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::patch('/profile/{user}/update', 'HomeController@updateProfile');
 
+	Route::get('/view/{vendor}', 'HomeController@showVendor');
+
 	Route::get('/repairs', 'RepairsController@index');
 
 	Route::get('/finished', 'RepairsController@finished');
@@ -129,6 +148,10 @@ Route::get('/login/vendor', 'VendorController@loginVendor');
 Route::post('/register/vendor', 'VendorController@registerVendor')->name('register.vendor');
 
 Route::post('/login/vendor', 'VendorController@vendorAuth')->name('login.vendor');
+
+Route::get('/x', function () {
+    return view('test');
+});
 
 
 //vendor routes we want protected 

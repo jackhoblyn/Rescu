@@ -40,6 +40,8 @@
                          <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                             <div class="text-sm lg:flex-grow">
 
+                            <a href="/vendor/profile"><p> + $gmaps_geocache->address; + </p></a>
+
                             <a href="#" style="text-decoration:none; font-size: 1.1rem; font-weight: bold; position: relative;" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
                                 {{ Auth('vendor')->user()->name }}
                             </a>

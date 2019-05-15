@@ -71,12 +71,24 @@
 		    <!--The div element for the map -->
 		    <div id="map"></div>
 		    <script>
+		    	
+	    	
+	    	var array =  {!! json_encode($data) !!};
+	    	var aCached = array[0].cached;
+	    	var aLat = array[0].cLat;
+	    	var cLng = array[0].cLng;
+
+	    	console.log(aCached);
+    		console.log(array[0].cLat);
+    		console.log(array[0].cLng);
+	    	
 
 		    var map;
 		    var lat;
 		    var lng;
 		    var LatLng;
 		    var marker;
+
 
 	    	geoLocationInit();
 			
@@ -92,10 +104,19 @@
 
 	    	function success(position){
 	    		console.log(position);
-	    		lat = position.coords.latitude;
-	    		lng = position.coords.longitude;
+	    		
 
-	    		LatLng = new google.maps.LatLng(lat, lng);
+	    		if (aCached == 'yes') {
+				
+					LatLng = new google.maps.LatLng(array[0].cLat, array[0].cLng);
+					
+				} else {
+
+					lat = position.coords.latitude;
+	    			lng = position.coords.longitude;
+	    			LatLng = new google.maps.LatLng(lat, lng);
+				}
+
 	    		initMap(LatLng);
 	    	}
 

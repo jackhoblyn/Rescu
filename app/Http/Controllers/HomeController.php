@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\gmaps_geocache;
 use Auth;
+use App\Vendor;
 use Image;
 
 class HomeController extends Controller
@@ -24,6 +25,12 @@ class HomeController extends Controller
     public function profile()
     {
         return view('profiles.profile');
+    }
+
+    public function showVendor(Vendor $vendor)
+    {
+
+        return view('profiles.viewFixer', compact('vendor'));
     }
 
     public function editProfile()

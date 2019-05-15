@@ -104,7 +104,7 @@ class VendorController extends Controller
       $id = Auth('vendor')->user()->id;
       $vendor = Vendor::find($id);
 
-      $vendor->gcached = 'no';
+      $vendor->gcached = 'yes';
       $vendor->save();
 
         gmaps_geocache::updateOrCreate([
@@ -123,20 +123,34 @@ class VendorController extends Controller
     $id = Auth('vendor')->user()->id;
     $vendor = Vendor::find($id);
 
-    $cache = \DB::table('gmaps_geocache')
-         ->where('address', $vendor->name);
+    $cache = \DB::table('gmaps_geocache')->where('address', $vendor->name)->first();
     
     $chached = $vendor->gcached;
-    $cLat = $cache->latitude;
-    $cLng = $cache->longtude;
 
-    $data = array([
-      'chached' => $chached,
-      'cLat' => $cLat,
-      'cLng' => $cLng
-    ]);
 
-    return view('map');
+    if ($vendor->gcached == 'yes')
+    {
+      $cLat = $cache->latitude;
+      $cLng = $cache->longitude;
+
+      $data = array([
+        'cached' => $vendor->gcached,
+        'cLat' => $cLat,
+        'cLng' => $cLng
+      ]);
+    }
+
+    if ($vendor->gcached == 'no')
+    {
+
+      $data = array([
+        'cached' => 'no',
+        'cLat' => null,
+        'cLng' => null
+      ]);
+    }
+
+    return view('map', compact('data'));
   }
 
   public function viewShops()
