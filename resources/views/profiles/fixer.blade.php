@@ -27,13 +27,25 @@
                                             <div style="border-bottom-width: var(--border-rule-border-width, 4px); border-bottom-color: var(--color-divider, green); border-bottom-style: solid;">
                                             </div>
                                         </div>
-                                        <div style="margin-top: 24px;">
+                                        <div style="margin-top: 17px;">
                                             <div style="text-align: center">
                                                 <p style="font-size: 20px;"> {{ Auth('vendor')->user()->city }} </p>
                                             </div>
                                         </div>
+
+                                        <div style="margin-top: 17px;">
+                                            <div style="text-align: center">
+                                                <p style="font-size: 20px;"> {{ Auth('vendor')->user()->email }} </p>
+                                            </div>
+                                        </div>
+
+                                        <div style="margin-top: 17px;">
+                                            <div style="text-align: center">
+                                                <p style="font-size: 20px;"> {{ Auth('vendor')->user()->phone }} </p>
+                                            </div>
+                                        </div>
                                         
-                                        <div style="margin-top: 24px;">
+                                        <div style="margin-top: 17px;">
                                             <div style="text-align: center">
                                                 <p style="font-size: 20px;"> <b>Repairs: {{ Auth('vendor')->user()->repairs->count() }}</b> </p>
                                             </div>
@@ -84,6 +96,19 @@
                             <div style="margin: 0px !important; word-wrap: break-word !important; font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important; font-size: 16px !important; font-weight: 400 !important; line-height: 1.375em !important; color: #484848 !important;">
 
                                {{ Auth('vendor')->user()->bio }}
+                                
+                            </div>
+
+
+                            <div style="margin-top: 3rem; margin-bottom: 2rem;">
+                                <div style="border-bottom: 4px solid black !important; width: 8rem !important;">
+                                    
+                                </div>
+                            </div>
+
+                            <div style="margin: 0px !important; word-wrap: break-word !important; font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important; font-size: 16px !important; font-weight: 900 !important; line-height: 1.375em !important; color: #2061b7 !important;">
+
+                               {{ Auth('vendor')->user()->skill }}
                                 
                             </div>
 
@@ -152,25 +177,7 @@
         </div>
     </div>
 
-        
-       <!--  <div class="row justify-content-center">
-            <div class="col-md-11">
-                <div class="flex mt-2 w-full">
-                    <div style="margin-left: 6%">
-                    <div class = "py-6 pb-6"><img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:150px; height: 150px; float:left; border-radius:50%; margin-right: 25px;"></div>
-                        
-                            <form enctype="multipart/form-data" action="/home" method="POST">
-                                <label style="margin-top: .5rem; font-weight: 550;">Update Profile Picture</label>
-                                <input type="file" name="avatar" style="margin-top: .2rem">
-                                @csrf
-                                <input type="submit" class="button" style="margin-top: .5rem">
-                            </form>
-                    </div>
-                       
-                    
-                </div>
-            </div>
-        </div> -->
+       
 
         
 

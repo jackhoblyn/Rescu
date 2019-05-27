@@ -86,7 +86,7 @@
                             </div>
                         @else
                          <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-                            <div class="relative group">
+                            <div class="relative group mt-2">
                               <div class="relative group">
                                   <div class="flex items-center cursor-pointer text-sm text-blue border border-white border-b-0  group-hover:border-grey-light rounded-t-lg py-1 px-2">
                                     <i class="fa fa-bell" style="font-size: 1rem; margin-right:1rem"></i>

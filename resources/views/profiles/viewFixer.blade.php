@@ -23,17 +23,28 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div style="margin-top: 24px; margin-bottom: 24px;">
+                                        <div style="margin-top: 17px; margin-bottom: 24px;">
                                             <div style="border-bottom-width: var(--border-rule-border-width, 4px); border-bottom-color: var(--color-divider, green); border-bottom-style: solid;">
                                             </div>
                                         </div>
-                                        <div style="margin-top: 24px;">
+                                        <div style="margin-top: 17px;">
                                             <div style="text-align: center">
                                                 <p style="font-size: 20px;"> {{ $vendor->city }} </p>
                                             </div>
                                         </div>
+                                        <div style="margin-top: 17px;">
+                                            <div style="text-align: center">
+                                                <p style="font-size: 20px;"> {{ $vendor->email }} </p>
+                                            </div>
+                                        </div>
+
+                                        <div style="margin-top: 17px;">
+                                            <div style="text-align: center">
+                                                <p style="font-size: 20px;"> {{ $vendor->phone }} </p>
+                                            </div>
+                                        </div>
                                         
-                                        <div style="margin-top: 24px;">
+                                        <div style="margin-top: 17px;">
                                             <div style="text-align: center">
                                                 <p style="font-size: 20px;"> <b>Repairs: {{ $vendor->repairs->count() }}</b> </p>
                                             </div>
@@ -87,11 +98,24 @@
                                 
                             </div>
 
+                            <div style="margin-top: 3rem; margin-bottom: 2rem;">
+                                <div style="border-bottom: 4px solid black !important; width: 8rem !important;">
+                                    
+                                </div>
+                            </div>
+
+                             <div style="margin: 0px !important; word-wrap: break-word !important; font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important; font-size: 16px !important; font-weight: 400 !important; line-height: 1.375em !important; color: #2061b7 !important;">
+
+                               {{ $vendor->skill }}
+                                
+                            </div>
+
                             <div style="margin-top: 3rem; margin-bottom: 4rem;">
                                 <div style="border-bottom: 4px solid black !important; width: 8rem !important;">
                                     
                                 </div>
                             </div>
+
 
                             <div style="margin-top: 1rem; margin-bottom: 1rem;">
                                 <h2 style="font-size: 2rem;">{{ $vendor->reviews->count() }} Reviews</h2>

@@ -37,7 +37,10 @@ Route::get('/map', function (gmaps_geocache $gmaps_geocache) {
 		$name = $gmaps_geocache->address;
 		$image = $gmaps_geocache->vendor->avatar;
 		$rating = $gmaps_geocache->vendor->rating;
-		$marker['infowindow_content'] = '<div id="content" style="width:280px; height: 150px; border-style: solid; border-color: green; text-align: center"> <a href="/view/' . $link . '" style="text-decoration: none"><h1 style="font-family: calibri; ">' . $name . '</h1> <div style="text-align: center;"> <div style="display: inline-block;"> <img src="/uploads/avatars/' . $image . '" style=" border-radius:50%; max-height: 100px; max-width: 100px;"> </div> </div></a></div>';
+		$phone = $gmaps_geocache->vendor->phone;
+		$email = $gmaps_geocache->vendor->email;
+
+		$marker['infowindow_content'] = '<div id="content" style="width:280px; height: 185px; border-style: solid; border-color: green; text-align: center"> <a href="/view/' . $link . '" style="text-decoration: none"><h1 style="font-family: calibri; ">' . $name . '</h1> <div style="text-align: center;"> <div style="display: inline-block;"> <img src="/uploads/avatars/' . $image . '" style=" border-radius:50%; max-height: 100px; max-width: 100px;"> </div><div><h2>' . $email . ' </h2 style="margin-top=3px"></div> <div><h2 style="margin-top: 8px;">' . $phone . '</h2></div> </div></a></div>';
 
 
 

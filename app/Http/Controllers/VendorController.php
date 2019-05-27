@@ -184,19 +184,22 @@ class VendorController extends Controller
        return redirect('/vendor/profile');
     }
 
-    public function updateProfile()
+     public function updateProfile(Request $request)
     {
        $attributes = request()->validate([
             'name' => 'required',
             'city' => 'required',
-            'bio' => 'required'
+            'bio' => 'required',
+            'phone' => 'required',
+            'skill' => 'required'
         ]);
 
         $vendor = Auth('vendor')->user();
-  
+
         $vendor->update($attributes);
-       
+
         return redirect('/vendor/profile');
+        
     }
 
 

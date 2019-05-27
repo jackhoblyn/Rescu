@@ -44,16 +44,26 @@
 				<div class="mb-4-6">
 					<input type="text" class="mb-6 shadow appearance-none border border-blue-light rounded w-full py-2 px-3 text-grey-darker" name="city" placeholder="title" value="{{Auth('vendor')->user()->city}}" style="font-size: 1.2rem">
 				</div>
-			
-				<label class="block text-blue text-sm font-bold mb-2 mt-4" for="description" style="font-size: 1.2rem">Bio</label>
+
+				<label class="block text-blue text-sm font-bold mb-2 block" for="title" style="font-size: 1.2rem">Contact Number</label>
 				<div class="mb-4-6">
-					<textarea name="bio" class="textarea bg-transparent border border-blue-light rounded p-2 text-m w-full" style="min-height: 200px;">{{Auth('vendor')->user()->bio}}</textarea>
+					<input type="text" class="mb-6 shadow appearance-none border border-blue-light rounded w-full py-2 px-3 text-grey-darker" name="phone" placeholder="0869082234" value="{{Auth('vendor')->user()->phone}}" style="font-size: 1.2rem">
+				</div>
+			
+				<label class="block text-blue text-sm font-bold mb-2 mt-4" for="description" style="font-size: 1.2rem">Describe yourself</label>
+				<div class="mb-4-6">
+					<textarea name="bio" placeholder="I am a freelancer from Dublin who has been fixing my mates phones for years" class="textarea bg-transparent border border-blue-light rounded p-2 text-m w-full" style="min-height: 200px;">{{Auth('vendor')->user()->bio}}</textarea>
+				</div>
+
+				<label class="block text-blue text-sm font-bold mb-2 mt-4" for="description" style="font-size: 1.2rem">What are you good at fixing????</label>
+				<div class="mb-4-6">
+					<textarea name="skill" placeholder="I have a talent for fixing Samsung phones" class="textarea bg-transparent border border-blue-light rounded p-2 text-m w-full" style="min-height: 200px;">{{Auth('vendor')->user()->skill}}</textarea>
 				</div>
 
 				<div class="mb-4-6">
 					<button type="submit" class="mt-6 button is-link mr-2" style="float: left;">Update</button>
 					
-					<a href="/vendor/profile">
+					<a href="/">
 						<button type="submit" class="mt-6 button is-link mr-2" style="background-color: #fc6821;">Cancel </button>
 					</a>
 				

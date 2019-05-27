@@ -66,7 +66,7 @@
 </head>
 
 <body class="bg-grey-light mt-auto mr-auto">
-    <div id="app">
+    <div id="app" style="overflow: hidden; display: block;">
         <nav class="py-4 bg-white">
             <div style="margin-left: 10%; margin-right: 10%">
                 <div class = "flex justify-between items-center">
@@ -88,7 +88,7 @@
 
                             @else
                                  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-                                    <div class="relative group">
+                                    <div class="relative group mt-2">
                                       <div class="relative group">
                                           <div class="flex items-center cursor-pointer text-sm text-blue border border-white border-b-0  group-hover:border-grey-light rounded-t-lg py-1 px-2">
                                             <i class="fa fa-bell" style="font-size: 1rem; margin-right:1rem"></i>
@@ -97,7 +97,13 @@
                                           </div>
                                           <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-full" style="min-width: 500px; z-index: 1; padding-top: 30px">
                                             @foreach(Auth::user()->notifications as $notification)
+                                                <div>
+                                                    <div style="border-bottom: 2px solid black !important; width: 29rem !important;">
+                                                        
+                                                    </div>
+                                                </div>
                                                 @include ('notifications.' .snake_case(class_basename($notification->type)))
+
                                             @endforeach
                                            
                                           </div>

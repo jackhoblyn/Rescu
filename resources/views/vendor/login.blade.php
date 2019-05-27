@@ -3,11 +3,11 @@
 @section('content')
 <div class="flex items-center" style="padding-left: 10rem;
     padding-right: 10rem;">
-    <div class = "container mx-auto" style="padding-right: 7rem; padding-left: 7rem; padding-top: 3rem; margin-top: 3rem;">
+    <div class = "container mx-auto" style="padding-top: 3rem; margin-top: 3rem; max-width: 34rem; min-width: 34rem;">
     <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 ml-9" method="POST" action="{{ route('login.vendor') }}" aria-label="{{ __('Login') }}">
          @csrf
         <div class="mb-4">
-          <h1 class="text-center text-2xl text-green-dark mb-6 mt-6">Vendor Login</h1>
+           <h1 class="text-center text-2xl text-green-dark mb-6">Vendor Login</h1>
 
           <label for="email" class="block text-grey-darker text-sm font-bold mb-2 mt-6 ">{{ __('E-Mail Address') }}</label>
 

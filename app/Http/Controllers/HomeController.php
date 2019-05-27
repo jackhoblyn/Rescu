@@ -95,7 +95,6 @@ class HomeController extends Controller
     }
 
     public function update(Ad $ad)
-
     {
        $attributes = request()->validate([
             'title' => 'required',
