@@ -15,10 +15,10 @@
                                             <div style="box-sizing: border-box;">
                                                 <div style="display: inline-block;">
                                                     
-                                                        <div class = "textWithBlurredBg" style="position: relative; width: 200px; height: 200px; display: block">
+                                                        
                                                             <img src="/uploads/avatars/{{ $vendor->avatar }}" style=" border-radius:50%;">
                                                            
-                                                        </div>
+                                                        
                                                     
                                                 </div>
                                             </div>
@@ -60,8 +60,15 @@
                 </div>
                 <div style="width: 66.66%; float: left; margin-bottom: 5rem;">
                     <div style="margin-left: 110px;">
-                        <div style="box-sizing: border-box; margin-bottom: 15px;">
-                            <h3 class="mt-2" style="font-weight:430; font-size: 2.2rem; margin-top: .6rem">{{ $vendor->name }} </h3>
+                        <div style="width: 100%; display: flex">
+                            <div style="box-sizing: border-box; margin-bottom: 15px;">
+                                <h3 class="mt-2" style="font-weight:430; font-size: 2.2rem; margin-top: .6rem; float: left">{{ $vendor->name }} </h3>
+                                <a href="/messages/message/{{ $vendor->id }}">
+                                <h3 class="mt-2" style="font-weight:430; font-size: 4rem; margin-top: .6rem; padding-left: 20rem; float: right"><i class="fas fa-envelope"></i> </h3></a>
+                            </div>
+                            
+                                
+                           
                         </div>
                         <div>
                             <p style="font-size: 1.3rem; color: grey"> Joined in {{ $vendor->created_at->year }}</p>

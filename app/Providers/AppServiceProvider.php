@@ -13,10 +13,6 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
-        Ad::observe(AdObserver::class);
-    }
 
     /**
      * Register any application services.

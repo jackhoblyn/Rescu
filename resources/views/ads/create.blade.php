@@ -22,12 +22,22 @@
 
 		<label class="block text-blue text-sm font-bold mb-2 mt-3" for="phone" style="font-size: 1.2rem">Device</label>
 		<div class="mb-4-6">
-			<input type="text" class="mb-6 shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" name="phone" placeholder="Please detail the exact deviceyou would like to list">
+			<input type="text" class="mb-6 shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" name="phone" placeholder="Please detail the exact device you would like to list">
 		</div>
 
-		<label class="block text-blue text-sm font-bold mb-2 mt-3" for="price" style="font-size: 1.2rem">Price</label>
+		<label class="block text-blue text-sm font-bold mb-2 mt-3" for="brand" style="font-size: 1.2rem">Device Brand</label>
 		<div class="mb-4-6">
-			<input type="number" class="mb-6 shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" name="price" placeholder="Price in €">
+			<input type="text" class="mb-6 shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" name="brand" placeholder="Apple, Samsung, Huaweii etc">
+		</div>
+
+		<label class="block text-blue text-sm font-bold mb-2 mt-3" for="brand" style="font-size: 1.2rem">How old is the device?</label>
+		<div class="mb-4-6">
+			<input type="number" class="mb-6 shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" name="year" placeholder="3 years old">
+		</div>
+
+		<label class="block text-blue text-sm font-bold mb-2 mt-3" for="price" style="font-size: 1.2rem">Ideal Price</label>
+		<div class="mb-4-6">
+			<input type="number" class="mb-6 shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" name="price" placeholder="Your ideal price in €">
 		</div>
 
 		<div class="mb-4-6">

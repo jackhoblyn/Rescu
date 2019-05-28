@@ -5,10 +5,12 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Cmgmyr\Messenger\Traits\Messagable;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use Messagable;
 
     /**
      * The attributes that are mass assignable.
@@ -41,6 +43,21 @@ class User extends Authenticatable
     public function reviews()
     {
         return $this->hasMany(Review::class);
+    }
+
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
+
+    public function convos()
+    {
+        return $this->hasMany(Convo::class);
+    }
+
+    public function msgs()
+    {
+        return $this->hasMany(Msg::class);
     }
 
     public function edit()

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Ad;
 use App\User;
+use App\Vendor;
 use App\Response;
 use App\Repair;
 use Image;
@@ -15,40 +16,39 @@ use App\Notifications\ResponseChosen;
 class AdsController extends Controller
 {
     public function index()
-
     {
     	// $ads = Ad::all(); //Showall projects
         $ads = auth()->user()->ads()->orderBy('updated_at', 'desc')->get(); //show ads by a certain user,
     	return view('ads.index', compact('ads'));
     }
 
-        public function all()
-
+    public function all()
     {
         $ads = Ad::orderBy('updated_at','desc')->get(); //Showall projects
         return view('ads.showall', compact('ads'));
     }
 
-     public function show(Ad $ad)
-
+    public function show(Ad $ad)
     {
-       
-        if(auth()->user()->isNot($ad->user)) {
-            abort(403);
-        }
+        $search = $ad->brand;
+        $city = $ad->user->city;
 
-         return view('ads.show', compact('ad'));
+        //Find the best three fixers in your area who specialize in your device
+        $vendors = Vendor::where('city', 'LIKE', "%$city%")
+                    ->where('skill', 'LIKE', "%$search%")
+                    ->orderBy('rating', 'desc')
+                    ->paginate(3);
+        
+        return view('ads.show', compact('ad', 'vendors'));
     }
 
     public function list(Ad $ad)
-
     {
          return view('ads.list', compact('ad'));
 
     }
 
-     public function full(Ad $ad)
-
+    public function full(Ad $ad)
     {
          return view('ads.full', compact('ad'));
 
@@ -83,10 +83,10 @@ class AdsController extends Controller
     	$attributes = request()->validate([
             'title' => 'required',
             'phone' => 'required',
+            'brand' => 'required',
             'description' => 'required',
             'price' => 'required'
         ]);
-
 
         $ad = auth()->user()->ads()->create($attributes);
 
@@ -115,9 +115,6 @@ class AdsController extends Controller
         return redirect($ad->path());
     }
 
-    
-
-
     public function create() 
     {
         return view('ads.create');
@@ -126,7 +123,7 @@ class AdsController extends Controller
     public function respond(Ad $ad)
 
     {
-         return view('ads.respond');
+        return view('ads.respond');
 
     }
 

@@ -66,26 +66,78 @@
                         		</div>
 								
 								<div class="flex w-full pt-6">
-									<button type="submit" class="button">Choose Response</button>
+									<button type="submit" class="button" style="background-color: red">Choose Response</button>
 								</div>
 							</form>
 						</div>
 					@empty
 						<div class="card mb-3"> Nothing yet! </div>
 					@endforelse
-				</div>
+				
+					@if($vendors->count() > 0)
+						<div style="margin-top: 3rem; margin-bottom: 2rem;">
+		                    <div style="border-bottom: 4px solid black !important; width: 8rem !important;">
+		                        
+		                    </div>
+		                </div>
+
+                		<h2 class="text-lg text-grey font-normal mb-3">Suggestions in your area</h2>
+            		@endif
+
+                
+	                @forelse ($vendors as $vendor)
+						<div class="card mb-5" style="height:70%; position: relative;">
+								<p class="font-normal text-m py-4 -ml-5 border-l-4 border-red pl-4"> 
+								<b>{{ $vendor->name }} </b></p>
+								<p>{{ $vendor->city }}</p>
+								<p class="pt-3" style="color: green">{{ $vendor->type }}</p>
+								<p class="font-normal pt-3 text-sm" style="color:blue"> 
+								<b>Specializes in: {{ $vendor->skill }} </b></p>
+								<div class="flex w-full mt-3">
+									
+                            		@foreach(range(1,5) as $i)
+	                                	<span class="fa-stack" style="width:1em">
+		                                	<i class="far fa-star fa-stack-1x"></i>
+
+		                                	@if($vendor->rating >0)
+			                                    @if($vendor->rating >0.5)
+			                                        <i class="fas fa-star fa-stack-1x"></i>
+			                                    @else
+			                                        <i class="fas fa-star-half fa-stack-1x"></i>
+		                                    	@endif
+		                                	@endif
+		                                	@php $vendor->rating--; @endphp
+	                                	</span>
+                            		@endforeach
+
+                            		({{ $vendor->reviews->count() }})
+                        		</div>
+                        		<div class="flex w-full pt-6">
+									<a href="{{ $vendor->path() }}"><button class="button">View Profile</button></a>
+									<a href="{{ $vendor->message() }}"><button class="button ml-3" style="background-color: orange">Message</button></a>
+								</div>
+						</div>
+								
+					@empty
+							
+					@endforelse
+					</div>
+				
+            	
+
+
 			</div>
 			<div class="lg:w-1/3 px-3">
 				<div class="card" style="position: relative; ">
 					<div>
-						<h3 class="font-normal text-xl mb-3 py-4 -ml-5 border-l-4 border-blue-light pl-4" style = "float: left">
+						<h3 class="font-normal text-xl mb-3 py-4 -ml-5 border-l-4 border-blue-light pl-4" style = "float: left; max-width: 15rem;">
 							<div class="text-black no-underline" >{{ $ad->title }}</div>
 						</h3>
 
-						<h1 style= "color: green; text-align: right; font-size: 3rem;"> €{{ $ad->price }} </h1></br>
+						<h1 style= "color: green; text-align: right; font-size: 3rem; padding-top: 1rem;"> €{{ $ad->price }} </h1></br>
 						
 
-						<div class="text-grey pb-4">{{ str_limit($ad->description, 60) }}</div>
+						<div class="text-grey pb-4" style="margin-top: 2rem">{{ str_limit($ad->description, 60) }}</div>
 						<a href="{{ $ad->full() }}">
 							<div class="textWithBlurredBg flex w-full" style="align-items: center; justify-content: center;">
 								<img class = "center mt-6" sizes="100vw" src="/uploads/photos/{{ $ad->photo }}" alt="Card image" style="position: relative; object-fit: cover; object-position: center; min-height: 300px; max-width: 320px;">

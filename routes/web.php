@@ -133,7 +133,19 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::post('/repairs/{repair}/review', 'ReviewsController@store');
 
-	
+	Route::get('/messages', ['as' => 'messages', 'uses' => 'ConvoController@index']);
+
+	Route::get('/messages/create', ['as' => 'messages.create', 'uses' => 'MsgsController@create']);
+
+	Route::get('/messages/message/{vendor}', ['as' => 'messages.send', 'uses' => 'MsgsController@send']);
+
+    Route::post('/messages/message/{vendor}/send', ['as' => 'messages.store', 'uses' => 'MsgsController@store']);
+
+    Route::post('/messages/{convo}/reply', ['as' => 'messages.reply', 'uses' => 'MsgsController@reply']);
+
+    Route::get('/messages/{convo}', ['as' => 'messages.show', 'uses' => 'ConvoController@show']);
+    
+    Route::put('/messages/{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
 
 });
 
@@ -195,6 +207,16 @@ Route::group(['middleware'=>'vendor'], function() {
 	Route::get('/vendor/repairs/{repair}/fullAd', 'RepairsController@fullAd');
 
 	Route::post('/vendor/repairs/{repair}/updates', 'UpdatesController@store');
+
+	Route::get('/vendor/messages', ['as' => 'messages.all', 'uses' => 'ConvoController@all']);
+
+	Route::get('/vendor/messages/{convo}', ['as' => 'messages.list', 'uses' => 'ConvoController@list']);
+
+	Route::post('/vendor/messages/{convo}/reply', ['as' => 'messages.vsend', 'uses' => 'MsgsController@vreply']);
+
+	Route::put('/vendor/messages/{id}', ['as' => 'messages.vupdate', 'uses' => 'MessagesController@vupdate']);
+
+
 
 
 

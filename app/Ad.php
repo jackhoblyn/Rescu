@@ -3,12 +3,28 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Ad extends Model
 {
-    use RecordsActivity;
+    use Searchable;
+    public $asYouType = true;
 
     protected $guarded = [];
+
+     /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        // Customize array...
+
+        return $array;
+    }
 
     public function path()
     {
