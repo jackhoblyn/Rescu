@@ -30,6 +30,8 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+    @yield('extra css')
+
     <style>
         .checked {
             color: orange;
@@ -92,12 +94,42 @@
                                     <div class="relative group mt-2">
                                       <div class="relative group">
                                           <div class="flex items-center cursor-pointer text-sm text-blue border border-white border-b-0  group-hover:border-grey-light rounded-t-lg py-1 px-2">
+                                            <i class="fas fa-envelope" style="font-size: 1rem; margin-right:1rem"></i>
+                                            <span class="badge">{{ count(Auth::user()->messages) }}</span>
+                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                          </div>
+                                          <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-full" style="min-width: 500px; z-index: 1; padding-top: 30px">
+                                            @foreach(Auth::user()->messages as $message)
+                                                <div>
+                                                    <div style="border-bottom: 2px solid black !important; width: 29rem !important;">
+                                                        <a href="/convos/{{ $message->convo_id }}">
+                                                            {{$message->body}}
+                                                        </a>
+                                                        
+                                                    </div>
+                                                </div>
+                                                
+
+                                            @endforeach
+                                            @if( Auth::user()->unreadNotifications->count() > 0 )
+                                                <div style="padding-left: 24rem;">
+                                                    <form method="GET" action ='/notifications'>
+                                                        <button type="submit" class="button" style="background-color: #6cb2eb">Clear</button>
+                                                    </form>
+                                                </div>
+                                            @endif                                      
+                                          </div>     
+                                        </div>
+                                    </div>
+                                    <div class="relative group mt-2">
+                                      <div class="relative group">
+                                          <div class="flex items-center cursor-pointer text-sm text-blue border border-white border-b-0  group-hover:border-grey-light rounded-t-lg py-1 px-2">
                                             <i class="fa fa-bell" style="font-size: 1rem; margin-right:1rem"></i>
                                             <span class="badge">{{ count(Auth::user()->unreadNotifications) }}</span>
                                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                                           </div>
                                           <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-full" style="min-width: 500px; z-index: 1; padding-top: 30px">
-                                            @foreach(Auth::user()->notifications as $notification)
+                                            @foreach(Auth::user()->unreadNotifications as $notification)
                                                 <div>
                                                     <div style="border-bottom: 2px solid black !important; width: 29rem !important;">
                                                         
@@ -106,11 +138,15 @@
                                                 @include ('notifications.' .snake_case(class_basename($notification->type)))
 
                                             @endforeach
-                                           
-                                          </div>
-                                                
+                                            @if( Auth::user()->unreadNotifications->count() > 0 )
+                                                <div style="padding-left: 24rem;">
+                                                    <form method="GET" action ='/notifications'>
+                                                        <button type="submit" class="button" style="background-color: #6cb2eb">Clear</button>
+                                                    </form>
+                                                </div>
+                                            @endif                                      
+                                          </div>     
                                         </div>
-
                                     </div>
                                     <div class="text-sm lg:flex-grow">
 

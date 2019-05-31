@@ -66,30 +66,18 @@ class Ad extends Model
         return $this->hasMany(Response::class);
     }
 
-    // public function recordActivity($description)
-    // {
-
-    // $this->activity()->create(compact('description'));
-
-    // }
-
-    // public function activity()
-    // {
-    //     return $this->hasMany(Activity::class)->latest();;
-    // }
+    
 
     public function chosen()
     {
         $this->update(['chosen' => 'yes']);
 
-        $this->recordActivity('response picked');
     }
 
     public function open()
     {
         $this->update(['chosen' => 'no']);
         
-        $this->recordActivity('ad reopened');
     }
 
 

@@ -60,6 +60,11 @@ class User extends Authenticatable
         return $this->hasMany(Msg::class);
     }
 
+    public function messages()
+    {
+        return $this->msgs()->where('read','=', 'no');
+    }
+
     public function edit()
     {
         return "/profile/{$this->id}/update";

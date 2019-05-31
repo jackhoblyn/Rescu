@@ -25,14 +25,22 @@ class VendorController extends Controller
 
      $email = $request->email;
      $password = $request->password;
-    
-    
-     Vendor::create([
+
+
+    if($vendors = \DB::table('vendors')->where('email', $email)->exists())
+    {
+      return redirect()->back()->with('warning', 'Invalid Email or Password');
+    }
+    else
+    {
+      Vendor::create([
           'name'=>$request->name,
           'email'=>$request->email,
           'password'=>bcrypt($request->password),
           'type'=> $request->type
     ]);
+    }
+    
       // return redirect()->intended('/vendor/home');
      if(Auth::guard('vendor')->attempt(['email'=> $email, 'password'=> $password]))
      {
@@ -48,6 +56,8 @@ class VendorController extends Controller
     {
         return view('vendor.login');
     }
+
+    
     public function vendorAuth(Request $request)
    {
    	    $this->validate($request, [
@@ -83,6 +93,17 @@ class VendorController extends Controller
 
     return redirect('/');
   }
+
+  public function clearNotifications(Vendor $vendor)
+    { 
+        $vendor = Auth('vendor')->user();
+
+        foreach ($vendor->unreadNotifications as $notification) {
+            $notification->markAsRead();
+        }
+
+        return redirect('/vendor/home');
+    }
 
     public function location(Request $request, Vendor $vendor)
     {

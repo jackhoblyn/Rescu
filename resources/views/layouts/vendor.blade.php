@@ -94,9 +94,21 @@
                                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                                   </div>
                                   <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-full" style="min-width: 500px; z-index: 1; padding-top: 30px">
-                                    @foreach(Auth('vendor')->user()->notifications as $notification)
+                                    @foreach(Auth('vendor')->user()->unreadNotifications as $notification)
+                                    <div>
+                                        <div style="border-bottom: 2px solid black !important; width: 29rem !important;">
+                                            
+                                        </div>
+                                    </div>
                                         @include ('notifications.' .snake_case(class_basename($notification->type)))
                                     @endforeach
+                                    @if( Auth('vendor')->user()->unreadNotifications->count() > 0 )
+                                        <div style="padding-left: 24rem;">
+                                            <form method="GET" action ='/vendor/notifications'>
+                                                <button type="submit" class="button" style="background-color: #6cb2eb">Clear</button>
+                                            </form>
+                                        </div>
+                                    @endif
                                    
                                   </div>
                                         

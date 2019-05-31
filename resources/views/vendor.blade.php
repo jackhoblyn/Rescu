@@ -32,7 +32,7 @@
                                 <img role="presentation" sizes="100vw" src={{ asset('img/vendor2.jpeg') }} style=" position: relative; object-fit: cover; object-position: center; min-height: 330px; max-height: 330px;">
                             </div>
                               <div style="position: absolute; top: 52%; left: 50%; transform: translate(-50%, -50%); font-size: 1.1rem; font-weight: bold" class="bg-white border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 px-4 py-4">
-                                View Yours Ads
+                                Messages
                              </div>
                         </div>
                     </div>

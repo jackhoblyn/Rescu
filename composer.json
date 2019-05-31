@@ -17,6 +17,7 @@
         "laravel/scout": "^7.1",
         "laravel/tinker": "^1.0",
         "pusher/pusher-php-server": "^3.4",
+        "stripe/stripe-php": "^6.37",
         "teamtnt/laravel-scout-tntsearch-driver": "^7.0"
     },
     "require-dev": {

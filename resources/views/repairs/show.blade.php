@@ -17,7 +17,7 @@
 
 	<main>
 		<div class="lg:flex -mx-3">
-			<div class ="lg:w-1/2 px-3 mb-6" style="max-height: 800px">
+			<div class ="lg:w-1/2 px-3 mb-6" style="max-height: 730px">
 
 				<div class="card" style="height: 100%; position: relative; ">
 					<div>
@@ -50,6 +50,15 @@
 								<div class="w-full" style="text-align: center">
 									<a href="{{ $repair->path() .'/review' }}">
 										<button type="submit" class="bg-green hover:bg-green-dark text-white font-bold py-2 px-4 rounded" style="min-width: 8rem; font-size: 0.9rem; ">Leave a Review</button>
+									</a>
+								</div>
+							@endif
+						</div>
+						<div class = "center mt-3 pt-3">
+							@if($repair->progress == 100)
+								<div class="w-full" style="text-align: center">
+									<a href="{{ $repair->path() .'/pay' }}">
+										<button type="submit" class="bg-green hover:bg-green-dark text-white font-bold py-2 px-4 rounded" style="min-width: 8rem; font-size: 0.9rem; ">Proceed to Payment</button>
 									</a>
 								</div>
 							@endif

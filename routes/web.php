@@ -105,6 +105,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::post('/ads', 'AdsController@store');
 
+	Route::get('/notifications', 'HomeController@clearNotifications');
+
+	Route::get('/messageCount', 'HomeController@msgsCount');
+
 	Route::post('/ads/{ad}/choose/{response}', 'AdsController@choose');
 	
 	Route::get('/home', 'HomeController@index')->name('home');
@@ -126,6 +130,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/finished', 'RepairsController@finished');
 
 	Route::get('/repairs/{repair}', 'RepairsController@show');
+
+	Route::get('/stripe', 'StripeController@stripe');
+	
+	Route::post('/checkout', 'StripeController@store')->name('checkout,store'); 
 
 	Route::get('/repairs/{repair}/full', 'RepairsController@full');
 
@@ -181,6 +189,8 @@ Route::group(['middleware'=>'vendor'], function() {
 	Route::post('/vendor/profile/{vendor}/editPhoto', 'VendorController@editPhoto');
 
 	Route::patch('/vendor/profile/{vendor}/update', 'VendorController@updateProfile');
+
+	Route::get('/vendor/notifications', 'VendorController@clearNotifications');
 
 	Route::get('/vendor/map', 'VendorController@map');
 

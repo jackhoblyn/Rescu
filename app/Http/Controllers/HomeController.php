@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\gmaps_geocache;
 use Auth;
 use App\Vendor;
+use App\User;
 use Image;
 
 class HomeController extends Controller
@@ -20,6 +21,27 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function clearNotifications(User $user)
+    { 
+        $user = Auth::user();
+
+        foreach ($user->unreadNotifications as $notification) {
+            $notification->markAsRead();
+        }
+
+        return redirect('/home');
+    }
+
+    public function msgsCount(User $user)
+    { 
+        $user = Auth::user();
+
+        $messages = $user->messages();
+
+        dd($messages);
+        
     }
 
     public function profile()

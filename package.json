@@ -24,12 +24,14 @@
         "sass-loader": "^7.1.0",
         "tailwindcss": "^0.7.4",
         "vue": "^2.5.17",
-        "vue-template-compiler": "^2.6.3"
+        "vue-template-compiler": "^2.6.3",
+        "cartalyst/stripe-laravel": "9.0.*"
     },
     "dependencies": {
         "laravel-echo": "^1.5.3",
         "pusher-js": "^4.4.0",
         "vue2-google-maps": "^0.10.6",
-        "vuetify": "^1.5.6"
+        "vuetify": "^1.5.6",
+        "cartalyst/stripe-laravel": "9.0.*"
     }
 }

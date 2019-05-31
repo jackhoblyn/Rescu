@@ -29,11 +29,19 @@
 
 						<div class="text-grey">{{ str_limit($repair->description, 150) }}</div>
 						
+						@if($repair->progress == 100 and $repair->payment=='no')
+							<div class="pt-4 text-red" style="font-size: 1.5rem"><b>Payment Status: Awaiting Payment</b></div>
+						@elseif($repair->progress == 100 and $repair->payment=='yes')
+							<div class="pt-4 text-green" style="font-size: 1.5rem"><b>Payment Status: Accepted!</b></div>
+						@endif
+						
+
+						
 						<div class="flex w-full pt-3" style="align-items: center; justify-content: center;">
 							<img class = "center pt-6 mt-6" sizes="100vw" src="/uploads/photos/{{ $repair->pic }}" alt="Card image" style="position: relative; object-fit: cover; object-position: center; min-height: 270px; max-width: 270px; border-radius:50%; float: right;">
 							<div class="progress-circle" data-progress="{{ $repair->progress }}" style="float: right; font-size: 3rem; min-width: 15rem"></div>
 						</div>
-						<div style="float: right; padding-right: 5.5rem; padding-top: 1rem">
+						<div style="float: right; padding-right: 7rem; padding-top: 1rem">
 							<p style="color: green">Repair Progress</p>
 						</div>
 						<div class = "center mt-8 pt-6">

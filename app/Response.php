@@ -12,25 +12,6 @@ class Response extends Model
 
     protected $touches = ['ad'];
 
-    protected static function boot() 
-
-    {
-        parent::boot();
-
-        static::created(function ($response) {
-
-            $response->ad->recordActivity('response posted');
-
-        });
-
-        static::updated(function ($response) {
-
-            $response->ad->recordActivity('response picked');
-            $response->ad->recordActivity('repair strated');
-        
-         });
-    }
-
     public function ad()
     {
     	return $this->belongsTo(Ad::class);
