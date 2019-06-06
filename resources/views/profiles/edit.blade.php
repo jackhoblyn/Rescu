@@ -33,8 +33,6 @@
 			<form method="POST" action="{{Auth::user()->edit()}}">
 				@csrf
 				@method('PATCH')
-
-	
         
 			<div class="mb-4">
 
@@ -61,7 +59,7 @@
 					</a>
 				
 				</div>
-		</div>
+			</div>
 	</form>
 
 @endsection

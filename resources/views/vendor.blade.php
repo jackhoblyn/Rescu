@@ -16,7 +16,7 @@
         <a href="/vendor/ads">
             <img class = "mt-1" role="presentation" sizes="100vw" src={{ asset('img/vendor1.jpeg') }} style="width: 100%; height: 50%; position: absolute; object-fit: cover; object-position: center; min-height: 450px; min-width: 900px;">
             <div style="position: absolute; top: 52%; left: 50%; transform: translate(-50%, -50%); font-size: 1.1rem; font-weight: bold" class="border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 px-4 py-4">
-                    View ads
+                    View local ads
             </div>
           
         </a>

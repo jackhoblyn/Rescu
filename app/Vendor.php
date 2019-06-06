@@ -50,9 +50,19 @@ class Vendor extends Authenticatable
         return "/messages/message/{$this->id}";
     }
 
-    public function convos()
+   public function convos()
     {
         return $this->hasMany(Convo::class);
+    }
+
+    public function msgs()
+    {
+        return $this->hasMany(Msg::class);
+    }
+
+    public function messages()
+    {
+        return $this->msgs()->where('read','=', 'no')->where('sender', '=', 'user');
     }
 
      public function responses()

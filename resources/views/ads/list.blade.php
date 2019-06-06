@@ -4,7 +4,7 @@
 	<header class="flex items-center mb-4 py-4">
 		<div class="flex justify-between items-end w-full">
 			<p class="text-grey text-sm font-normal">
-				<a href="/vendor/ads" class="text-grey text-sm font-normal no-underline">Ads</a> / {{ $ad ->title }}
+				<a href="/vendor/ads" class="text-grey text-sm font-normal no-underline">Local Ads</a> / {{ $ad ->title }}
 			</p>
 			
 		</div>
@@ -15,25 +15,25 @@
 		<div class="card" style="height: 50%; position: relative; ">
 			<div>
 
-				<h3 class="font-normal text-xl mb-3 py-3 -ml-5 border-l-4 border-blue-light pl-7" style = "font-size: 2em; float: left">
-					<div class="text-black no-underline pt-3 ml-8" >{{ $ad->title }}</div>
+				<h3 class="font-normal text-xl mb-3 py-3 -ml-5 border-l-4 border-blue-light pl-7" style = "font-size: 2.4em; float: left">
+					<div class="text-black no-underline pt-3 ml-8" ><b>{{ $ad->title }}</b></div>
 				</h3>
 
 				<h1 class = "mt-3 pt-5 pr-5" style= "color: green; text-align: right; font-size: 5rem;"> €{{ $ad->price }} </h1></br>
 			</div>
 			<div class="text-grey pt-6 pl-6">
-				<h2 class = "pt-1" style = "font-size: 1.2rem;">{{ ($ad->phone) }}</h2>
+				<h2 class = "pt-1" style = "font-size: 1.7rem;">{{ ($ad->phone) }}</h2>
 			</div>
 			<div class="text-blue pt-6 pl-6">
-				<h2 class = "pt-1" style = "font-size: 1.2rem;">{{ ($ad->user->name) }}</h2>
+				<h2 class = "pt-1" style = "font-size: 1.7rem;">{{ ($ad->user->name) }}</h2>
 			</div>
 
 		<div class="text-black pt-9 pl-6 mt-6" style="width: 50%; float: left; margin-top: 4rem">
-			<h2 style = "font-size: 0.9rem;">{{ ($ad->description) }}</h2>
+			<h2 style = "font-size: 1.6rem; padding-top: 9rem">{{ ($ad->description) }}</h2>
 		</div>
 
 		<div class="mt-8 pt-7" style="vertical-align: top; display: inline-block;">
-				<img class = "mt-6" src="/uploads/photos/{{ $ad->photo }}" alt="Card image" style="max-height: 370px; min-height: 370px; padding-top: 1%; margin-left:26%; border-radius:50%;">
+				<img class = "mt-6" src="/uploads/photos/{{ $ad->photo }}" alt="Card image" style="max-height: 385px; min-height: 440px; padding-top: 1%; margin-left:32%; border-radius:50%;">
 			</div>
 
 

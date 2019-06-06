@@ -13,11 +13,12 @@ class UpdatesController extends Controller
 {
     public function store(Repair $repair)
     {
-        Update::create([
-            'description' => request('description'),
-            'progress' => request('progress'),
-            'repair_id' => $repair->id
+        $attributes = request()->validate([
+            'description' => 'required',
+            'progress' => 'required'
         ]);
+
+        $update = $repair->updates()->create($attributes);
 
         $repair->progress = request('progress');
         $repair->save();

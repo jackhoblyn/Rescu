@@ -51,6 +51,11 @@ class Ad extends Model
     	return "/vendor/ads/respond/{$this->id}";
     }
 
+    public function del()
+    {
+        return "/ads/delete/{$this->id}";
+    }
+
     public function user()
     {
     	return $this->belongsTo(User::class);

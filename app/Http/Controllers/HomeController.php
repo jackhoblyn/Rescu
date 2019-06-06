@@ -34,6 +34,19 @@ class HomeController extends Controller
         return redirect('/home');
     }
 
+    public function clearMessages(User $user)
+    { 
+        $user = Auth::user();
+
+
+        foreach ($user->messages as $message) {
+            $message->read = 'yes';
+            $message->save();
+        }
+
+        return redirect('/home');
+    }
+
     public function msgsCount(User $user)
     { 
         $user = Auth::user();
@@ -41,7 +54,6 @@ class HomeController extends Controller
         $messages = $user->messages();
 
         dd($messages);
-        
     }
 
     public function profile()

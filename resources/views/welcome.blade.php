@@ -149,13 +149,18 @@
                         <div>
                             <div class="content-style-overlay">
                                 <span class="icon icon-close"><img src="https://img.icons8.com/metro/26/000000/multiply.png" ></span>
-                                <h2 style="font-family: 'Nunito';">Rescü</h2>
-                                <p>Rescu is a service designed to help everyone to find the best possible price when getting their device fixed. In 2019, I broke a headphone jack and had to pay $100 to get it fixed. I later found out that my friend could have done it for $20. I think that says it all.</p>
-                                <p>As phones and similar devices become more and more vital to our lives, we here at Rescü think that everyone should have the chance to get them fixed at a fair price instead of paying extortionate prices to shops that often have a small monopoly over their areas.</p>
-                                <p>We also offer a way to make money if you have expertise in fixing phones, computers, tablets, Airpods or whatever you find listed on here.</p>
-                                <p>If you are a shop, it's easy to make a profile and list the location of your shop to our ever growing worldwide database of trusted repair shops.</p>
-                                <p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
-                                <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke.</p>
+                                <h2 style="font-family: 'Nunito'; font-size: 5rem"><b>Rescü</b></h2>
+                                <p>Rescu is a service designed to help everyone to find the best price when getting their device fixed. </p>
+
+                                <p>In 2019, I broke a headphone jack and had to pay $100 to get it fixed, which was a process that involved going to several repair shops where I was quoted a similar price each time. I later found out that a friend could have done it for $30. I thought that a service that heled with this dilema that everyone always seems to face whenever they break one of their devices should definitely exist, so I decided to make it.</p>
+
+                                <p>As phones and similar devices become more and more vital to our daily lives, getting them repaired becomes more and more of a common task and with phone prices seemingly getting higher and higher every year, repair prices are bound to follow. The thing is, there are actually a lot more options than you might think when such a thing occurs, at all sorts of price points, and we want to help you to find a price point that suits you.</p>
+
+                                <p>We also offer a way to make money if you have expertise in fixing phones, computers, tablets, airpods or whatever you find listed on here. Simply apply as a freelancer and start answering ads in your area!</p>
+
+                                <p>If you are a repair shop, register a profile on here and you can find all sorts of jobs in your area. After each job you'll receive a review and become suggested to someone when they make an ad. Communication with customers will also be a lot easier as we have a messaging system and a dashboard to commuicate with customers during repairs.</p>
+
+                                
                             </div>
                         </div>
                     </div>

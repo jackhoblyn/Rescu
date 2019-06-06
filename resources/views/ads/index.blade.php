@@ -38,14 +38,16 @@
 					</div>
 				</div>
 			@endif
+			@if( ($ads->where("chosen", "no"))->count() < 1 )
+					<div style="margin-top: 15%; margin-left: 15%; padding-top: 7%; font-family: 'Nunito';"><h1>No ads yet!</h1> </br><h2>To make one, click the button in the top right corner</h2></div>
+			@endif
+
 
 
 		@empty
-			<div style="margin-top: 15%; margin-left: 15%; padding-top: 7%; font-family: 'Nunito';"><h1>No ads yet!</h1></div>
+			<div style="margin-top: 15%; margin-left: 15%; padding-top: 7%; font-family: 'Nunito';"><h1>No ads yet!</h1> </br><h2>To make one, click the button in the top right corner</h2></div>
+			
 		@endforelse
-		@if( ($ads->where("chosen", "no"))->count() < 1 )
-				<div style="margin-top: 15%; margin-left: 15%; padding-top: 7%; font-family: 'Nunito';"><h1>No ads yet!</h1> </br><h2>To make one, click the button in the top right corner</h2></div>
-		@endif
 	</main>
 	
 @endsection

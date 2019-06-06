@@ -55,7 +55,7 @@
 					<textarea name="bio" placeholder="I am a freelancer from Dublin who has been fixing my mates phones for years" class="textarea bg-transparent border border-blue-light rounded p-2 text-m w-full" style="min-height: 200px;">{{Auth('vendor')->user()->bio}}</textarea>
 				</div>
 
-				<label class="block text-blue text-sm font-bold mb-2 mt-4" for="description" style="font-size: 1.2rem">What are you good at fixing????</label>
+				<label class="block text-blue text-sm font-bold mb-2 mt-4" for="description" style="font-size: 1.2rem">What tech brands are you good at fixing?</label>
 				<div class="mb-4-6">
 					<textarea name="skill" placeholder="I have a talent for fixing Samsung phones" class="textarea bg-transparent border border-blue-light rounded p-2 text-m w-full" style="min-height: 200px;">{{Auth('vendor')->user()->skill}}</textarea>
 				</div>

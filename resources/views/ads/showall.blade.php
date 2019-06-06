@@ -11,13 +11,13 @@
 		<!-- moves everything from left to right -->
 
 		@forelse ($ads as $ad)
-			@if ($ad->chosen == 'no')
+			@if ($ad->chosen == 'no' && $ad->user->city == $city )
 				<div class="lg:w-1/3 px-3 mb-5">
 					<div class="card" style="height: 100%; position: relative; ">
 						<div>
 							<h3 class="font-normal text-xl mb-3 py-4 -ml-5 border-l-4 border-blue-light pl-4" style = "float: left; margin-bottom: -15px;">
 								<a href="{{ $ad->list() }}" class="text-black no-underline">
-									<div class="text-black no-underline" >{{ str_limit($ad->title, 26 )}}</div>
+									<div class="text-black no-underline" >{{ str_limit($ad->title, 23 )}}</div>
 								</a>
 							</h3>
 

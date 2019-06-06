@@ -21,7 +21,7 @@ class MsgsController extends Controller
             'vendor_id' => $vendor->id
         ]);
 
-        Msg::create([
+        $msg = Msg::create([
         	'user_id' => $userId,
             'body' => request('body'),
             'vendor_id' => $vendor->id,
@@ -30,12 +30,27 @@ class MsgsController extends Controller
             'read' => request('read')
         ]);
 
-        return redirect('/messages');
+        return redirect()->route('messages.show', ['convo' => $convo->id]);
     }
 
     public function send(Vendor $vendor)
     {
-        return view('messenger.send', compact('vendor'));
+        if (\DB::table('convos')->where('vendor_id', $vendor->id)->exists())
+        {
+            $convo = \DB::table('convos')->where('vendor_id', $vendor->id)->first();
+            return redirect()->route('messages.show', ['convo' => $convo->id]);
+        }
+        else
+        {
+            return view('messenger.send', compact('vendor'));
+        }
+        
+    }
+
+    public function vsend(User $user)
+    {
+        dd('hi');
+        
     }
 
     public function reply(Convo $convo)

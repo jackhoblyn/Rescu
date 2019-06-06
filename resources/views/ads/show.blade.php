@@ -5,7 +5,8 @@
 		<div class="flex justify-between mt-2 items-end w-full">
 			<p class="text-muted font-light">
                 <a href="/home" class="text-muted no-underline hover:underline">Home</a> /
-                <a href="/ads" class="text-muted no-underline hover:underline"> Your ads </a> / {{ $ad ->title }}
+                <a href="/ads" class="text-muted no-underline hover:underline"> Your ads </a> / 
+                <a href="/ads/{{ $ad->id }}" class="text-muted no-underline hover:underline"> {{ $ad ->title }} </a>
             </p>
 		</div>
 	</header>
@@ -32,10 +33,10 @@
 									@endif
 									<div class="pt-2 w-full {{ $response->chosen ? 'text-blue' : '' }}">{{ $response->description }} </div></p>
 									<!-- <input name="chosen" type="checkbox" onChange="this.form.submit()" {{ $response->chosen ? 'checked' : '' }}> -->
-									<h1 style= "color: green; font-size: 1.2rem;"> ${{ $response->offer }} </h1>
+									<h1 style= "color: green; font-size: 1.2rem;"> €{{ $response->offer }} </h1>
 								</div>
 								<div class="flex w-full">
-									<h1 style= "color: blue; font-size: 1.2rem;"> {{ $response->vendor->name }} </h1>
+									<a href="/view/{{ $response->vendor->id }} "><h1 style= "color: blue; font-size: 1.2rem;"> {{ $response->vendor->name }} </h1></a>
 
 								</div>
 								<div class="flex w-full mt-3">
@@ -67,8 +68,14 @@
 								
 								<div class="flex w-full pt-6">
 									<button type="submit" class="button" style="background-color: red">Choose Response</button>
+									</form>
+									
+
+								
+									<a href="{{ $response->vendor->path() }}"><button class="button mx-3" style="background-color: orange">View Profile</button></a>
+									<a href="{{ $response->vendor->message() }}"><button class="button">Message</button></a>
 								</div>
-							</form>
+							
 						</div>
 					@empty
 						<div class="card mb-3"> Nothing yet! </div>
@@ -131,7 +138,7 @@
 				<div class="card" style="position: relative; ">
 					<div>
 						<h3 class="font-normal text-xl mb-3 py-4 -ml-5 border-l-4 border-blue-light pl-4" style = "float: left; max-width: 15rem;">
-							<div class="text-black no-underline" >{{ $ad->title }}</div>
+							<div class="text-black no-underline" ><b>{{ $ad->title }}</b></div>
 						</h3>
 
 						<h1 style= "color: green; text-align: right; font-size: 3rem; padding-top: 1rem;"> €{{ $ad->price }} </h1></br>
@@ -141,16 +148,10 @@
 						<a href="{{ $ad->full() }}">
 							<div class="textWithBlurredBg flex w-full" style="align-items: center; justify-content: center;">
 								<img class = "center mt-6" sizes="100vw" src="/uploads/photos/{{ $ad->photo }}" alt="Card image" style="position: relative; object-fit: cover; object-position: center; min-height: 300px; max-width: 320px;">
-								<h2 style="margin-top: 16%">Change Picture</h2>
+								<h2 style="margin-top: 16%">View Details</h2>
 							</div>
 						</a>
-						<div class = "center mt-5">
-							<a href="{{ $ad->full() }}" style="text-decoration: none">
-								<div class="flex w-full pt-3" style="align-items: center; justify-content: center;">
-									<button type="submit" class="button center" style="min-width: 8rem; float: center; font-size: 0.9rem; ">View Full Ad</button>
-								</div>
-							</a>
-						</div>
+						
 
 
 						<!-- <form class = "mt-6 pt-6" enctype="multipart/form-data" action="/ads" method="POST">

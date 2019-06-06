@@ -57,6 +57,18 @@ class VendorController extends Controller
         return view('vendor.login');
     }
 
+    public function clearMessages(Vendor $vendor)
+    { 
+        $vendor = Vendor::find(Auth('vendor')->user()->id);
+
+        foreach ($vendor->messages as $message) {
+            $message->read = 'yes';
+            $message->save();
+        }
+
+        return redirect('/vendor/home');
+    }
+
     
     public function vendorAuth(Request $request)
    {

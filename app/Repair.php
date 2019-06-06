@@ -33,6 +33,11 @@ class Repair extends Model
         return "/vendor/repairs/{$this->id}";
     }
 
+    public function msgVendor()
+    {
+        return "/vendor/messages/{$this->user->id}";
+    }
+
      public function full()
     {
         return "/repairs/{$this->id}/full";

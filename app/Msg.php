@@ -20,8 +20,19 @@ class msg extends Model
         return $this->belongsTo(Vendor::class);
     }
 
+    public function path()
+    {
+        return "/view/{$this->vendor->id}";
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+     public function markAsRead()
+    {
+        $this->update(['read' => 'yes']);
+
     }
 }

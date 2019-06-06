@@ -60,9 +60,14 @@ class User extends Authenticatable
         return $this->hasMany(Msg::class);
     }
 
+    public function sendMessage()
+    {
+        return "/vendor/messages/{$this->id}/send";
+    }
+
     public function messages()
     {
-        return $this->msgs()->where('read','=', 'no');
+        return $this->msgs()->where('read','=', 'no')->where('sender', '=', 'vendor');
     }
 
     public function edit()

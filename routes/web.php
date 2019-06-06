@@ -30,6 +30,8 @@ Route::get('/map', function (gmaps_geocache $gmaps_geocache) {
 
 	$gmaps_geocaches = gmaps_geocache::orderBy('updated_at','desc')->get();
 
+
+
 	foreach($gmaps_geocaches as $gmaps_geocache)
 	{
 		$marker['position'] = $gmaps_geocache->address;
@@ -101,13 +103,15 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/ads/edit/{ad}', 'AdsController@edit');
 
+	Route::delete('/ads/delete/{ad}', 'AdsController@delete');
+
 	Route::patch('/ads/edit/{ad}', 'AdsController@update');
 
 	Route::post('/ads', 'AdsController@store');
 
 	Route::get('/notifications', 'HomeController@clearNotifications');
 
-	Route::get('/messageCount', 'HomeController@msgsCount');
+	Route::patch('/clearMessages', 'HomeController@clearMessages');
 
 	Route::post('/ads/{ad}/choose/{response}', 'AdsController@choose');
 	
@@ -129,17 +133,17 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('/finished', 'RepairsController@finished');
 
-	Route::get('/repairs/{repair}', 'RepairsController@show');
-
-	Route::get('/stripe', 'StripeController@stripe');
-	
-	Route::post('/checkout', 'StripeController@store')->name('checkout,store'); 
+	Route::get('/repairs/{repair}', 'RepairsController@show')->name('repair.show');
 
 	Route::get('/repairs/{repair}/full', 'RepairsController@full');
 
 	Route::get('/repairs/{repair}/review', 'ReviewsController@create');
 
 	Route::post('/repairs/{repair}/review', 'ReviewsController@store');
+
+	Route::get('/repairs/{repair}/pay', 'StripeController@stripe');
+
+	Route::post('/repairs/{repair}/checkout', 'StripeController@store')->name('payment.store'); 
 
 	Route::get('/messages', ['as' => 'messages', 'uses' => 'ConvoController@index']);
 
@@ -195,6 +199,8 @@ Route::group(['middleware'=>'vendor'], function() {
 	Route::get('/vendor/map', 'VendorController@map');
 
 	Route::post('/vendor/map', 'VendorController@locationMake');
+
+	Route::patch('/vendor/clearMessages', 'VendorController@clearMessages');
     
 	Route::post('/logout/vendor', 'VendorController@logout')->name('logout.vendor');
 
@@ -221,6 +227,8 @@ Route::group(['middleware'=>'vendor'], function() {
 	Route::get('/vendor/messages', ['as' => 'messages.all', 'uses' => 'ConvoController@all']);
 
 	Route::get('/vendor/messages/{convo}', ['as' => 'messages.list', 'uses' => 'ConvoController@list']);
+
+	Route::get('/vendor/messages/{user}', ['as' => 'messages.user', 'uses' => 'ConvoController@vsend']);
 
 	Route::post('/vendor/messages/{convo}/reply', ['as' => 'messages.vsend', 'uses' => 'MsgsController@vreply']);
 

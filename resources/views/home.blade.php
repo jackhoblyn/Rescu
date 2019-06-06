@@ -32,7 +32,7 @@
                                 <img role="presentation" sizes="100vw" src={{ asset('img/viewbox.jpg') }} style=" position: relative; object-fit: cover; object-position: center; min-height: 330px;">
                             </div>
                               <div style="position: absolute; top: 52%; left: 50%; transform: translate(-50%, -50%); font-size: 1.1rem; font-weight: bold" class="bg-white border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 px-4 py-4">
-                                View Yours Ads
+                                Your Ads
                              </div>
                         
                         </div>
@@ -76,11 +76,11 @@
 
     <div class = "w-full" style="box-sizing: border-box; margin-top: 20px; margin-bottom: 15%">
         <div style="width: 49%; float: left;">
-            <a href="/finished">
+            <a href="/messages">
                 <div style="background-size: 100% 100%;">
                     <img role="presentation" sizes="100vw" src={{ asset('img/3.jpg') }} style="position: relative; object-fit: cover; object-position: center; min-width: 100%; max-height: 330px; min-height: 330px;">
                         <div style="position: absolute; bottom: -43%; left: 30%; transform: translate(-50%, -50%); font-size: 1.1rem; font-weight: bold" class="bg-white border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 px-4 py-4">
-                            Finished Repairs
+                            Messages
                         </div>
                 </div>
 
@@ -89,9 +89,12 @@
         </div>
 
         <div style="width: 49%; float:right">
-            <a href="/ads">
+            <a href="/finished">
                 <div style="background-size: 100% 100%;">
                     <img role="presentation" sizes="100vw" src={{ asset('img/iphone-fix.jpeg') }} style="position: relative; object-fit: cover; object-position: center; min-width: 100%; max-height: 330px; min-height: 330px;">
+                    <div style="position: absolute; bottom: -43%; left: 70%; transform: translate(-50%, -50%); font-size: 1.1rem; font-weight: bold" class="bg-white border rounded text-black border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0 px-4 py-4">
+                            Finished Repairs
+                        </div>
 
                 </div>
             </a>

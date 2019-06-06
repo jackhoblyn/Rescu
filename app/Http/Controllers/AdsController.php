@@ -24,8 +24,11 @@ class AdsController extends Controller
 
     public function all()
     {
+        $vendor = Vendor::find(Auth('vendor')->user()->id);
+        $city = $vendor->city;
+
         $ads = Ad::orderBy('updated_at','desc')->get(); //Showall projects
-        return view('ads.showall', compact('ads'));
+        return view('ads.showall', compact('ads', 'city'));
     }
 
     public function show(Ad $ad)
@@ -118,6 +121,13 @@ class AdsController extends Controller
     public function create() 
     {
         return view('ads.create');
+    }
+
+    public function delete(Ad $ad) 
+    {
+        $ad->delete();
+
+        return redirect('/home');
     }
 
     public function respond(Ad $ad)

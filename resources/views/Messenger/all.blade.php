@@ -21,14 +21,13 @@
 				<a href="{{ $convo->list() }}" class="text-black no-underline">
 					<div class="card" style="height: 100%; position: relative; ">
 						<div>
-							<h3 class="font-normal text-xl mb-3 py-4 -ml-5 border-l-4 border-blue-light pl-4" style = "float: left; margin-bottom: -15px;">
-								
+							<div>
+							<h3 class="font-normal text-xl mb-3 py-4 -ml-5 border-l-4 border-black pl-4" style = "float: left; margin-bottom: -15px;">
 									<div class="text-black no-underline" >{{ $convo->user->name }}</div>
-								
 							</h3>
 
 
-							<div class="text-grey pt-4">{{ $convo->user->email }}</div>
+							<div class="text-grey pt-4" style="float: right">{{ $convo->user->email }}</div>
 
 							<img class = "center pt-6 mt-6 ml-6" sizes="70vw" src="/uploads/avatars/{{ $convo->user->avatar }}" alt="Card image" style="position: relative; object-fit: cover; object-position: center; min-height: 250px; max-width: 250px; margin-left: 3rem;">
 						</div>

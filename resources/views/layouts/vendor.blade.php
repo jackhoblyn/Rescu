@@ -80,12 +80,45 @@
                            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                                 <div class="text-sm lg:flex-grow">
                                     <a href="{{ route('login') }}" style="font-size: 1rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
-                                    Login as User
+                                    User
                                     </a>
                                 </div>
                             </div>
                         @else
                          <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                            <div class="relative group mt-2">
+                              <div class="relative group">
+                                  <div class="flex items-center cursor-pointer text-sm text-blue border border-white border-b-0  group-hover:border-grey-light rounded-t-lg py-1 px-2">
+                                    <i class="fas fa-envelope" style="font-size: 1rem; margin-right:1rem"></i>
+                                    <span class="badge">{{ count(Auth('vendor')->user()->messages) }}</span>
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                  </div>
+                                  <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-full" style="min-width: 500px; z-index: 1; padding-top: 30px">
+                                    @foreach(Auth('vendor')->user()->messages as $message)
+                                        <a href="/vendor/messages/{{ $message->convo_id }}">
+                                            <div style="margin-top: 10px; margin-left: 7px" class="red-border-bottom">
+                                                <h4 style="color:black"><span style="color: #6cb2eb"> {{ $message->user->name}} </span> : {{ $message->body }}'</h4>
+                                                <p style="font-size: 0.9rem; padding: 0.3rem">{{ $message->created_at->diffForHumans() }}</p>
+                                            </div>
+                                        </a>
+                                         <div>
+                                            <div style="border-bottom: 2px solid black !important; width: 29rem !important;">
+                                                
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                    @if( Auth('vendor')->user()->messages->count() > 0 )
+                                        <div style="padding-left: 24rem;">
+                                            <form method="POST" action ='/vendor/clearMessages'>
+                                                @csrf
+                                                @method('PATCH')
+                                                <button type="submit" class="button" style="background-color: #6cb2eb; margin-top: 1rem;">Clear</button>
+                                            </form>
+                                        </div>
+                                    @endif                                      
+                                  </div>     
+                                </div>
+                            </div>
                             <div class="relative group mt-2">
                               <div class="relative group">
                                   <div class="flex items-center cursor-pointer text-sm text-blue border border-white border-b-0  group-hover:border-grey-light rounded-t-lg py-1 px-2">

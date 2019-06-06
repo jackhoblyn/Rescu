@@ -106,6 +106,12 @@
                                 </div>
                             </div>
 
+                            <div style="margin-bottom: 2rem; !important; word-wrap: break-word !important; font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important; font-size: 1.7rem; !important; line-height: 1.375em !important; color: black !important;">
+
+                               <b>Specializes in:</b>
+                                
+                            </div>
+
                             <div style="margin: 0px !important; word-wrap: break-word !important; font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important; font-size: 16px !important; font-weight: 900 !important; line-height: 1.375em !important; color: #2061b7 !important;">
 
                                {{ Auth('vendor')->user()->skill }}

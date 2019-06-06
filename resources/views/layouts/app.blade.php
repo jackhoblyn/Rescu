@@ -84,7 +84,7 @@
                              <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                                 <div class="text-sm lg:flex-grow">
                                   <a href="/login/vendor" style="font-size: 1rem; font-weight: bold" class="block mt-4 lg:inline-block lg:mt-0 text-blue hover:text-orange mr-4">
-                                    Login as Fixer
+                                    Fixer
                                     </a>
                                 </div>
                               </div>
@@ -100,21 +100,24 @@
                                           </div>
                                           <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-full" style="min-width: 500px; z-index: 1; padding-top: 30px">
                                             @foreach(Auth::user()->messages as $message)
-                                                <div>
+                                                <a href="/messages/{{ $message->convo_id }}">
+                                                    <div style="margin-top: 10px; margin-left: 7px" class="red-border-bottom">
+                                                        <h4 style="color:black"><span style="color: #6cb2eb"> {{ $message->vendor->name}} </span> : {{ $message->body }}'</h4>
+                                                        <p style="font-size: 0.9rem; padding: 0.3rem">{{ $message->created_at->diffForHumans() }}</p>
+                                                    </div>
+                                                </a>
+                                                 <div>
                                                     <div style="border-bottom: 2px solid black !important; width: 29rem !important;">
-                                                        <a href="/convos/{{ $message->convo_id }}">
-                                                            {{$message->body}}
-                                                        </a>
                                                         
                                                     </div>
                                                 </div>
-                                                
-
                                             @endforeach
-                                            @if( Auth::user()->unreadNotifications->count() > 0 )
+                                            @if( Auth::user()->messages->count() > 0 )
                                                 <div style="padding-left: 24rem;">
-                                                    <form method="GET" action ='/notifications'>
-                                                        <button type="submit" class="button" style="background-color: #6cb2eb">Clear</button>
+                                                    <form method="POST" action ='/clearMessages'>
+                                                        @csrf
+                                                        @method('PATCH')
+                                                        <button type="submit" class="button" style="background-color: #6cb2eb; margin-top: 1rem;">Clear</button>
                                                     </form>
                                                 </div>
                                             @endif                                      
@@ -141,7 +144,7 @@
                                             @if( Auth::user()->unreadNotifications->count() > 0 )
                                                 <div style="padding-left: 24rem;">
                                                     <form method="GET" action ='/notifications'>
-                                                        <button type="submit" class="button" style="background-color: #6cb2eb">Clear</button>
+                                                        <button type="submit" class="button" style="background-color: #6cb2eb;">Clear</button>
                                                     </form>
                                                 </div>
                                             @endif                                      

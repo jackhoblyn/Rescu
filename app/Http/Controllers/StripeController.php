@@ -4,8 +4,7 @@
 namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
-use Stripe\Stripe;
-use Stripe\Charge;
+use App\Repair;
  
 class StripeController extends Controller
 {
@@ -16,9 +15,9 @@ class StripeController extends Controller
      *
      * @return Response
      */
-    public function stripe()
+    public function stripe(Repair $repair)
     {
-        return view('checkout');
+        return view('checkout', compact('repair'));
     }
  
     /**
@@ -26,28 +25,26 @@ class StripeController extends Controller
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Repair $repair)
     {
-        try{
-            $charge = Stripe::charges()->create([
-                'amount' => $request->amount,
-                'currency' => 'EUR',
-                'source' => $request->stripeToken,
-                'description' => 'Order',
-                'receipt_email' => $request->email,
-                'metadata' =>[],
-            ]);
 
-            return back()->with('success_message', 'Thank You');
-        } catch (Exception $e) {
+        // See your keys here: https://dashboard.stripe.com/account/apikeys
+        \Stripe\Stripe::setApiKey('sk_test_oQYxD2s7yDQAq4MupfPbY42e00aqRUHJrA');
 
-        }
+        // Token is created using Checkout or Elements!
+        // Get the payment token ID submitted by the form:
+        $token = $_POST['stripeToken'];
+        $charge = \Stripe\Charge::create([
+            'amount' => $repair->price*100,
+            'currency' => 'eur',
+            'description' => 'Example charge',
+            'source' => $token,
+        ]);
 
+        $repair->payment = 'yes';
+        $repair->save();
 
-
-
-
-
+        return redirect()->route('repair.show', ['repair' => $repair->id]);
             
     }
     

@@ -33,4 +33,9 @@ class ConvoController extends Controller
     {
          return view('messenger.list', compact('convo'));
     }
+
+    public function vsend(User $user)
+    {
+        dd('hi');
+    }
 }
